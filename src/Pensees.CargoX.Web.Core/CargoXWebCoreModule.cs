@@ -12,14 +12,16 @@ using Abp.Zero.Configuration;
 using Pensees.CargoX.Authentication.JwtBearer;
 using Pensees.CargoX.Configuration;
 using Pensees.CargoX.EntityFrameworkCore;
+using Pensees.CargoX.ObjectStorage;
 
 namespace Pensees.CargoX
 {
     [DependsOn(
          typeof(CargoXApplicationModule),
          typeof(CargoXEntityFrameworkModule),
-         typeof(AbpAspNetCoreModule)
-        ,typeof(AbpAspNetCoreSignalRModule)
+         typeof(CargoXObjectStorageModule),
+         typeof(AbpAspNetCoreModule),
+         typeof(AbpAspNetCoreSignalRModule)
      )]
     public class CargoXWebCoreModule : AbpModule
     {

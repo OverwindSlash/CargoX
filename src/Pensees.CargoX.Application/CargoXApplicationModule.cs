@@ -2,11 +2,14 @@
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Pensees.CargoX.Authorization;
+using Pensees.CargoX.ObjectStorage;
+using Pensees.CargoX.Service;
 
 namespace Pensees.CargoX
 {
     [DependsOn(
         typeof(CargoXCoreModule), 
+        typeof(CargoXServiceModule),
         typeof(AbpAutoMapperModule))]
     public class CargoXApplicationModule : AbpModule
     {

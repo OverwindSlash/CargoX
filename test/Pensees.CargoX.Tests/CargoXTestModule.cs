@@ -10,6 +10,7 @@ using Abp.TestBase;
 using Abp.Zero.Configuration;
 using Abp.Zero.EntityFrameworkCore;
 using Pensees.CargoX.EntityFrameworkCore;
+using Pensees.CargoX.ObjectStorage;
 using Pensees.CargoX.Tests.DependencyInjection;
 
 namespace Pensees.CargoX.Tests
@@ -17,6 +18,7 @@ namespace Pensees.CargoX.Tests
     [DependsOn(
         typeof(CargoXApplicationModule),
         typeof(CargoXEntityFrameworkModule),
+        typeof(CargoXObjectStorageModule),
         typeof(AbpTestBaseModule)
         )]
     public class CargoXTestModule : AbpModule

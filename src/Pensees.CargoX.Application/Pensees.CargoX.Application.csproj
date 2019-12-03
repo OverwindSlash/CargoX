@@ -12,6 +12,8 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pensees.CargoX.Core\Pensees.CargoX.Core.csproj" />
+    <ProjectReference Include="..\Pensees.CargoX.ObjectStorage\Pensees.CargoX.ObjectStorage.csproj" />
+    <ProjectReference Include="..\Pensees.CargoX.Service\Pensees.CargoX.Service.csproj" />
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

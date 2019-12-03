@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Pensees.CargoX.Application\Pensees.CargoX.Application.csproj" />
     <ProjectReference Include="..\..\src\Pensees.CargoX.EntityFrameworkCore\Pensees.CargoX.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\src\Pensees.CargoX.ObjectStorage\Pensees.CargoX.ObjectStorage.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
@@ -31,6 +32,12 @@
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\Image1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Images\image2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

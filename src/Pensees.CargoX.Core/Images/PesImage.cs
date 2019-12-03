@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.IO;
 using Abp.Domain.Entities;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
 
-namespace Pensees.CargoX.Graphics
+namespace Pensees.CargoX.Images
 {
     public class PesImage : Entity<long>
     {
@@ -27,6 +26,15 @@ namespace Pensees.CargoX.Graphics
             byte[] _bytesArray = Convert.FromBase64String(base64Str);
             var image = Image<Rgba32>.Load(_bytesArray);
             return new PesImage(image);
+        }
+
+        public byte[] ToByteArray()
+        {
+            using (var ms = new MemoryStream())
+            {
+                _innerImage.Save(ms, PngFormat.Instance);
+                return ms.ToArray();
+            }
         }
     }
 }

@@ -7,8 +7,7 @@ using Abp.Reflection.Extensions;
 namespace Pensees.CargoX.Service
 {
     [DependsOn(
-        typeof(CargoXCoreModule)
-        )]
+        typeof(CargoXCoreModule))]
     public class CargoXServiceModule : AbpModule
     {
         public override void Initialize()
