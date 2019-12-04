@@ -7,6 +7,7 @@ using Abp.Modules;
 using Minio;
 using Minio.Exceptions;
 using Pensees.CargoX.Repository;
+using Sentry;
 
 namespace Pensees.CargoX.ObjectStorage.MinIO
 {
@@ -52,7 +53,7 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
             }
             catch (MinioException e)
             {
-                Console.WriteLine(e);
+                SentrySdk.CaptureException(e);
                 throw;
             }
         }

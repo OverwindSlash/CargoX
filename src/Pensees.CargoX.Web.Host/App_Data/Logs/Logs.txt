@@ -318,3 +318,442 @@ INFO  2019-11-21 11:42:26,362 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics -
 INFO  2019-11-21 11:42:26,645 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
 INFO  2019-11-21 11:42:26,750 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 105.0342ms 200 application/json;charset=utf-8
 DEBUG 2019-11-21 11:42:31,030 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:51:56,891 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-12-04 17:51:57,103 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2019-12-04 17:51:57,117 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Web.Host.Startup.CargoXWebHostModule, Pensees.CargoX.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXWebCoreModule, Pensees.CargoX.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXApplicationModule, Pensees.CargoX.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXCoreModule, Pensees.CargoX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Service.CargoXServiceModule, Pensees.CargoX.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.EntityFrameworkCore.CargoXEntityFrameworkModule, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,121 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.ObjectStorage.CargoXObjectStorageModule, Pensees.CargoX.ObjectStorage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,121 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,121 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,121 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:57,123 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2019-12-04 17:51:57,236 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:51:57,236 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:51:57,236 [1    ] o.Configuration.LanguageManagementConfig - Converted CargoX (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:51:57,236 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:51:57,561 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Pensees.CargoX.EntityFrameworkCore.CargoXDbContext, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:51:58,182 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-12-04 17:51:58,224 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-12-04 17:51:58,254 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-12-04 17:51:58,269 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: CargoX
+DEBUG 2019-12-04 17:51:58,290 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-12-04 17:51:58,430 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-12-04 17:51:58,521 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-12-04 17:51:58,555 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2019-12-04 17:51:58,555 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-12-04 17:51:58,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.CreateUserDto
+DEBUG 2019-12-04 17:51:58,560 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.UserDto
+DEBUG 2019-12-04 17:51:58,561 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-12-04 17:51:58,561 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-12-04 17:51:58,561 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Roles.Dto.PermissionDto
+DEBUG 2019-12-04 17:51:58,561 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-12-04 17:51:58,561 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.TenantDto
+DEBUG 2019-12-04 17:52:00,877 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:00,920 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:01,021 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:01,070 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 17:52:01,400 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Overwind\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2019-12-04 17:52:01,466 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-12-04 17:52:01,595 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+DEBUG 2019-12-04 17:52:03,795 [9    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 17:52:03,925 [13   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Pensees.CargoX.Web.Host.Controllers.HomeController (Pensees.CargoX.Web.Host).
+INFO  2019-12-04 17:52:04,670 [13   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) - Validation state: Valid
+INFO  2019-12-04 17:52:04,675 [13   ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.3604ms.
+INFO  2019-12-04 17:52:04,832 [9    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-12-04 17:52:04,838 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) in 908.8649ms
+INFO  2019-12-04 17:52:04,840 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-04 17:52:04,854 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3388.8687ms 302 
+INFO  2019-12-04 17:52:04,862 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-12-04 17:52:04,978 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 116.0895ms 200 text/html;charset=utf-8
+INFO  2019-12-04 17:52:05,018 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2019-12-04 17:52:05,020 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2019-12-04 17:52:05,027 [13   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.swagger.js was not modified
+INFO  2019-12-04 17:52:05,028 [5    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.js was not modified
+INFO  2019-12-04 17:52:05,031 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.6782ms 304 application/javascript
+INFO  2019-12-04 17:52:05,032 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.688500000000001ms 304 application/javascript
+INFO  2019-12-04 17:52:05,252 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-12-04 17:52:05,360 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 107.28110000000001ms 200 application/json;charset=utf-8
+DEBUG 2019-12-04 17:52:08,936 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:13,942 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:18,955 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:23,973 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:28,987 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:33,990 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:38,999 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:44,017 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:49,032 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 17:52:52,474 [15   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Image/SaveImageByBase64String application/json-patch+json 28
+INFO  2019-12-04 17:52:52,479 [15   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-04 17:52:52,480 [15   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-04 17:52:52,483 [15   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application)'
+INFO  2019-12-04 17:52:52,497 [15   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "SaveImageByBase64String", controller = "Image"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.SaveImageResponse] SaveImageByBase64StringAsync(Pensees.CargoX.Images.Dtos.SaveImageRequest) on controller Pensees.CargoX.Images.ImageAppService (Pensees.CargoX.Application).
+INFO  2019-12-04 17:52:52,599 [15   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application) - Validation state: Valid
+ERROR 2019-12-04 17:52:52,784 [4    ] Mvc.ExceptionHandling.AbpExceptionFilter - The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+System.FormatException: The input is not a valid Base-64 string as it contains a non-base 64 character, more than two padding characters, or an illegal character among the padding characters.
+   at System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   at System.Convert.FromBase64String(String s)
+   at Pensees.CargoX.Images.PesImage.FromBase64String(String base64Str) in D:\Workspace\Formal\Pensees.CargoX\aspnet-core\src\Pensees.CargoX.Core\Images\PesImage.cs:line 26
+   at Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync(SaveImageRequest request) in D:\Workspace\Formal\Pensees.CargoX\aspnet-core\src\Pensees.CargoX.Application\Images\ImageAppService.cs:line 23
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+INFO  2019-12-04 17:52:52,983 [4    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-04 17:52:52,995 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application) in 496.0536ms
+INFO  2019-12-04 17:52:52,996 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application)'
+INFO  2019-12-04 17:52:52,998 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 524.4717ms 500 application/json; charset=utf-8
+DEBUG 2019-12-04 17:52:54,050 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:52:59,052 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:53:04,065 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:53:09,080 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:54:29,419 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-12-04 17:54:29,476 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2019-12-04 17:54:29,488 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Web.Host.Startup.CargoXWebHostModule, Pensees.CargoX.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXWebCoreModule, Pensees.CargoX.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXApplicationModule, Pensees.CargoX.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXCoreModule, Pensees.CargoX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,490 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,491 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,491 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Service.CargoXServiceModule, Pensees.CargoX.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,491 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,491 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.EntityFrameworkCore.CargoXEntityFrameworkModule, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,491 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,492 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,492 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,492 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.ObjectStorage.CargoXObjectStorageModule, Pensees.CargoX.ObjectStorage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,492 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,492 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,492 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:29,494 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2019-12-04 17:54:29,536 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:54:29,536 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:54:29,536 [1    ] o.Configuration.LanguageManagementConfig - Converted CargoX (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:54:29,536 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:54:29,781 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Pensees.CargoX.EntityFrameworkCore.CargoXDbContext, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:54:30,355 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-12-04 17:54:30,394 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-12-04 17:54:30,424 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-12-04 17:54:30,439 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: CargoX
+DEBUG 2019-12-04 17:54:30,459 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-12-04 17:54:30,605 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-12-04 17:54:30,692 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-12-04 17:54:30,725 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2019-12-04 17:54:30,725 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-12-04 17:54:30,729 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.CreateUserDto
+DEBUG 2019-12-04 17:54:30,730 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.UserDto
+DEBUG 2019-12-04 17:54:30,730 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-12-04 17:54:30,730 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-12-04 17:54:30,730 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Roles.Dto.PermissionDto
+DEBUG 2019-12-04 17:54:30,730 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-12-04 17:54:30,730 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.TenantDto
+DEBUG 2019-12-04 17:54:32,114 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:54:32,154 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:54:32,239 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:54:32,285 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 17:54:32,473 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Overwind\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2019-12-04 17:54:32,517 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-12-04 17:54:32,578 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-04 17:54:34,972 [14   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Pensees.CargoX.Web.Host.Controllers.HomeController (Pensees.CargoX.Web.Host).
+DEBUG 2019-12-04 17:54:35,653 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 17:54:35,704 [14   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) - Validation state: Valid
+INFO  2019-12-04 17:54:35,708 [14   ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.3236ms.
+INFO  2019-12-04 17:54:35,845 [13   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-12-04 17:54:35,851 [13   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) in 874.8697000000001ms
+INFO  2019-12-04 17:54:35,852 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-04 17:54:35,865 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3348.1186000000002ms 302 
+INFO  2019-12-04 17:54:35,872 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-12-04 17:54:35,982 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 110.3305ms 200 text/html;charset=utf-8
+INFO  2019-12-04 17:54:36,351 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-12-04 17:54:36,464 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 112.558ms 200 application/json;charset=utf-8
+DEBUG 2019-12-04 17:54:40,663 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:54:45,678 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:54:50,692 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:59:50,843 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-12-04 17:59:50,895 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2019-12-04 17:59:50,907 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Web.Host.Startup.CargoXWebHostModule, Pensees.CargoX.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXWebCoreModule, Pensees.CargoX.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,908 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXApplicationModule, Pensees.CargoX.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXCoreModule, Pensees.CargoX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,909 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Service.CargoXServiceModule, Pensees.CargoX.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.EntityFrameworkCore.CargoXEntityFrameworkModule, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.ObjectStorage.CargoXObjectStorageModule, Pensees.CargoX.ObjectStorage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,910 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,911 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:50,912 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2019-12-04 17:59:50,953 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:59:50,953 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:59:50,953 [1    ] o.Configuration.LanguageManagementConfig - Converted CargoX (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:59:50,953 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 17:59:51,200 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Pensees.CargoX.EntityFrameworkCore.CargoXDbContext, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 17:59:51,788 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-12-04 17:59:51,826 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-12-04 17:59:51,855 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-12-04 17:59:51,870 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: CargoX
+DEBUG 2019-12-04 17:59:51,891 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-12-04 17:59:52,018 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-12-04 17:59:52,095 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-12-04 17:59:52,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2019-12-04 17:59:52,130 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-12-04 17:59:52,134 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.CreateUserDto
+DEBUG 2019-12-04 17:59:52,134 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.UserDto
+DEBUG 2019-12-04 17:59:52,134 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-12-04 17:59:52,135 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-12-04 17:59:52,135 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Roles.Dto.PermissionDto
+DEBUG 2019-12-04 17:59:52,135 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-12-04 17:59:52,135 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.TenantDto
+DEBUG 2019-12-04 17:59:54,013 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:59:54,054 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:59:54,150 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 17:59:54,197 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 17:59:54,385 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Overwind\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2019-12-04 17:59:54,428 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-12-04 17:59:54,487 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-04 17:59:56,915 [13   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Pensees.CargoX.Web.Host.Controllers.HomeController (Pensees.CargoX.Web.Host).
+DEBUG 2019-12-04 17:59:57,339 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 17:59:57,643 [13   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) - Validation state: Valid
+INFO  2019-12-04 17:59:57,647 [13   ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.32ms.
+INFO  2019-12-04 17:59:57,780 [9    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-12-04 17:59:57,786 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) in 867.1772000000001ms
+INFO  2019-12-04 17:59:57,788 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-04 17:59:57,800 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3371.9754000000003ms 302 
+INFO  2019-12-04 17:59:57,807 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-12-04 17:59:57,916 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 108.54100000000001ms 200 text/html;charset=utf-8
+INFO  2019-12-04 17:59:58,174 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-12-04 17:59:58,277 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 103.125ms 200 application/json;charset=utf-8
+DEBUG 2019-12-04 18:00:02,444 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:07,467 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:12,477 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:17,492 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:22,504 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:27,516 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:32,519 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:37,533 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:42,551 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:47,564 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:52,583 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:00:57,597 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:02,609 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:07,612 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:12,624 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:17,629 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 18:01:21,201 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Image/SaveImageByBase64String application/json-patch+json 1840306
+INFO  2019-12-04 18:01:21,206 [12   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-04 18:01:21,208 [12   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-04 18:01:21,210 [12   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application)'
+INFO  2019-12-04 18:01:21,223 [12   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "SaveImageByBase64String", controller = "Image"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.SaveImageResponse] SaveImageByBase64StringAsync(Pensees.CargoX.Images.Dtos.SaveImageRequest) on controller Pensees.CargoX.Images.ImageAppService (Pensees.CargoX.Application).
+INFO  2019-12-04 18:01:21,401 [4    ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application) - Validation state: Valid
+ERROR 2019-12-04 18:01:22,279 [10   ] Mvc.ExceptionHandling.AbpExceptionFilter - MinIO API responded with message=Unsuccessful response from server without XML error: The SSL connection could not be established, see inner exception. The handshake failed due to an unexpected packet format.
+Unsuccessful response from server without XML error: The SSL connection could not be established, see inner exception. The handshake failed due to an unexpected packet format.: Minio.Exceptions.InternalClientException: MinIO API responded with message=Unsuccessful response from server without XML error: The SSL connection could not be established, see inner exception. The handshake failed due to an unexpected packet format.
+   at Minio.MinioClient.ParseError(IRestResponse response) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 468
+   at Minio.MinioClient.<>c.<.ctor>b__80_0(IRestResponse response) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 77
+   at Minio.MinioClient.HandleIfErrorResponse(IRestResponse response, IEnumerable`1 handlers, DateTime startTime) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 526
+   at Minio.MinioClient.ExecuteTaskAsync(IEnumerable`1 errorHandlers, IRestRequest request, CancellationToken cancellationToken) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 370
+   at Minio.BucketRegionCache.Update(MinioClient client, String bucketName) in /q/.q/sources/minio-dotnet/Minio/BucketRegionCache.cs:line 104
+   at Minio.MinioClient.GetRegion(String bucketName) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 128
+   at Minio.MinioClient.CreateRequest(Method method, String bucketName, String objectName, Dictionary`2 headerMap, String contentType, Object body, String resourcePath) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 161
+   at Minio.MinioClient.BucketExistsAsync(String bucketName, CancellationToken cancellationToken) in /q/.q/sources/minio-dotnet/Minio/ApiEndpoints/BucketOperations.cs:line 105
+   at Pensees.CargoX.ObjectStorage.MinIO.ImageRepository.SaveImageByteAsync(SaveImageParam param) in D:\Workspace\Formal\Pensees.CargoX\aspnet-core\src\Pensees.CargoX.ObjectStorage\MinIO\ImageRepository.cs:line 30
+   at Abp.Threading.InternalAsyncHelper.AwaitTaskWithPostActionAndFinallyAndGetResult[T](Task`1 actualReturnValue, Func`1 postAction, Action`1 finalAction)
+   at Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync(SaveImageRequest request) in D:\Workspace\Formal\Pensees.CargoX\aspnet-core\src\Pensees.CargoX.Application\Images\ImageAppService.cs:line 26
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+INFO  2019-12-04 18:01:22,559 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-04 18:01:22,569 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application) in 1343.9502ms
+INFO  2019-12-04 18:01:22,570 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application)'
+INFO  2019-12-04 18:01:22,572 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1371.3582000000001ms 500 application/json; charset=utf-8
+DEBUG 2019-12-04 18:01:22,642 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:27,644 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:32,655 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:37,658 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:42,661 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:47,672 [25   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:52,689 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:01:57,692 [25   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:02,703 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:07,706 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:12,720 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:17,723 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:22,734 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:27,741 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:32,752 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:37,764 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:42,766 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:47,768 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:52,780 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:02:57,782 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:02,801 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:07,812 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:12,813 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:17,831 [25   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:22,846 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:27,862 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:32,875 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:37,895 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:42,909 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:47,925 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:52,943 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:03:57,951 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:04:02,953 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:04:07,969 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:04:12,974 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:04:17,992 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:04:23,012 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:04:28,016 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:04:33,029 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:27,131 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-12-04 18:09:27,178 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2019-12-04 18:09:27,190 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Web.Host.Startup.CargoXWebHostModule, Pensees.CargoX.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,192 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXWebCoreModule, Pensees.CargoX.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,192 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXApplicationModule, Pensees.CargoX.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,192 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXCoreModule, Pensees.CargoX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,192 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,192 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,192 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,193 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Service.CargoXServiceModule, Pensees.CargoX.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,193 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,193 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.EntityFrameworkCore.CargoXEntityFrameworkModule, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,193 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,193 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,194 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,194 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.ObjectStorage.CargoXObjectStorageModule, Pensees.CargoX.ObjectStorage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,194 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,194 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,194 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:27,196 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2019-12-04 18:09:27,236 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 18:09:27,236 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 18:09:27,236 [1    ] o.Configuration.LanguageManagementConfig - Converted CargoX (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 18:09:27,236 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-04 18:09:27,487 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Pensees.CargoX.EntityFrameworkCore.CargoXDbContext, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-04 18:09:28,005 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-12-04 18:09:28,041 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-12-04 18:09:28,070 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-12-04 18:09:28,085 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: CargoX
+DEBUG 2019-12-04 18:09:28,105 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-12-04 18:09:28,230 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-12-04 18:09:28,305 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-12-04 18:09:28,338 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2019-12-04 18:09:28,338 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-12-04 18:09:28,342 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.CreateUserDto
+DEBUG 2019-12-04 18:09:28,342 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.UserDto
+DEBUG 2019-12-04 18:09:28,342 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-12-04 18:09:28,343 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-12-04 18:09:28,343 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Roles.Dto.PermissionDto
+DEBUG 2019-12-04 18:09:28,343 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-12-04 18:09:28,343 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.TenantDto
+DEBUG 2019-12-04 18:09:29,722 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:29,760 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:29,846 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:29,891 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 18:09:30,080 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Overwind\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2019-12-04 18:09:30,124 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-12-04 18:09:30,183 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-04 18:09:32,464 [9    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Pensees.CargoX.Web.Host.Controllers.HomeController (Pensees.CargoX.Web.Host).
+INFO  2019-12-04 18:09:33,135 [9    ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) - Validation state: Valid
+INFO  2019-12-04 18:09:33,139 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.3544ms.
+DEBUG 2019-12-04 18:09:33,257 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 18:09:33,277 [10   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-12-04 18:09:33,282 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) in 814.4607000000001ms
+INFO  2019-12-04 18:09:33,284 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-04 18:09:33,296 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3173.139ms 302 
+INFO  2019-12-04 18:09:33,303 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-12-04 18:09:33,415 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 111.24180000000001ms 200 text/html;charset=utf-8
+INFO  2019-12-04 18:09:33,672 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-12-04 18:09:33,775 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 102.95270000000001ms 200 application/json;charset=utf-8
+DEBUG 2019-12-04 18:09:38,276 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:43,286 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:48,305 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:53,323 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:09:58,335 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:03,349 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:08,353 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:13,370 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:18,383 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:23,393 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:28,406 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:33,418 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:38,438 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:43,446 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:48,460 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:53,472 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:10:58,477 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:03,492 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:08,505 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:13,522 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:18,532 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:23,535 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:28,547 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:33,550 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:38,562 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:43,565 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:48,569 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:53,578 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:11:58,579 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:03,592 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:08,595 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:13,600 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:18,609 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:23,611 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:28,613 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:33,625 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:38,626 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 18:12:41,770 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Image/SaveImageByBase64String application/json-patch+json 1840306
+INFO  2019-12-04 18:12:41,774 [10   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-04 18:12:41,775 [10   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-04 18:12:41,778 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application)'
+INFO  2019-12-04 18:12:41,791 [10   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "SaveImageByBase64String", controller = "Image"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.SaveImageResponse] SaveImageByBase64StringAsync(Pensees.CargoX.Images.Dtos.SaveImageRequest) on controller Pensees.CargoX.Images.ImageAppService (Pensees.CargoX.Application).
+INFO  2019-12-04 18:12:41,963 [11   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application) - Validation state: Valid
+DEBUG 2019-12-04 18:12:43,628 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-04 18:12:45,134 [13   ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3167.8101ms.
+INFO  2019-12-04 18:12:45,147 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-04 18:12:45,159 [11   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application) in 3365.3037ms
+INFO  2019-12-04 18:12:45,161 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.ImageAppService.SaveImageByBase64StringAsync (Pensees.CargoX.Application)'
+INFO  2019-12-04 18:12:45,163 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 3392.4096ms 200 application/json; charset=utf-8
+DEBUG 2019-12-04 18:12:48,639 [21   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:53,640 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:12:58,643 [21   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:03,649 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:08,663 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:13,679 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:18,692 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:23,698 [21   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:28,711 [21   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:33,723 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:38,736 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:43,737 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:48,751 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:53,751 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:13:58,758 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-04 18:14:03,775 [21   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
