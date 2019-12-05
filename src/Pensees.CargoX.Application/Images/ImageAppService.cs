@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq.Expressions;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
 using Abp.IO.Extensions;
 using Microsoft.AspNetCore.Http;
 using Pensees.CargoX.Images.Dtos;
 using Pensees.CargoX.Repository;
 using RestSharp.Extensions;
 using Sentry;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Pensees.CargoX.Images
 {
@@ -65,9 +61,11 @@ namespace Pensees.CargoX.Images
 
         public async Task<SaveImageResponse> SaveImageByBase64Async(SaveImageByBase64Request request)
         {
-            PesImage pesImage = PesImage.FromBase64String(request.ImageBase64);
+            //PesImage pesImage = PesImage.FromBase64String(request.ImageBase64);
 
-            return await SaveImageBytes(pesImage.ToByteArray());
+            byte[] bytes = Convert.FromBase64String(request.ImageBase64);
+
+            return await SaveImageBytes(bytes);
         }
 
         private async Task<SaveImageResponse> SaveImageBytes(byte[] bytes)
