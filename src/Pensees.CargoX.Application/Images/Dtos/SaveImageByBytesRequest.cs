@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Pensees.CargoX.Images.Dtos
 {
-    public class SaveImageRequest
+    public class SaveImageByBytesRequest
     {
-        public string Base64ImageData { get; set; }
+        public byte[] ImageBytes { get; set; }
     }
 }

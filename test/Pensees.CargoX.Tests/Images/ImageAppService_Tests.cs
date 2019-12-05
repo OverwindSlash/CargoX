@@ -21,12 +21,12 @@ namespace Pensees.CargoX.Tests.Images
         [Fact]
         public async Task SaveImageBase64_Test()
         {
-            SaveImageRequest request = new SaveImageRequest()
+            SaveImageByBase64Request request = new SaveImageByBase64Request()
             {
-                Base64ImageData = ImageLoader.ConvertToBase64("images/image2.png")
+                ImageBase64 = ImageLoader.ConvertToBase64("images/image3.jpg")
             };
 
-            SaveImageResponse response = await _imageAppService.SaveImageByBase64StringAsync(request);
+            SaveImageResponse response = await _imageAppService.SaveImageByBase64Async(request);
 
             response.Location.ShouldBe("us-east-1");
             response.BucketName.ShouldBe(DateTime.Today.ToString("yyyy-MM-dd"));

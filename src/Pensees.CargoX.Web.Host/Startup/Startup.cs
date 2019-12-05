@@ -80,6 +80,11 @@ namespace Pensees.CargoX.Web.Host.Startup
                 )
             );
 
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AllowSynchronousIO = true;
+            });
+
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>
             {
@@ -118,7 +123,6 @@ namespace Pensees.CargoX.Web.Host.Startup
             app.UseAuthentication();
 
             app.UseAbpRequestLocalization();
-
           
             app.UseEndpoints(endpoints =>
             {
@@ -126,7 +130,6 @@ namespace Pensees.CargoX.Web.Host.Startup
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
             });
-
 
             // Enable middleware to serve generated Swagger as a JSON endpoint
             app.UseSwagger();
