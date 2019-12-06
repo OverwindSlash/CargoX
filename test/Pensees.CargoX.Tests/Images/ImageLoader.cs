@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Abp.IO.Extensions;
+using System;
 using System.IO;
-using System.Runtime.CompilerServices;
-using System.Text;
-using Abp.IO.Extensions;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.PixelFormats;
 
 namespace Pensees.CargoX.Tests.Images
 {

@@ -19,6 +19,8 @@ namespace Pensees.CargoX.Tests.DependencyInjection
 
             services.AddEntityFrameworkInMemoryDatabase();
 
+            services.AddHttpClient();
+
             var serviceProvider = WindsorRegistrationHelper.CreateServiceProvider(iocManager.IocContainer, services);
 
             var builder = new DbContextOptionsBuilder<CargoXDbContext>();
