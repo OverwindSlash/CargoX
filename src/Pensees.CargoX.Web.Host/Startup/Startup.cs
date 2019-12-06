@@ -18,6 +18,7 @@ using Abp.AspNetCore.SignalR.Hubs;
 using Abp.Dependency;
 using Abp.Json;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using Pensees.CargoX.Conventions;
@@ -80,10 +81,19 @@ namespace Pensees.CargoX.Web.Host.Startup
                 )
             );
 
+            // If using Kestrel:
+            services.Configure<KestrelServerOptions>(options =>
+            {
+                options.AllowSynchronousIO = true;
+            });
+
+            // If using IIS:
             services.Configure<IISServerOptions>(options =>
             {
                 options.AllowSynchronousIO = true;
             });
+
+            services.AddHttpClient();
 
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>

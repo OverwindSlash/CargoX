@@ -7,19 +7,26 @@ using RestSharp.Extensions;
 using Sentry;
 using System;
 using System.IO;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Abp.Events.Bus;
 
 namespace Pensees.CargoX.Images
 {
     public class ImageAppService : ApplicationService, IImageAppService
     {
-        private IImageRepository _imageRepository;
-        private IHttpContextAccessor _httpContext;
+        private readonly IImageRepository _imageRepository;
+        private readonly IHttpContextAccessor _httpContext;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public ImageAppService(IImageRepository imageRepository, IHttpContextAccessor httpContext)
+        public ImageAppService(
+            IImageRepository imageRepository,
+            IHttpContextAccessor httpContext,
+            IHttpClientFactory httpClientFactory)
         {
             _imageRepository = imageRepository;
             _httpContext = httpContext;
+            _httpClientFactory = httpClientFactory;
         }
 
         public async Task<SaveImageResponse> SaveImageByBinaryBodyAsync()
@@ -56,16 +63,34 @@ namespace Pensees.CargoX.Images
 
         public async Task<SaveImageResponse> SaveImageByUrlAsync(SaveImageByUrlRequest request)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var client = _httpClientFactory.CreateClient();
+                using (var stream = await client.GetStreamAsync(request.ImageUrl))
+                {
+                    return await SaveImageBytes(stream.GetAllBytes());
+                }
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
         }
 
         public async Task<SaveImageResponse> SaveImageByBase64Async(SaveImageByBase64Request request)
         {
-            //PesImage pesImage = PesImage.FromBase64String(request.ImageBase64);
+            try
+            {
+                byte[] bytes = Convert.FromBase64String(request.ImageBase64);
 
-            byte[] bytes = Convert.FromBase64String(request.ImageBase64);
-
-            return await SaveImageBytes(bytes);
+                return await SaveImageBytes(bytes);
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
         }
 
         private async Task<SaveImageResponse> SaveImageBytes(byte[] bytes)
