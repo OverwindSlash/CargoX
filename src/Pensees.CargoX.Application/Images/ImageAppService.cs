@@ -15,16 +15,16 @@ namespace Pensees.CargoX.Images
 {
     public class ImageAppService : ApplicationService, IImageAppService
     {
-        private readonly IImageRepository _imageRepository;
+        private readonly IMinioRepository _minioRepository;
         private readonly IHttpContextAccessor _httpContext;
         private readonly IHttpClientFactory _httpClientFactory;
 
         public ImageAppService(
-            IImageRepository imageRepository,
+            IMinioRepository minioRepository,
             IHttpContextAccessor httpContext,
             IHttpClientFactory httpClientFactory)
         {
-            _imageRepository = imageRepository;
+            _minioRepository = minioRepository;
             _httpContext = httpContext;
             _httpClientFactory = httpClientFactory;
         }
@@ -96,13 +96,27 @@ namespace Pensees.CargoX.Images
         private async Task<SaveImageResponse> SaveImageBytes(byte[] bytes)
         {
             SaveImageParam param = new SaveImageParam(bytes);
-            SaveImageResult result = await _imageRepository.SaveImageByteAsync(param);
+            SaveImageResult result = await _minioRepository.SaveImageByteAsync(param);
 
             return new SaveImageResponse()
             {
                 Location = result.Location,
                 BucketName = result.BucketName,
                 ImageName = result.ImageName
+            };
+        }
+
+        public async Task<GetImageWithBytesResponse> GetImageWithBytes(GetImageWithBytesRequest request)
+        {
+            GetImageResult result = await _minioRepository.GetImageByteAsync(new GetImageParam()
+            {
+                BucketName = request.BucketName,
+                ImageName = request.ImageName
+            });
+
+            return new GetImageWithBytesResponse()
+            {
+                ImageData = result.ImageData.GetAllBytes()
             };
         }
     }

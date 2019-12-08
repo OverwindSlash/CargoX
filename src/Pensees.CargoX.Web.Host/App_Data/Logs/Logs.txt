@@ -8778,3 +8778,496 @@ INFO  2019-12-06 20:02:47,883 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics -
 DEBUG 2019-12-06 20:02:48,051 [13   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
 DEBUG 2019-12-06 20:02:53,061 [7    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
 DEBUG 2019-12-06 20:02:58,064 [9    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:05,202 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-12-07 16:38:05,584 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2019-12-07 16:38:05,599 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Web.Host.Startup.CargoXWebHostModule, Pensees.CargoX.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,601 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXWebCoreModule, Pensees.CargoX.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,602 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXApplicationModule, Pensees.CargoX.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,603 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXCoreModule, Pensees.CargoX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,603 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,603 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,604 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,604 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Service.CargoXServiceModule, Pensees.CargoX.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,605 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.EntityFrameworkCore.CargoXEntityFrameworkModule, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,606 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,607 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,607 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.ObjectStorage.CargoXObjectStorageModule, Pensees.CargoX.ObjectStorage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,607 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,607 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,608 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:05,610 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2019-12-07 16:38:05,779 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 16:38:05,779 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 16:38:05,779 [1    ] o.Configuration.LanguageManagementConfig - Converted CargoX (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 16:38:05,779 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 16:38:06,478 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Pensees.CargoX.EntityFrameworkCore.CargoXDbContext, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 16:38:07,482 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-12-07 16:38:07,564 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-12-07 16:38:07,607 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-12-07 16:38:07,629 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: CargoX
+DEBUG 2019-12-07 16:38:07,659 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-12-07 16:38:07,886 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-12-07 16:38:08,030 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-12-07 16:38:08,091 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2019-12-07 16:38:08,091 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-12-07 16:38:08,096 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.CreateUserDto
+DEBUG 2019-12-07 16:38:08,097 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.UserDto
+DEBUG 2019-12-07 16:38:08,097 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-12-07 16:38:08,097 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-12-07 16:38:08,098 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Roles.Dto.PermissionDto
+DEBUG 2019-12-07 16:38:08,098 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-12-07 16:38:08,098 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.TenantDto
+DEBUG 2019-12-07 16:38:11,872 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:11,940 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:12,097 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:12,186 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 16:38:12,742 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\overw\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2019-12-07 16:38:12,882 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+DEBUG 2019-12-07 16:38:12,927 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 16:38:12,995 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-07 16:38:17,057 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Pensees.CargoX.Web.Host.Controllers.HomeController (Pensees.CargoX.Web.Host).
+DEBUG 2019-12-07 16:38:18,126 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 16:38:18,267 [4    ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) - Validation state: Valid
+INFO  2019-12-07 16:38:18,274 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.809ms.
+INFO  2019-12-07 16:38:18,533 [14   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-12-07 16:38:18,540 [14   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) in 1478.0012000000002ms
+INFO  2019-12-07 16:38:18,543 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-07 16:38:18,569 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 5687.5523ms 302 
+INFO  2019-12-07 16:38:18,584 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-12-07 16:38:18,765 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 180.9186ms 200 text/html;charset=utf-8
+INFO  2019-12-07 16:38:18,841 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2019-12-07 16:38:18,846 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2019-12-07 16:38:18,859 [4    ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.swagger.js was not modified
+INFO  2019-12-07 16:38:18,862 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /swagger/ui/abp.js was not modified
+INFO  2019-12-07 16:38:18,867 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 29.021900000000002ms 304 application/javascript
+INFO  2019-12-07 16:38:18,869 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 30.4995ms 304 application/javascript
+INFO  2019-12-07 16:38:20,170 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-12-07 16:38:20,353 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 186.81ms 200 application/json;charset=utf-8
+DEBUG 2019-12-07 16:38:23,140 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:28,167 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:33,189 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:38,202 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:43,229 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:48,242 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:53,255 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:38:58,290 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:03,311 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:08,328 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:13,362 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:18,374 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:23,397 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:28,418 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:33,434 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:38,459 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:43,480 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 16:39:46,408 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Bucket/ListBucket application/json-patch+json 16
+INFO  2019-12-07 16:39:46,417 [5    ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-07 16:39:46,419 [5    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-07 16:39:46,424 [5    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 16:39:46,448 [5    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "ListBucket", controller = "Bucket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.ListBucketResponse] ListBucketAsync(Pensees.CargoX.Images.Dtos.ListBucketRequest) on controller Pensees.CargoX.Images.BucketAppService (Pensees.CargoX.Application).
+INFO  2019-12-07 16:39:46,620 [5    ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) - Validation state: Valid
+DEBUG 2019-12-07 16:39:54,663 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:39:59,694 [22   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:58:29,142 [21   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 16:58:29,155 [12   ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1122517.2097ms.
+INFO  2019-12-07 16:58:29,200 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-07 16:58:29,216 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) in 1122766.556ms
+INFO  2019-12-07 16:58:29,219 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 16:58:29,222 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1122814.2573ms 200 application/json; charset=utf-8
+DEBUG 2019-12-07 16:58:34,159 [21   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:58:39,169 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:58:44,187 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:58:49,226 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:58:54,245 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 16:58:54,327 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Bucket/ListBucket application/json-patch+json 17
+INFO  2019-12-07 16:58:54,330 [12   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-07 16:58:54,332 [12   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-07 16:58:54,336 [12   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 16:58:54,343 [12   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "ListBucket", controller = "Bucket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.ListBucketResponse] ListBucketAsync(Pensees.CargoX.Images.Dtos.ListBucketRequest) on controller Pensees.CargoX.Images.BucketAppService (Pensees.CargoX.Application).
+INFO  2019-12-07 16:58:54,369 [12   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) - Validation state: Valid
+DEBUG 2019-12-07 16:58:59,262 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:04,278 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:09,304 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:14,315 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+ERROR 2019-12-07 16:59:18,642 [12   ] Mvc.ExceptionHandling.AbpExceptionFilter - MinIO API responded with message=Unsuccessful response from server without XML error: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+Unsuccessful response from server without XML error: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。: Minio.Exceptions.InternalClientException: MinIO API responded with message=Unsuccessful response from server without XML error: 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。
+   at Minio.MinioClient.ParseError(IRestResponse response) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 468
+   at Minio.MinioClient.<>c.<.ctor>b__80_0(IRestResponse response) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 77
+   at Minio.MinioClient.HandleIfErrorResponse(IRestResponse response, IEnumerable`1 handlers, DateTime startTime) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 526
+   at Minio.MinioClient.ExecuteTaskAsync(IEnumerable`1 errorHandlers, IRestRequest request, CancellationToken cancellationToken) in /q/.q/sources/minio-dotnet/Minio/MinioClient.cs:line 370
+   at Minio.MinioClient.ListBucketsAsync(CancellationToken cancellationToken) in /q/.q/sources/minio-dotnet/Minio/ApiEndpoints/BucketOperations.cs:line 46
+   at Pensees.CargoX.ObjectStorage.MinIO.MinioRepository.ListBucketAsync(ListBucketParam param) in C:\Workspace\Github\CargoX\src\Pensees.CargoX.ObjectStorage\MinIO\MinioRepository.cs:line 70
+   at Abp.Threading.InternalAsyncHelper.AwaitTaskWithPostActionAndFinallyAndGetResult[T](Task`1 actualReturnValue, Func`1 postAction, Action`1 finalAction)
+   at Pensees.CargoX.Images.BucketAppService.ListBucketAsync(ListBucketRequest request) in C:\Workspace\Github\CargoX\src\Pensees.CargoX.Application\Images\BucketAppService.cs:line 22
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+INFO  2019-12-07 16:59:18,958 [12   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-07 16:59:18,974 [12   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) in 24618.2118ms
+INFO  2019-12-07 16:59:18,976 [12   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 16:59:18,979 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 24651.8534ms 500 application/json; charset=utf-8
+DEBUG 2019-12-07 16:59:19,321 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:24,349 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:29,359 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:34,375 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:39,394 [23   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:44,404 [23   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:49,428 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 16:59:54,445 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 16:59:55,333 [24   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Bucket/ListBucket application/json-patch+json 17
+INFO  2019-12-07 16:59:55,344 [24   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-07 16:59:55,346 [24   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-07 16:59:55,350 [24   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 16:59:55,358 [24   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "ListBucket", controller = "Bucket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.ListBucketResponse] ListBucketAsync(Pensees.CargoX.Images.Dtos.ListBucketRequest) on controller Pensees.CargoX.Images.BucketAppService (Pensees.CargoX.Application).
+INFO  2019-12-07 16:59:55,386 [24   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) - Validation state: Valid
+INFO  2019-12-07 17:00:08,592 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 13204.233ms.
+DEBUG 2019-12-07 17:00:08,605 [24   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 17:00:08,633 [23   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-07 17:00:08,647 [23   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) in 13277.6124ms
+INFO  2019-12-07 17:00:08,649 [23   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 17:00:08,652 [23   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13318.815900000001ms 200 application/json; charset=utf-8
+DEBUG 2019-12-07 17:00:13,617 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:18,640 [29   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:23,661 [27   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:28,680 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:33,708 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:38,729 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:43,758 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:48,774 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:53,802 [27   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:00:58,810 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:03,822 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:08,828 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:13,849 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:18,861 [27   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:23,875 [29   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:28,894 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:33,900 [12   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:38,919 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:01:43,934 [27   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:04:31,576 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2019-12-07 17:04:31,688 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2019-12-07 17:04:31,705 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Web.Host.Startup.CargoXWebHostModule, Pensees.CargoX.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,707 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXWebCoreModule, Pensees.CargoX.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,707 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXApplicationModule, Pensees.CargoX.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,707 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXCoreModule, Pensees.CargoX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,708 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Service.CargoXServiceModule, Pensees.CargoX.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.EntityFrameworkCore.CargoXEntityFrameworkModule, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,709 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.ObjectStorage.CargoXObjectStorageModule, Pensees.CargoX.ObjectStorage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,710 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:31,713 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2019-12-07 17:04:31,780 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 17:04:31,780 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 17:04:31,780 [1    ] o.Configuration.LanguageManagementConfig - Converted CargoX (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 17:04:31,780 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2019-12-07 17:04:32,176 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Pensees.CargoX.EntityFrameworkCore.CargoXDbContext, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2019-12-07 17:04:33,124 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2019-12-07 17:04:33,180 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2019-12-07 17:04:33,221 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2019-12-07 17:04:33,242 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: CargoX
+DEBUG 2019-12-07 17:04:33,271 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2019-12-07 17:04:33,499 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2019-12-07 17:04:33,634 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2019-12-07 17:04:33,688 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2019-12-07 17:04:33,689 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2019-12-07 17:04:33,694 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.CreateUserDto
+DEBUG 2019-12-07 17:04:33,694 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.UserDto
+DEBUG 2019-12-07 17:04:33,695 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2019-12-07 17:04:33,695 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.UserLoginInfoDto
+DEBUG 2019-12-07 17:04:33,695 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Roles.Dto.PermissionDto
+DEBUG 2019-12-07 17:04:33,695 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2019-12-07 17:04:33,695 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.TenantDto
+DEBUG 2019-12-07 17:04:35,786 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:04:35,856 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:04:36,017 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:04:36,095 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 17:04:36,392 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\overw\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2019-12-07 17:04:36,466 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-12-07 17:04:36,566 [5    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+DEBUG 2019-12-07 17:04:39,509 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 17:04:40,419 [5    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Pensees.CargoX.Web.Host.Controllers.HomeController (Pensees.CargoX.Web.Host).
+INFO  2019-12-07 17:04:41,578 [5    ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) - Validation state: Valid
+INFO  2019-12-07 17:04:41,585 [5    ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 0.7947000000000001ms.
+INFO  2019-12-07 17:04:41,795 [12   ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2019-12-07 17:04:41,804 [12   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) in 1378.135ms
+INFO  2019-12-07 17:04:41,807 [12   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2019-12-07 17:04:41,826 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 5361.089800000001ms 302 
+INFO  2019-12-07 17:04:41,839 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2019-12-07 17:04:42,005 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 165.2598ms 200 text/html;charset=utf-8
+INFO  2019-12-07 17:04:42,449 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2019-12-07 17:04:42,646 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 196.9559ms 200 application/json;charset=utf-8
+DEBUG 2019-12-07 17:04:45,215 [9    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:04:50,231 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:04:55,243 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:00,271 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:05,288 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 17:05:09,026 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Bucket/ListBucket application/json-patch+json 19
+INFO  2019-12-07 17:05:09,032 [5    ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-07 17:05:09,035 [5    ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-07 17:05:09,039 [5    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 17:05:09,058 [5    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "ListBucket", controller = "Bucket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.ListBucketResponse] ListBucketAsync(Pensees.CargoX.Images.Dtos.ListBucketRequest) on controller Pensees.CargoX.Images.BucketAppService (Pensees.CargoX.Application).
+INFO  2019-12-07 17:05:09,202 [5    ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) - Validation state: Valid
+DEBUG 2019-12-07 17:05:10,294 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 17:05:11,139 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1934.3433ms.
+INFO  2019-12-07 17:05:11,178 [5    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-07 17:05:11,199 [5    ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) in 2138.8138ms
+INFO  2019-12-07 17:05:11,201 [5    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 17:05:11,204 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 2178.2262ms 200 application/json; charset=utf-8
+DEBUG 2019-12-07 17:05:15,313 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:20,325 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:25,367 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:30,379 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:35,399 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:40,409 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:45,434 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:50,456 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:05:55,464 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 17:05:55,636 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Bucket/ListBucket application/json-patch+json 18
+INFO  2019-12-07 17:05:55,639 [11   ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution failed.
+INFO  2019-12-07 17:05:55,642 [11   ] pNetCore.Cors.Infrastructure.CorsService - Request origin http://localhost:21021 does not have permission to access the resource.
+INFO  2019-12-07 17:05:55,648 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 17:05:55,655 [11   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "ListBucket", controller = "Bucket"}. Executing controller action with signature System.Threading.Tasks.Task`1[Pensees.CargoX.Images.Dtos.ListBucketResponse] ListBucketAsync(Pensees.CargoX.Images.Dtos.ListBucketRequest) on controller Pensees.CargoX.Images.BucketAppService (Pensees.CargoX.Application).
+INFO  2019-12-07 17:05:55,681 [11   ] c.Infrastructure.ControllerActionInvoker - Executing action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) - Validation state: Valid
+DEBUG 2019-12-07 17:06:00,489 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2019-12-07 17:06:01,795 [15   ] c.Infrastructure.ControllerActionInvoker - Executed action method Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6111.6086000000005ms.
+INFO  2019-12-07 17:06:01,825 [14   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2019-12-07 17:06:01,834 [14   ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application) in 6173.407ms
+INFO  2019-12-07 17:06:01,838 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Images.BucketAppService.ListBucketAsync (Pensees.CargoX.Application)'
+INFO  2019-12-07 17:06:01,843 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 6205.2087ms 200 application/json; charset=utf-8
+DEBUG 2019-12-07 17:06:05,514 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:10,512 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:15,534 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:20,567 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:25,587 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:30,601 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:35,601 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:40,610 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:45,628 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:50,640 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:06:55,662 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:00,680 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:05,691 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:10,719 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:15,728 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:20,746 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:25,764 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:30,776 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:35,786 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:40,795 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:45,806 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:50,818 [15   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:07:55,832 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:00,834 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:05,846 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:10,865 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:15,883 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:20,902 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:25,911 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:30,926 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:35,934 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:40,937 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:45,941 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:50,961 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:08:55,960 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:00,964 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:05,979 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:10,991 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:15,999 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:20,995 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:26,019 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:31,023 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:36,050 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:41,057 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:46,062 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:51,077 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:09:56,086 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:01,095 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:06,105 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:11,114 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:16,129 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:21,132 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:26,136 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:31,157 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:36,169 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:41,190 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:46,214 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:51,221 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:10:56,225 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:01,235 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:06,254 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:11,263 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:16,288 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:21,316 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:26,330 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:31,332 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:36,343 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:41,339 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:46,353 [14   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:51,380 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:11:56,389 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:01,400 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:06,402 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:11,428 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:16,448 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:21,450 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:26,455 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:31,466 [32   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:36,485 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:41,496 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:46,507 [32   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:51,518 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:12:56,532 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:01,549 [32   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:06,554 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:11,569 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:16,584 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:21,599 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:26,606 [31   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:31,620 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:36,646 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:41,654 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:46,688 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:51,682 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:13:56,689 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:01,701 [32   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:06,723 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:11,734 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:16,742 [32   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:21,754 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:26,758 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:31,785 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:36,800 [32   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:41,812 [32   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:46,836 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:51,847 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:14:56,851 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:01,860 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:06,869 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:11,873 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:16,890 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:21,939 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:26,969 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:31,991 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:37,000 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:42,020 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:47,017 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:52,029 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:15:57,038 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:02,047 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:07,052 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:12,054 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:17,060 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:22,076 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:27,100 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:32,125 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:37,138 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:42,142 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:47,160 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:52,175 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:16:57,185 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:02,198 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:07,202 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:12,207 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:17,232 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:22,251 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:27,269 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:32,292 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:37,320 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:42,349 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:47,364 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:52,376 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:17:57,379 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:02,403 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:07,408 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:12,425 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:17,453 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:22,458 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:27,468 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:32,477 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:37,503 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:42,530 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:47,543 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:52,549 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:18:57,571 [30   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:02,589 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:07,603 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:12,612 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:17,618 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:22,625 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:27,644 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:32,663 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:37,680 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:42,690 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:47,721 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:52,743 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:19:57,746 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:02,755 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:07,764 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:12,768 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:17,785 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:22,798 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:27,808 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:32,820 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:37,830 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:42,847 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:47,865 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:52,901 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:20:57,928 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:02,932 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:07,932 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:12,936 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:17,949 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:22,955 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:27,958 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:32,982 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:37,984 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:43,013 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:48,028 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:53,041 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:21:58,068 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:03,090 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:08,093 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:13,108 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:18,126 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:23,146 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:28,156 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:33,160 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:38,177 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:43,190 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:48,213 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:53,222 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:22:58,230 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:03,247 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:08,276 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:13,287 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:18,298 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:23,305 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:28,323 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:33,334 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:38,341 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:43,343 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:48,353 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:53,365 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:23:58,377 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:24:03,387 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:24:08,424 [33   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:24:13,450 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:24:18,458 [35   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2019-12-07 17:24:23,467 [34   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null

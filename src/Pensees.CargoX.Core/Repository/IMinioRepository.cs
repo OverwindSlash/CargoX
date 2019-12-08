@@ -8,8 +8,12 @@ using Abp.Domain.Repositories;
 
 namespace Pensees.CargoX.Repository
 {
-    public interface IImageRepository : IRepository
+    public interface IMinioRepository : IRepository
     {
         Task<SaveImageResult> SaveImageByteAsync(SaveImageParam param);
+
+        Task<List<BucketInfo>> ListBucketAsync(ListBucketParam param);
+
+        Task<GetImageResult> GetImageByteAsync(GetImageParam param);
     }
 }
