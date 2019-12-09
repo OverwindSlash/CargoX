@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Abp.Application.Services;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Pensees.CargoX.Images.Dtos;
 
 namespace Pensees.CargoX.Images
@@ -18,6 +19,10 @@ namespace Pensees.CargoX.Images
 
         Task<SaveImageResponse> SaveImageByBase64Async(SaveImageByBase64Request request);
 
-        Task<GetImageWithBytesResponse> GetImageWithBytes(GetImageWithBytesRequest request);
+        Task<GetImageWithBytesResponse> GetImageWithBytesAsync(GetImageRequest request);
+
+        Task<GetImageStatusResponse> GetImageStatusAsync(GetImageRequest request);
+
+        Task<FileStreamResult> DownloadImageAsync(DownloadImageRequest request);
     }
 }

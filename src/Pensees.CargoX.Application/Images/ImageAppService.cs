@@ -10,6 +10,7 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Abp.Events.Bus;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Pensees.CargoX.Images
 {
@@ -95,29 +96,91 @@ namespace Pensees.CargoX.Images
 
         private async Task<SaveImageResponse> SaveImageBytes(byte[] bytes)
         {
-            SaveImageParam param = new SaveImageParam(bytes);
-            SaveImageResult result = await _minioRepository.SaveImageByteAsync(param);
-
-            return new SaveImageResponse()
+            try
             {
-                Location = result.Location,
-                BucketName = result.BucketName,
-                ImageName = result.ImageName
-            };
+                SaveImageParam param = new SaveImageParam(bytes);
+                SaveImageResult result = await _minioRepository.SaveImageByteAsync(param);
+
+                return new SaveImageResponse()
+                {
+                    Location = result.Location,
+                    BucketName = result.BucketName,
+                    ImageName = result.ImageName
+                };
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
         }
 
-        public async Task<GetImageWithBytesResponse> GetImageWithBytes(GetImageWithBytesRequest request)
+        public async Task<GetImageWithBytesResponse> GetImageWithBytesAsync(GetImageRequest request)
         {
-            GetImageResult result = await _minioRepository.GetImageByteAsync(new GetImageParam()
+            try
             {
-                BucketName = request.BucketName,
-                ImageName = request.ImageName
-            });
+                ImageLocationParam param = new ImageLocationParam()
+                {
+                    BucketName = request.BucketName,
+                    ImageName = request.ImageName
+                };
 
-            return new GetImageWithBytesResponse()
+                GetImageResult result = await _minioRepository.GetImageByteAsync(param);
+
+                return new GetImageWithBytesResponse()
+                {
+                    ImageData = result.ImageData.GetAllBytes()
+                };
+            }
+            catch (Exception exception)
             {
-                ImageData = result.ImageData.GetAllBytes()
-            };
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
+        }
+
+        public async Task<GetImageStatusResponse> GetImageStatusAsync(GetImageRequest request)
+        {
+            try
+            {
+                ImageLocationParam param = new ImageLocationParam()
+                {
+                    BucketName = request.BucketName,
+                    ImageName = request.ImageName
+                };
+
+                GetImageStatusResult result = await _minioRepository.GetImageStatusAsync(param);
+
+                return new GetImageStatusResponse(result);
+
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
+        }
+
+        [HttpGet]
+        public async Task<FileStreamResult> DownloadImageAsync(DownloadImageRequest request)
+        {
+            try
+            {
+                ImageLocationParam param = new ImageLocationParam()
+                {
+                    BucketName = request.BucketName,
+                    ImageName = request.ImageName
+                };
+
+                GetImageResult result = await _minioRepository.GetImageByteAsync(param);
+
+                return new FileStreamResult(new MemoryStream(result.ImageData.GetAllBytes()), "image/jpeg");
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
         }
     }
 }

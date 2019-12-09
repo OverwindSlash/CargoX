@@ -6,8 +6,10 @@ using Pensees.CargoX.Repository;
 using Sentry;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Abp.IO.Extensions;
 
 namespace Pensees.CargoX.ObjectStorage.MinIO
 {
@@ -15,16 +17,16 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
         typeof(CargoXCoreModule))]
     public class MinioRepository : IMinioRepository
     {
-        private static readonly MinioClient _minio = new MinioClient("play.min.io",
-            "Q3AM3UQ867SPQQA43P2F",
-            "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG"
-        ).WithSSL();
+        //private static readonly MinioClient _minio = new MinioClient("play.min.io",
+        //    "Q3AM3UQ867SPQQA43P2F",
+        //    "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG"
+        //).WithSSL();
 
-        //private static readonly MinioClient _minio =
-        //    new MinioClient("10.10.1.101:9005",
-        //    "minio",
-        //    "minio123"
-        //);
+        private static readonly MinioClient _minio =
+            new MinioClient("10.10.1.101:9005",
+            "minio",
+            "minio123"
+        );
 
         public async Task<SaveImageResult> SaveImageByteAsync(SaveImageParam param)
         {
@@ -63,6 +65,51 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
             }
         }
 
+        public async Task<GetImageResult> GetImageByteAsync(ImageLocationParam param)
+        {
+            try
+            {
+                GetImageResult result = new GetImageResult();
+
+                await _minio.GetObjectAsync(param.BucketName, param.ImageName,
+                    (stream) =>
+                    {
+                        result.ImageData = new MemoryStream(stream.GetAllBytes());
+                    });
+
+                //await _minio.GetObjectAsync(param.BucketName, param.ImageName, "test.jpg");
+
+                return result;
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
+        }
+
+        public async Task<GetImageStatusResult> GetImageStatusAsync(ImageLocationParam param)
+        {
+            try
+            {
+                ObjectStat os = await _minio.StatObjectAsync(param.BucketName, param.ImageName);
+                return new GetImageStatusResult()
+                {
+                    ImageName = os.ObjectName,
+                    Size = os.Size,
+                    LastModified = os.LastModified,
+                    ETag = os.ETag,
+                    ContentType = os.ContentType,
+                    MetaData = os.MetaData
+                };
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
+        }
+
         public async Task<List<BucketInfo>> ListBucketAsync(ListBucketParam param)
         {
             try
@@ -85,27 +132,6 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
                 }
 
                 return bucketInfos;
-            }
-            catch (Exception exception)
-            {
-                SentrySdk.CaptureException(exception);
-                throw;
-            }
-        }
-
-        public async Task<GetImageResult> GetImageByteAsync(GetImageParam param)
-        {
-            try
-            {
-                GetImageResult result = new GetImageResult();
-
-                await _minio.GetObjectAsync(param.BucketName, param.ImageName,
-                    (stream) =>
-                    {
-                        stream.CopyTo(result.ImageData);
-                    });
-
-                return result;
             }
             catch (Exception exception)
             {

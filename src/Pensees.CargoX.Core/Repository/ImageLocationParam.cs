@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Pensees.CargoX.Images.Dtos
+namespace Pensees.CargoX.Repository
 {
-    public class GetImageWithBytesRequest
+    public class ImageLocationParam
     {
         public string BucketName { get; set; }
         public string ImageName { get; set; }

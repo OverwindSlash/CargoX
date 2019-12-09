@@ -14,6 +14,8 @@ namespace Pensees.CargoX.Repository
 
         Task<List<BucketInfo>> ListBucketAsync(ListBucketParam param);
 
-        Task<GetImageResult> GetImageByteAsync(GetImageParam param);
+        Task<GetImageResult> GetImageByteAsync(ImageLocationParam param);
+
+        Task<GetImageStatusResult> GetImageStatusAsync(ImageLocationParam param);
     }
 }
