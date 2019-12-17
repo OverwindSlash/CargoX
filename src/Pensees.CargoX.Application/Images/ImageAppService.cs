@@ -94,6 +94,19 @@ namespace Pensees.CargoX.Images
             }
         }
 
+        public async Task<SaveImageResponse> SaveImageByBytesAsync(SaveImageByBytesRequest request)
+        {
+            try
+            {
+                return await SaveImageBytes(request.ImageBytes);
+            }
+            catch (Exception exception)
+            {
+                SentrySdk.CaptureException(exception);
+                throw;
+            }
+        }
+
         private async Task<SaveImageResponse> SaveImageBytes(byte[] bytes)
         {
             try

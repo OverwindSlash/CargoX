@@ -6,6 +6,8 @@ package Pensees.CargoX.Rpc;
 
 service ImageRpc {
 	rpc GetImageWithBytesRpc (GetImageRpcRequest) returns (GetImageWithBytesRpcResponse);
+	rpc SaveImageByBase64Rpc (SaveImageByBase64RpcRequest) returns (SaveImageRpcResponse);
+	rpc SaveImageByBytesRpc (SaveImageByBytesRpcRequest) returns (SaveImageRpcResponse); 
 }
 
 message GetImageRpcRequest {
@@ -14,5 +16,19 @@ message GetImageRpcRequest {
 }
 
 message GetImageWithBytesRpcResponse {
+	bytes ImageData = 1;
+}
+
+message SaveImageByBase64RpcRequest {
+	string ImageBase64 = 1;
+}
+
+message SaveImageRpcResponse {
+	string Location = 1;
+	string BucketName = 2;
+	string ImageName = 3;
+}
+
+message SaveImageByBytesRpcRequest {
 	bytes ImageData = 1;
 }

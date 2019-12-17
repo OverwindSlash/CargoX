@@ -64,6 +64,8 @@ namespace Pensees.CargoX.Rpc.Host.Startup
             //    )
             //);
 
+            services.AddHttpClient();
+
             // Configure Abp and Dependency Injection
             return services.AddAbp<CargoXRpcHostModule>(
                 // Configure Log4Net logging
