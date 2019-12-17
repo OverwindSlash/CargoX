@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -19,9 +18,11 @@ using Abp.Dependency;
 using Abp.Json;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using Pensees.CargoX.Conventions;
+using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Pensees.CargoX.Web.Host.Startup
 {
@@ -150,6 +151,19 @@ namespace Pensees.CargoX.Web.Host.Startup
                 options.IndexStream = () => Assembly.GetExecutingAssembly()
                     .GetManifestResourceStream("Pensees.CargoX.Web.Host.wwwroot.swagger.ui.index.html");
             }); // URL: /swagger
+
+
+            // register this service to Consul
+            //var lifetime = app.ApplicationServices.GetService(typeof(IHostApplicationLifetime));
+            //ServiceEntity serviceEntity = new ServiceEntity
+            //{
+            //    IP = "192.168.1.60",
+            //    Port = 21021,
+            //    ServiceName = "CargoX",
+            //    ConsulIP = "192.168.1.200",
+            //    ConsulPort = 8500
+            //};
+            //app.RegisterConsul(lifetime as IHostApplicationLifetime, serviceEntity);
         }
     }
 }

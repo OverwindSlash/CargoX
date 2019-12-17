@@ -13,8 +13,6 @@ using Abp.IO.Extensions;
 
 namespace Pensees.CargoX.ObjectStorage.MinIO
 {
-    [DependsOn(
-        typeof(CargoXCoreModule))]
     public class MinioRepository : IMinioRepository
     {
         //private static readonly MinioClient _minio = new MinioClient("play.min.io",

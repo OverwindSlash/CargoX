@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Pensees.CargoX.Rpc";
+
+package Pensees.CargoX.Rpc;
+
+service ImageRpc {
+	rpc GetImageWithBytesRpc (GetImageRpcRequest) returns (GetImageWithBytesRpcResponse);
+}
+
+message GetImageRpcRequest {
+	string bucketname = 1;
+	string ImageName = 2;
+}
+
+message GetImageWithBytesRpcResponse {
+	bytes ImageData = 1;
+}
