@@ -1,27 +1,27 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
+﻿using Abp.AspNetCore;
+using Abp.AspNetCore.Mvc.Antiforgery;
+using Abp.AspNetCore.Mvc.Conventions;
+using Abp.AspNetCore.SignalR.Hubs;
+using Abp.Castle.Logging.Log4Net;
+using Abp.Dependency;
+using Abp.Extensions;
+using Abp.Json;
+using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Castle.Facilities.Logging;
-using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc.Antiforgery;
-using Abp.AspNetCore.Mvc.Conventions;
-using Abp.Castle.Logging.Log4Net;
-using Abp.Extensions;
-using Pensees.CargoX.Configuration;
-using Pensees.CargoX.Identity;
-using Abp.AspNetCore.SignalR.Hubs;
-using Abp.Dependency;
-using Abp.Json;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using Pensees.CargoX.Configuration;
 using Pensees.CargoX.Conventions;
+using Pensees.CargoX.Identity;
+using System;
+using System.Linq;
+using System.Reflection;
+using Microsoft.Extensions.Hosting;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Pensees.CargoX.Web.Host.Startup
@@ -154,16 +154,16 @@ namespace Pensees.CargoX.Web.Host.Startup
 
 
             // register this service to Consul
-            //var lifetime = app.ApplicationServices.GetService(typeof(IHostApplicationLifetime));
-            //ServiceEntity serviceEntity = new ServiceEntity
-            //{
-            //    IP = "192.168.1.60",
-            //    Port = 21021,
-            //    ServiceName = "CargoX",
-            //    ConsulIP = "192.168.1.200",
-            //    ConsulPort = 8500
-            //};
-            //app.RegisterConsul(lifetime as IHostApplicationLifetime, serviceEntity);
+            var lifetime = app.ApplicationServices.GetService(typeof(IHostApplicationLifetime));
+            ServiceEntity serviceEntity = new ServiceEntity
+            {
+                IP = "10.10.1.115",
+                Port = 21021,
+                ServiceName = "CargoX",
+                ConsulIP = "10.10.1.101",
+                ConsulPort = 8500
+            };
+            app.RegisterConsul(lifetime as IHostApplicationLifetime, serviceEntity);
         }
     }
 }

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Pensees.CargoX.Configuration;
 using Pensees.CargoX.Rpc.Host.Services;
@@ -33,36 +34,7 @@ namespace Pensees.CargoX.Rpc.Host.Startup
                 {
                     options.Filters.Add(new AbpAutoValidateAntiforgeryTokenAttribute());
                 }
-            )/*.AddNewtonsoftJson(options =>
-            {
-                options.SerializerSettings.ContractResolver = new AbpMvcContractResolver(IocManager.Instance)
-                {
-                    NamingStrategy = new CamelCaseNamingStrategy()
-                };
-            })*/;
-
-            //IdentityRegistrar.Register(services);
-            //AuthConfigurer.Configure(services, _appConfiguration);
-
-            //services.AddSignalR();
-
-            //// Configure CORS for angular2 UI
-            //services.AddCors(
-            //    options => options.AddPolicy(
-            //        _defaultCorsPolicyName,
-            //        builder => builder
-            //            .WithOrigins(
-            //                // App:CorsOrigins in appsettings.json can contain more than one address separated by comma.
-            //                _appConfiguration["App:CorsOrigins"]
-            //                    .Split(",", StringSplitOptions.RemoveEmptyEntries)
-            //                    .Select(o => o.RemovePostFix("/"))
-            //                    .ToArray()
-            //            )
-            //            .AllowAnyHeader()
-            //            .AllowAnyMethod()
-            //            .AllowCredentials()
-            //    )
-            //);
+            );
 
             services.AddHttpClient();
 
@@ -79,15 +51,7 @@ namespace Pensees.CargoX.Rpc.Host.Startup
         {
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
 
-            //app.UseCors(_defaultCorsPolicyName); // Enable CORS!
-
-            //app.UseStaticFiles();
-
             app.UseRouting();
-
-            //app.UseAuthentication();
-
-            //app.UseAbpRequestLocalization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -100,16 +64,16 @@ namespace Pensees.CargoX.Rpc.Host.Startup
             });
 
             // register this service to Consul
-            //var lifetime = app.ApplicationServices.GetService(typeof(IHostApplicationLifetime));
-            //ServiceEntity serviceEntity = new ServiceEntity
-            //{
-            //    IP = "192.168.1.60",
-            //    Port = 21021,
-            //    ServiceName = "CargoX",
-            //    ConsulIP = "192.168.1.200",
-            //    ConsulPort = 8500
-            //};
-            //app.RegisterConsul(lifetime as IHostApplicationLifetime, serviceEntity);
+            var lifetime = app.ApplicationServices.GetService(typeof(IHostApplicationLifetime));
+            ServiceEntity serviceEntity = new ServiceEntity
+            {
+                IP = "192.168.1.60",
+                Port = 5001,
+                ServiceName = "CargoX-RPC",
+                ConsulIP = "192.168.1.200",
+                ConsulPort = 8500
+            };
+            app.RegisterConsul(lifetime as IHostApplicationLifetime, serviceEntity);
         }
     }
 }
