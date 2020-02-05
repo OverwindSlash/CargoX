@@ -73,6 +73,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Seed.Tenants
             if (adminUser == null)
             {
                 adminUser = User.CreateTenantAdminUser(_tenantId, "admin@defaulttenant.com");
+                adminUser.ClearTextPassword = "123qwe";
                 adminUser.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(adminUser, "123qwe");
                 adminUser.IsEmailConfirmed = true;
                 adminUser.IsActive = true;

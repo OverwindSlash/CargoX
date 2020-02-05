@@ -15,16 +15,16 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
 {
     public class MinioRepository : IMinioRepository
     {
-        //private static readonly MinioClient _minio = new MinioClient("play.min.io",
-        //    "Q3AM3UQ867SPQQA43P2F",
-        //    "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG"
-        //).WithSSL();
+        private static readonly MinioClient _minio = new MinioClient("play.min.io",
+            "Q3AM3UQ867SPQQA43P2F",
+            "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG"
+        ).WithSSL();
 
-        private static readonly MinioClient _minio =
-            new MinioClient("10.10.1.101:9005",
-            "minio",
-            "minio123"
-        );
+        //private static readonly MinioClient _minio =
+        //    new MinioClient("10.10.1.101:9005",
+        //    "minio",
+        //    "minio123"
+        //);
 
         public async Task<SaveImageResult> SaveImageByteAsync(SaveImageParam param)
         {

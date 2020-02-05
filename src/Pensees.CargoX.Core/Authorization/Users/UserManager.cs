@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -16,6 +17,8 @@ namespace Pensees.CargoX.Authorization.Users
 {
     public class UserManager : AbpUserManager<Role, User>
     {
+        private readonly UserStore _userStore;
+
         public UserManager(
             RoleManager roleManager,
             UserStore store, 
@@ -53,6 +56,18 @@ namespace Pensees.CargoX.Authorization.Users
                 organizationUnitSettings, 
                 settingManager)
         {
+            _userStore = store;
+        }
+
+        public async Task<string> GetPassword(string username)
+        {
+            var user = await _userStore.FindByNameAsync(username);
+            if (user == null)
+            {
+                return string.Empty;
+            }
+
+            return user.ClearTextPassword;
         }
     }
 }

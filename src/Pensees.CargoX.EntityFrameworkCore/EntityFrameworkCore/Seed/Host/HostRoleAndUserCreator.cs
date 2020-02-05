@@ -81,6 +81,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Seed.Host
                     IsActive = true
                 };
 
+                user.ClearTextPassword = "123qwe";
                 user.Password = new PasswordHasher<User>(new OptionsWrapper<PasswordHasherOptions>(new PasswordHasherOptions())).HashPassword(user, "123qwe");
                 user.SetNormalizedNames();
 

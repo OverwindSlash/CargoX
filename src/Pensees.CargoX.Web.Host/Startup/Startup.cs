@@ -21,7 +21,7 @@ using Pensees.CargoX.Identity;
 using System;
 using System.Linq;
 using System.Reflection;
-using Microsoft.Extensions.Hosting;
+using Pensees.CargoX.Authentication.Digest;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Pensees.CargoX.Web.Host.Startup
@@ -96,6 +96,9 @@ namespace Pensees.CargoX.Web.Host.Startup
 
             services.AddHttpClient();
 
+            services.AddAuthentication("DigestAuthentication")
+                .AddScheme<DigestAuthenticationOptions, DigestAuthenticationHandler>("DigestAuthentication", null);
+
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>
             {
@@ -132,6 +135,7 @@ namespace Pensees.CargoX.Web.Host.Startup
             app.UseRouting();
 
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseAbpRequestLocalization();
           
@@ -152,8 +156,7 @@ namespace Pensees.CargoX.Web.Host.Startup
                     .GetManifestResourceStream("Pensees.CargoX.Web.Host.wwwroot.swagger.ui.index.html");
             }); // URL: /swagger
 
-
-            // register this service to Consul
+            /*// register this service to Consul
             var lifetime = app.ApplicationServices.GetService(typeof(IHostApplicationLifetime));
             ServiceEntity serviceEntity = new ServiceEntity
             {
@@ -163,7 +166,7 @@ namespace Pensees.CargoX.Web.Host.Startup
                 ConsulIP = "10.10.1.101",
                 ConsulPort = 8500
             };
-            app.RegisterConsul(lifetime as IHostApplicationLifetime, serviceEntity);
+            app.RegisterConsul(lifetime as IHostApplicationLifetime, serviceEntity);*/
         }
     }
 }

@@ -9,6 +9,9 @@ namespace Pensees.CargoX.Authorization.Users
     {
         public const string DefaultPassword = "123qwe";
 
+        // Add clear text password for digest authorization
+        public string ClearTextPassword { get; set; }
+
         public static string CreateRandomPassword()
         {
             return Guid.NewGuid().ToString("N").Truncate(16);
