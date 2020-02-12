@@ -96,8 +96,8 @@ namespace Pensees.CargoX.Web.Host.Startup
 
             services.AddHttpClient();
 
-            services.AddAuthentication("DigestAuthentication")
-                .AddScheme<DigestAuthenticationOptions, DigestAuthenticationHandler>("DigestAuthentication", null);
+            //services.AddAuthentication("DigestAuthentication")
+            //    .AddScheme<DigestAuthenticationOptions, DigestAuthenticationHandler>("DigestAuthentication", null);
 
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>

@@ -29,4 +29,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Pensees.CargoX.Core\Pensees.CargoX.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EntityFrameworkCore\Criteria\" />
+  </ItemGroup>
 </Project>
