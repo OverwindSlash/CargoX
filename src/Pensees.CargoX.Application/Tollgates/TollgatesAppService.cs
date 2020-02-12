@@ -4,22 +4,23 @@ using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using Pensees.CargoX.Entities;
+using Pensees.CargoX.Repository.Tollgates;
 using Pensees.CargoX.Tollgates.Dto;
 
 namespace Pensees.CargoX.Tollgates
 {
     public class TollgatesAppService : AsyncCrudAppService<Tollgate, TollgateDto, long, PagedTollgateResultRequestDto, TollgateDto, TollgateDto>, ITollgatesAppService
     {
-        private readonly IRepository<Tollgate, long> _tollgateRepository;
+        private readonly ITollgateRepository _tollgateRepository;
 
-        public TollgatesAppService(IRepository<Tollgate, long> tollgateRepository) : base(tollgateRepository)
+        public TollgatesAppService(ITollgateRepository tollgateRepository) : base(tollgateRepository)
         {
             _tollgateRepository = tollgateRepository;
         }
 
         public async Task<ListResultDto<TollgateDto>> GetAllTollgates(Dictionary<string, string> parameters)
         {
-            var tollgates = await _tollgateRepository.GetAllListAsync().ConfigureAwait(false);
+            var tollgates = await _tollgateRepository.GetTollgateByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<TollgateDto>(ObjectMapper.Map<List<TollgateDto>>(tollgates));
         }
     }
