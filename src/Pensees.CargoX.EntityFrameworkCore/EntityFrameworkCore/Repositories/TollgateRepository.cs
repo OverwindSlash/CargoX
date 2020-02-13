@@ -37,12 +37,33 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
             {
                 switch (param.Key.ToLower())
                 {
+                    case "id":
+                        queryCriteria.Add(new TollgateIdCriterion(param.Value));
+                        break;
                     case "name":
                         queryCriteria.Add(new TollgateNameCriterion(param.Value));
                         break;
+                    case "placecode":
+                        queryCriteria.Add(new TollgatePlaceCodeCriterion(param.Value));
+                        break;
+                    case "place":
+                        queryCriteria.Add(new TollgatePlaceCriterion(param.Value));
+                        break;
+                    case "status":
+                        queryCriteria.Add(new TollgateStatusCriterion(param.Value));
+                        break;
+                    case "cat":
+                        queryCriteria.Add(new TollgateCatCriterion(param.Value));
+                        break;
+                    case "cat2":
+                        bool result = Int32.TryParse(param.Value, out var intValue);
+                        queryCriteria.Add(new TollgateCat2Criterion(intValue));
+                        break;
+                    case "orgcode":
+                        queryCriteria.Add(new TollgateOrgCodeCriterion(param.Value));
+                        break;
                     default:
                         break;
-
                 }
             }
 

@@ -6,18 +6,18 @@ using Pensees.CargoX.Entities;
 
 namespace Pensees.CargoX.EntityFrameworkCore.Criteria
 {
-    public class TollgateNameCriterion : ICriterion<Tollgate>
+    public class TollgateCat2Criterion : ICriterion<Tollgate>
     {
-        private readonly string _name;
+        private readonly int _category2;
 
-        public TollgateNameCriterion(string name)
+        public TollgateCat2Criterion(int category2)
         {
-            _name = name;
+            _category2 = category2;
         }
-        
+
         public IQueryable<Tollgate> HandleQueryable(IQueryable<Tollgate> queryable)
         {
-            return queryable.Where(tollgate => tollgate.Name.Contains(_name));
+            return queryable.Where(tollgate => tollgate.TollgateCat2 == _category2);
         }
     }
 }

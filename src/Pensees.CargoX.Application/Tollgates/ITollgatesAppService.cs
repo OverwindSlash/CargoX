@@ -8,6 +8,6 @@ namespace Pensees.CargoX.Tollgates
 {
     public interface ITollgatesAppService : IApplicationService
     {
-        Task<ListResultDto<TollgateDto>> GetAllTollgates(Dictionary<string,string> parameters);
+        Task<ListResultDto<TollgateDto>> QuesyByParams(Dictionary<string,string> parameters);
     }
 }

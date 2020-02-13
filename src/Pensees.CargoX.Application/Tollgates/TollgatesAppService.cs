@@ -18,7 +18,7 @@ namespace Pensees.CargoX.Tollgates
             _tollgateRepository = tollgateRepository;
         }
 
-        public async Task<ListResultDto<TollgateDto>> GetAllTollgates(Dictionary<string, string> parameters)
+        public async Task<ListResultDto<TollgateDto>> QuesyByParams(Dictionary<string, string> parameters)
         {
             var tollgates = await _tollgateRepository.GetTollgateByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<TollgateDto>(ObjectMapper.Map<List<TollgateDto>>(tollgates));
