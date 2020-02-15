@@ -20,7 +20,7 @@ namespace Pensees.CargoX.Tollgates
 
         public async Task<ListResultDto<TollgateDto>> QuesyByParams(Dictionary<string, string> parameters)
         {
-            var tollgates = await _tollgateRepository.GetTollgateByParams(parameters).ConfigureAwait(false);
+            var tollgates = await _tollgateRepository.QueryByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<TollgateDto>(ObjectMapper.Map<List<TollgateDto>>(tollgates));
         }
     }

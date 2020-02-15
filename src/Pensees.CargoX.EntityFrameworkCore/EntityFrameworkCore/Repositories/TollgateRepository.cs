@@ -16,7 +16,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
         {
         }
 
-        public async Task<List<Tollgate>> GetTollgateByParams(Dictionary<string, string> parameters)
+        /*public async Task<List<Tollgate>> QueryByParams(Dictionary<string, string> parameters)
         {
             IQueryable<Tollgate> tollgatesqQueryable = GetQueryable();
 
@@ -27,9 +27,9 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
             }
 
             return tollgatesqQueryable.ToList();
-        }
+        }*/
 
-        private List<ICriterion<Tollgate>> ConvertToCriteria(Dictionary<string, string> parameters)
+        protected override List<ICriterion<Tollgate>> ConvertToCriteria(Dictionary<string, string> parameters)
         {
             List<ICriterion<Tollgate>> queryCriteria = new List<ICriterion<Tollgate>>();
 

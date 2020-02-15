@@ -9,6 +9,6 @@ namespace Pensees.CargoX.Repository.Tollgates
 {
     public interface ITollgateRepository : IRepository<Tollgate, long>
     {
-        Task<List<Tollgate>> GetTollgateByParams(Dictionary<string, string> parameters);
+        Task<List<Tollgate>> QueryByParams(Dictionary<string, string> parameters);
     }
 }

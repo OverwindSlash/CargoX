@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pensees.CargoX.EntityFrameworkCore;
 
 namespace Pensees.CargoX.Migrations
 {
     [DbContext(typeof(CargoXDbContext))]
-    partial class CargoXDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200213100604_Add_Lane_Entity")]
+    partial class Add_Lane_Entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

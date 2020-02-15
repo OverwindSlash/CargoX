@@ -1,7 +1,12 @@
-﻿using Abp.Domain.Entities;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
 using Abp.EntityFrameworkCore;
 using Abp.EntityFrameworkCore.Repositories;
+using Pensees.CargoX.Entities;
+using Pensees.CargoX.EntityFrameworkCore.Criteria;
 
 namespace Pensees.CargoX.EntityFrameworkCore.Repositories
 {
@@ -19,6 +24,20 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
         }
 
         // Add your common methods for all repositories
+        public async Task<List<TEntity>> QueryByParams(Dictionary<string, string> parameters)
+        {
+            IQueryable<TEntity> queryable = GetQueryable();
+
+            List<ICriterion<TEntity>> criteria = ConvertToCriteria(parameters);
+            foreach (var criterion in criteria)
+            {
+                queryable = criterion.HandleQueryable(queryable);
+            }
+
+            return queryable.ToList();
+        }
+
+        protected abstract List<ICriterion<TEntity>> ConvertToCriteria(Dictionary<string, string> parameters);
     }
 
     /// <summary>
