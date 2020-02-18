@@ -21,6 +21,7 @@ namespace Pensees.CargoX.Faces.Dto
         [Required]
         [StringLength(48)]
         [DisplayName("人脸标识")]
+
         public string FaceId { get; set; }
 
         /// <summary>
