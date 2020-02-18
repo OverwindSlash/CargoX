@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
-using Pensees.CargoX.Entities.Common;
-using Pensees.CargoX.Entities.Faces;
+using Pensees.CargoX.Entities;
 using Pensees.CargoX.Faces.Dto;
 using Pensees.CargoX.Images;
 using Pensees.CargoX.Images.Dtos;
@@ -18,25 +17,20 @@ namespace Pensees.CargoX.Faces
     public class FaceAppService : AsyncCrudAppService<Face, FaceRequiredDto, long, PagedResultRequestDto, FaceRequiredDto, FaceRequiredDto>, IFaceAppService
     {
         private readonly IFaceRepository _faceRepository;
-        public FaceAppService(IFaceRepository faceRepository) : base(faceRepository)
+        private readonly IImageAppService _imageAppService;
+
+        public FaceAppService(
+            IFaceRepository faceRepository,
+            IImageAppService imageAppService) : base(faceRepository)
         {
             _faceRepository = faceRepository;
+            _imageAppService = imageAppService;
         }
 
         public async Task<ListResultDto<FaceDto>> QuesyByParams(Dictionary<string, string> parameters)
         {
             var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<FaceDto>(ObjectMapper.Map<List<FaceDto>>(faces));
-        private readonly IRepository<Face, long> _faceRepository;
-        private readonly IImageAppService _imageAppService;
-
-        public FaceAppService(
-            IRepository<Face, long> faceRepository,
-            IImageAppService imageAppService
-            ) : base(faceRepository)
-        {
-            _faceRepository = faceRepository;
-            _imageAppService = imageAppService;
         }
 
         public override async Task<FaceRequiredDto> CreateAsync(FaceRequiredDto input)
