@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Pensees.CargoX.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
-using Abp.Domain.Entities;
-using Pensees.CargoX.Entities;
 
-namespace Pensees.CargoX.Entities
+namespace Pensees.CargoX.Faces.Dto
 {
-    public class Face : Entity<long>
+    [AutoMap(typeof(Face))]
+    public class FaceDto:EntityDto<long>
     {
         /// <summary>
         /// 人脸标识
@@ -527,7 +529,7 @@ namespace Pensees.CargoX.Entities
         /// 图像列表 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public List<SubImageInfo> SubImageList { get; set; }
+        public List<SubImageInfoDto> SubImageList { get; set; }
 
         /// <summary>
         /// 人脸特征值

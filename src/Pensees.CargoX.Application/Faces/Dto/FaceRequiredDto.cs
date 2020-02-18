@@ -6,8 +6,8 @@ using System.Text;
 using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Abp.Domain.Entities;
-using Pensees.CargoX.Entities.Common;
-using Pensees.CargoX.Entities.Faces;
+using Pensees.CargoX.Entities;
+using Pensees.CargoX.Entities;
 
 namespace Pensees.CargoX.Faces.Dto
 {

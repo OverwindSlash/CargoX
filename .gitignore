@@ -251,4 +251,5 @@ paket-files/
 .idea/
 *.sln.iml
 /src/Pensees.CargoX.Rpc.Host/App_Data/Logs/Logs.txt
+/src/Pensees.CargoX.Web.Host/App_Data/Logs/Logs.txt
 /src/Pensees.CargoX.Rpc.Host/Properties/launchSettings.json

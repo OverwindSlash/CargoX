@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Abp.Domain.Entities;
 
-namespace Pensees.CargoX.Entities.Common
+namespace Pensees.CargoX.Entities
 {
     public class SubImageInfo : Entity<long>
     {
