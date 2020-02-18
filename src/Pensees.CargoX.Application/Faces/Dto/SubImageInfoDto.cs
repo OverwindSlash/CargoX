@@ -38,6 +38,13 @@ namespace Pensees.CargoX.Faces.Dto
         public string DeviceId { get; set; }
 
         /// <summary>
+        /// 图像存储路径
+        /// </summary>
+        [Required]
+        [DisplayName("图像存储路径")]
+        public string StoragePath { get; set; }
+
+        /// <summary>
         /// 图像类型
         /// GA/T 1400.3  B.3.54　图像类型（ImageType）
         /// </summary>
@@ -81,5 +88,19 @@ namespace Pensees.CargoX.Faces.Dto
         [Required]
         [DisplayName("图像Base64数据")]
         public string Data { get; set; }
+
+        /// <summary>
+        /// 存储节点
+        /// </summary>
+        [Required]
+        [DisplayName("存储节点")]
+        public string NodeId { get; set; }
+
+        /// <summary>
+        /// 存储Key
+        /// </summary>
+        [Required]
+        [DisplayName("存储Key")]
+        public string ImageKey { get; set; }
     }
 }
