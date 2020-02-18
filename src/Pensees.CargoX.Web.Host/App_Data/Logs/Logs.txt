@@ -980,3 +980,79 @@ INFO  2020-02-18 21:11:58,276 [10   ] ft.AspNetCore.Routing.EndpointMiddleware -
 INFO  2020-02-18 21:11:58,282 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 771.2318ms 200 application/json; charset=utf-8
 DEBUG 2020-02-18 21:12:02,306 [11   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
 DEBUG 2020-02-18 21:12:07,326 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2020-02-18 21:26:09,790 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-02-18 21:26:09,873 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2020-02-18 21:26:09,890 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Web.Host.Startup.CargoXWebHostModule, Pensees.CargoX.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,892 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXWebCoreModule, Pensees.CargoX.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,892 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXApplicationModule, Pensees.CargoX.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,892 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.CargoXCoreModule, Pensees.CargoX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,893 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,893 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,893 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,893 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.Service.CargoXServiceModule, Pensees.CargoX.Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,894 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,894 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.EntityFrameworkCore.CargoXEntityFrameworkModule, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,894 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,894 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,895 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,895 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Pensees.CargoX.ObjectStorage.CargoXObjectStorageModule, Pensees.CargoX.ObjectStorage, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,895 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,895 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,895 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:09,898 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2020-02-18 21:26:09,967 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-02-18 21:26:09,967 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-02-18 21:26:09,967 [1    ] o.Configuration.LanguageManagementConfig - Converted CargoX (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-02-18 21:26:09,983 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-02-18 21:26:10,444 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: Pensees.CargoX.EntityFrameworkCore.CargoXDbContext, Pensees.CargoX.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-02-18 21:26:11,398 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-02-18 21:26:11,464 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-02-18 21:26:11,508 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-02-18 21:26:11,533 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: CargoX
+DEBUG 2020-02-18 21:26:11,569 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-02-18 21:26:11,806 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-02-18 21:26:11,952 [1    ] rization.Users.UserTokenExpirationWorker - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker
+DEBUG 2020-02-18 21:26:12,004 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 13 classes define auto mapping attributes
+DEBUG 2020-02-18 21:26:12,004 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-02-18 21:26:12,009 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.CreateUserDto
+DEBUG 2020-02-18 21:26:12,010 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Users.Dto.UserDto
+DEBUG 2020-02-18 21:26:12,010 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Tollgates.Dto.TollgateDto
+DEBUG 2020-02-18 21:26:12,011 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-02-18 21:26:12,011 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-02-18 21:26:12,011 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Roles.Dto.PermissionDto
+DEBUG 2020-02-18 21:26:12,011 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-02-18 21:26:12,011 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.MultiTenancy.Dto.TenantDto
+DEBUG 2020-02-18 21:26:12,011 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Lanes.Dto.LaneDto
+DEBUG 2020-02-18 21:26:12,011 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Faces.Dto.FaceDto
+DEBUG 2020-02-18 21:26:12,012 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Faces.Dto.FaceRequiredDto
+DEBUG 2020-02-18 21:26:12,012 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Pensees.CargoX.Faces.Dto.SubImageInfoDto
+DEBUG 2020-02-18 21:26:15,208 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2020-02-18 21:26:15,269 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2020-02-18 21:26:15,379 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2020-02-18 21:26:15,447 [1    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2020-02-18 21:26:15,760 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\XHome\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-02-18 21:26:15,822 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-02-18 21:26:15,946 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+DEBUG 2020-02-18 21:26:17,349 [5    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2020-02-18 21:26:19,564 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Pensees.CargoX.Web.Host.Controllers.HomeController (Pensees.CargoX.Web.Host).
+INFO  2020-02-18 21:26:20,796 [5    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-02-18 21:26:20,806 [5    ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host) in 1234.653ms
+INFO  2020-02-18 21:26:20,809 [5    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Web.Host.Controllers.HomeController.Index (Pensees.CargoX.Web.Host)'
+INFO  2020-02-18 21:26:20,830 [6    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-02-18 21:26:20,834 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 5013.1686ms 302 
+INFO  2020-02-18 21:26:21,016 [6    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 185.343ms 200 text/html;charset=utf-8
+INFO  2020-02-18 21:26:21,160 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-02-18 21:26:21,427 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 265.5612ms 200 application/json;charset=utf-8
+DEBUG 2020-02-18 21:26:22,481 [10   ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2020-02-18 21:26:27,499 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2020-02-18 21:26:32,525 [6    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+DEBUG 2020-02-18 21:26:37,547 [4    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
+INFO  2020-02-18 21:26:38,552 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:21021/VIID/Face/QuesyByParams application/json-patch+json 82
+INFO  2020-02-18 21:26:38,560 [4    ] pNetCore.Cors.Infrastructure.CorsService - CORS policy execution successful.
+INFO  2020-02-18 21:26:38,567 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Pensees.CargoX.Faces.FaceAppService.QuesyByParams (Pensees.CargoX.Application)'
+INFO  2020-02-18 21:26:38,590 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "VIID", action = "QuesyByParams", controller = "Face"}. Executing controller action with signature System.Threading.Tasks.Task`1[Abp.Application.Services.Dto.ListResultDto`1[Pensees.CargoX.Faces.Dto.FaceRequiredDto]] QuesyByParams(System.Collections.Generic.Dictionary`2[System.String,System.String]) on controller Pensees.CargoX.Faces.FaceAppService (Pensees.CargoX.Application).
+INFO  2020-02-18 21:26:39,367 [5    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-02-18 21:26:39,385 [5    ] c.Infrastructure.ControllerActionInvoker - Executed action Pensees.CargoX.Faces.FaceAppService.QuesyByParams (Pensees.CargoX.Application) in 793.0784ms
+INFO  2020-02-18 21:26:39,391 [5    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Pensees.CargoX.Faces.FaceAppService.QuesyByParams (Pensees.CargoX.Application)'
+INFO  2020-02-18 21:26:39,394 [5    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 842.4055ms 200 application/json; charset=utf-8
+DEBUG 2020-02-18 21:26:42,591 [8    ] HttpRequestEntityChangeSetReasonProvider - Unable to get URL from HttpRequest, fallback to null
