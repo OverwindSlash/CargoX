@@ -41,6 +41,7 @@ namespace Pensees.CargoX.Faces
 
                 subImageInfoDto.NodeId = response.BucketName;
                 subImageInfoDto.ImageKey = response.ImageName;
+                subImageInfoDto.StoragePath = $"{response.BucketName}:{response.ImageName}";
             }
 
             return await base.CreateAsync(input);

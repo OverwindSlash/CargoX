@@ -40,7 +40,6 @@ namespace Pensees.CargoX.Faces.Dto
         /// <summary>
         /// 图像存储路径
         /// </summary>
-        [Required]
         [DisplayName("图像存储路径")]
         public string StoragePath { get; set; }
 
@@ -92,14 +91,12 @@ namespace Pensees.CargoX.Faces.Dto
         /// <summary>
         /// 存储节点
         /// </summary>
-        [Required]
         [DisplayName("存储节点")]
         public string NodeId { get; set; }
 
         /// <summary>
         /// 存储Key
         /// </summary>
-        [Required]
         [DisplayName("存储Key")]
         public string ImageKey { get; set; }
     }
