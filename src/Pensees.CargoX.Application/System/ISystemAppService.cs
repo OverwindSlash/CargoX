@@ -10,5 +10,10 @@ namespace Pensees.CargoX.System
     public interface ISystemAppService : IApplicationService
     {
         Task<ResponseStatus> Register(Register input);
+        Task<ResponseStatus> UnRegister(Register input);
+        Task<ResponseStatus> Keepalive(Register input);
+
+
+        Task<SystemTimeDto> Time();
     }
 }

@@ -25,7 +25,24 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
                     case "faceid":
                         queryCriteria.Add(new FaceIdCriterion(param.Value));
                         break;
-
+                    case "infokind":
+                        queryCriteria.Add(new InfoKindCriterion(Convert.ToInt32(param.Value)));
+                        break;
+                    case "sourceid":
+                        queryCriteria.Add(new SourceIdCriterion(param.Value));
+                        break;
+                    case "isvictim":
+                        queryCriteria.Add(new IsVictimCriterion(Convert.ToInt32(param.Value)));
+                        break;
+                    case "isdetainees":
+                        queryCriteria.Add(new IsDetaineesCriterion(Convert.ToInt32(param.Value)));
+                        break;
+                    case "issuspiciousperson":
+                        queryCriteria.Add(new IsSuspiciousPersonCriterion(Convert.ToInt32(param.Value)));
+                        break;
+                    //case "feature":
+                    //    queryCriteria.Add(new FeatureCriterion(param.Value));
+                    //    break;
                     default:
                         break;
                 }
