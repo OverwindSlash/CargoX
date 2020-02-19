@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Abp.Domain.Entities;
-using Pensees.CargoX.Entities.Common;
+using Pensees.CargoX.Entities;
 
-namespace Pensees.CargoX.Entities.Faces
+namespace Pensees.CargoX.Entities
 {
     public class Face : Entity<long>
     {

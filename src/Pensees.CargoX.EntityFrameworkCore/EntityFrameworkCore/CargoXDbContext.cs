@@ -3,7 +3,6 @@ using Abp.Zero.EntityFrameworkCore;
 using Pensees.CargoX.Authorization.Roles;
 using Pensees.CargoX.Authorization.Users;
 using Pensees.CargoX.Entities;
-using Pensees.CargoX.Entities.Faces;
 using Pensees.CargoX.MultiTenancy;
 
 namespace Pensees.CargoX.EntityFrameworkCore
