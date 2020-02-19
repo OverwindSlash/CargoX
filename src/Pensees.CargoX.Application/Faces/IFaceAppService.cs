@@ -10,6 +10,6 @@ namespace Pensees.CargoX.Faces
 {
     public interface IFaceAppService : IApplicationService
     {
-        Task<ListResultDto<FaceRequiredDto>> QuesyByParams(Dictionary<string, string> parameters);
+        Task<ListResultDto<FaceRequiredDto>> QueryByParams(Dictionary<string, string> parameters);
     }
 }

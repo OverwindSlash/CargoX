@@ -21,7 +21,7 @@ namespace Pensees.CargoX.Lanes
             _laneRepository = laneRepository;
         }
 
-        public async Task<ListResultDto<LaneDto>> QuesyByParams(Dictionary<string, string> parameters)
+        public async Task<ListResultDto<LaneDto>> QueryByParams(Dictionary<string, string> parameters)
         {
             var lanes = await _laneRepository.QueryByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<LaneDto>(ObjectMapper.Map<List<LaneDto>>(lanes));

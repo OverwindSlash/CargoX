@@ -10,6 +10,6 @@ namespace Pensees.CargoX.Lanes
 {
     public interface ILanesAppService : IApplicationService
     {
-        Task<ListResultDto<LaneDto>> QuesyByParams(Dictionary<string, string> parameters);
+        Task<ListResultDto<LaneDto>> QueryByParams(Dictionary<string, string> parameters);
     }
 }

@@ -27,7 +27,7 @@ namespace Pensees.CargoX.Faces
             _imageAppService = imageAppService;
         }
 
-        public async Task<ListResultDto<FaceRequiredDto>> QuesyByParams(Dictionary<string, string> parameters)
+        public async Task<ListResultDto<FaceRequiredDto>> QueryByParams(Dictionary<string, string> parameters)
         {
             var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<FaceRequiredDto>(ObjectMapper.Map<List<FaceRequiredDto>>(faces));
