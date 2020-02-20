@@ -1976,7 +1976,7 @@ namespace Pensees.CargoX.Migrations
             modelBuilder.Entity("Pensees.CargoX.Entities.Common.SubImageInfo", b =>
                 {
                     b.HasOne("Pensees.CargoX.Entities.Faces.Face", null)
-                        .WithMany("SubImageList")
+                        .WithMany("SubImages")
                         .HasForeignKey("FaceId");
                 });
 

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using AutoMapper.Configuration.Annotations;
+using Pensees.CargoX.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
-using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
-using Pensees.CargoX.Entities;
 
 namespace Pensees.CargoX.Faces.Dto
 {
@@ -529,13 +529,18 @@ namespace Pensees.CargoX.Faces.Dto
         /// 图像列表 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public List<SubImageInfoDto> SubImageList { get; set; }
+        public SubImageInfoDtoList SubImageList { get; set; }
+
+        /// <summary>
+        /// 只为 AutoMapper 使用
+        /// </summary>
+        [DisplayName("图像列表")]
+        public List<SubImageInfoDto> SubImageInfos { get; set; }
 
         /// <summary>
         /// 人脸特征值
         /// 非 1400 属性
         /// </summary>
-        [Required]
         [DisplayName("特征值")]
         [NotMapped]
         public List<byte> Feature { get; set; }

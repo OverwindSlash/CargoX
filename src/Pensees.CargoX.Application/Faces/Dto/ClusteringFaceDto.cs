@@ -86,7 +86,7 @@ namespace Pensees.CargoX.Faces.Dto
         /// 图像列表 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public List<SubImageInfoDto> SubImageList { get; set; }
+        public SubImageInfoDtoList SubImageList { get; set; }
 
         /// <summary>
         /// 人脸特征值

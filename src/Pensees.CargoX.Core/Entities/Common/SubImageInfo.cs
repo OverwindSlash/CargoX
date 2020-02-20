@@ -83,7 +83,7 @@ namespace Pensees.CargoX.Entities
         /// <summary>
         /// 图像Base64数据
         /// </summary>
-        [Required]
+        //[Required]
         [DisplayName("图像Base64数据")]
         [NotMapped]
         public string Data { get; set; }
@@ -91,14 +91,14 @@ namespace Pensees.CargoX.Entities
         /// <summary>
         /// 存储节点
         /// </summary>
-        [Required]
+        //[Required]
         [DisplayName("存储节点")]
         public string NodeId { get; set; }
 
         /// <summary>
         /// 存储Key
         /// </summary>
-        [Required]
+        //[Required]
         [DisplayName("存储Key")]
         public string ImageKey { get; set; }
     }

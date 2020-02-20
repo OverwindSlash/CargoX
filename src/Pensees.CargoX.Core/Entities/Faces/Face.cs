@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Abp.Domain.Entities;
 using Pensees.CargoX.Entities;
+using Pensees.CargoX.Entities.Common;
 
 namespace Pensees.CargoX.Entities
 {
@@ -527,13 +528,13 @@ namespace Pensees.CargoX.Entities
         /// 图像列表 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public List<SubImageInfo> SubImageList { get; set; }
+        public List<SubImageInfo> SubImageInfos { get; set; }
 
         /// <summary>
         /// 人脸特征值
         /// 非 1400 属性
         /// </summary>
-        [Required]
+        //[Required]
         [DisplayName("特征值")]
         [NotMapped]
         public List<byte> Feature { get; set; }

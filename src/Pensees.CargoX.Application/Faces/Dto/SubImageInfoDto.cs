@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using Pensees.CargoX.Entities;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
-using Pensees.CargoX.Entities;
 
 namespace Pensees.CargoX.Faces.Dto
 {
@@ -84,7 +83,6 @@ namespace Pensees.CargoX.Faces.Dto
         /// <summary>
         /// 图像Base64数据
         /// </summary>
-        [Required]
         [DisplayName("图像Base64数据")]
         public string Data { get; set; }
 

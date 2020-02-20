@@ -1,9 +1,12 @@
-﻿using Abp.AutoMapper;
+﻿using System.Collections.Generic;
+using Abp.AutoMapper;
 using Abp.Events.Bus;
 using Abp.Events.Bus.Exceptions;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Pensees.CargoX.Authorization;
+using Pensees.CargoX.Entities;
+using Pensees.CargoX.Faces.Dto;
 using Pensees.CargoX.Service;
 using Sentry;
 
@@ -35,6 +38,14 @@ namespace Pensees.CargoX
                 // Scan the assembly for classes which inherit from AutoMapper.Profile
                 cfg => cfg.AddMaps(thisAssembly)
             );
+
+            Configuration.Modules.AbpAutoMapper().Configurators.Add(config =>
+            {
+                config.CreateMap<FaceDto, Face>()
+                    .ForMember(face => face.SubImageInfos,
+                        opt => opt.MapFrom(
+                            dto => dto.SubImageList.SubImageInfoObject));
+            });
         }
     }
 }

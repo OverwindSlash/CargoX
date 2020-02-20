@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Pensees.CargoX.Entities;
+using Pensees.CargoX.Entities.Common;
 using Pensees.CargoX.Faces.Dto;
 using Pensees.CargoX.Images;
 using Pensees.CargoX.Images.Dtos;
@@ -17,6 +19,7 @@ namespace Pensees.CargoX.Faces
     public class FaceAppService : AsyncCrudAppService<Face, FaceDto, long, PagedResultRequestDto, FaceDto, FaceDto>, IFaceAppService
     {
         private readonly IFaceRepository _faceRepository;
+        private readonly IRepository<SubImageInfo, long> _subImageInfoRepository;
         private readonly IImageAppService _imageAppService;
 
         public FaceAppService(
@@ -35,8 +38,13 @@ namespace Pensees.CargoX.Faces
 
         public override async Task<FaceDto> CreateAsync(FaceDto input)
         {
-            foreach (var subImageInfoDto in input.SubImageList)
+            foreach (var subImageInfoDto in input.SubImageList.SubImageInfoObject)
             {
+                if (string.IsNullOrEmpty(subImageInfoDto.Data))
+                {
+                    continue;
+                }
+
                 SaveImageByBase64Request request = new SaveImageByBase64Request()
                 {
                     ImageBase64 = subImageInfoDto.Data
@@ -54,25 +62,46 @@ namespace Pensees.CargoX.Faces
 
         public override async Task<FaceDto> GetAsync(EntityDto<long> input)
         {
-            Face face = _faceRepository.GetAllIncluding(t => t.SubImageList)
-                .SingleOrDefault(f => f.Id == input.Id);
+            Face face = await _faceRepository.GetAllIncluding(t => t.SubImageInfos)
+                .SingleOrDefaultAsync(f => f.Id == input.Id).ConfigureAwait(false);
 
-            if (face.SubImageList != null)
+            if (face.SubImageInfos != null)
             {
-                foreach (var subImageInfo in face.SubImageList)
+                foreach (var subImageInfo in face.SubImageInfos)
                 {
+                    if (string.IsNullOrEmpty(subImageInfo.ImageKey) || 
+                        string.IsNullOrEmpty(subImageInfo.NodeId))
+                    {
+                        continue;
+                    }
+
                     GetImageRequest request = new GetImageRequest()
                     {
                         BucketName = subImageInfo.NodeId,
                         ImageName = subImageInfo.ImageKey
                     };
 
-                    GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request);
+                    GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request).ConfigureAwait(false);
                     subImageInfo.Data = Convert.ToBase64String(response.ImageData);
                 }
             }
 
-            return MapToEntityDto(face);
+            var faceDto = MapToEntityDto(face);
+            faceDto.SubImageList = new SubImageInfoDtoList();
+            faceDto.SubImageList.SubImageInfoObject = faceDto.SubImageInfos;
+            faceDto.SubImageInfos = null;
+
+            return faceDto;
+        }
+
+        public override Task<FaceDto> UpdateAsync(FaceDto input)
+        {
+            return base.UpdateAsync(input);
+        }
+
+        public override Task DeleteAsync(EntityDto<long> input)
+        {
+            return base.DeleteAsync(input);
         }
     }
 }

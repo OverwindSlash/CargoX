@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pensees.CargoX.EntityFrameworkCore;
 
 namespace Pensees.CargoX.Migrations
 {
     [DbContext(typeof(CargoXDbContext))]
-    partial class CargoXDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200220041630_Remove_Require_Attribute")]
+    partial class Remove_Require_Attribute
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1309,67 +1311,7 @@ namespace Pensees.CargoX.Migrations
                     b.ToTable("AbpUsers");
                 });
 
-            modelBuilder.Entity("Pensees.CargoX.Entities.Common.SubImageInfo", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DeviceId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<int>("EventSort")
-                        .HasColumnType("int");
-
-                    b.Property<long?>("FaceId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("FileFormat")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Height")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ImageID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(41)")
-                        .HasMaxLength(41);
-
-                    b.Property<string>("ImageKey")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NodeId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ShotTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("StoragePath")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(3)")
-                        .HasMaxLength(3);
-
-                    b.Property<int>("Width")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FaceId");
-
-                    b.ToTable("SubImageInfo");
-                });
-
-            modelBuilder.Entity("Pensees.CargoX.Entities.Faces.Face", b =>
+            modelBuilder.Entity("Pensees.CargoX.Entities.Face", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -1688,6 +1630,64 @@ namespace Pensees.CargoX.Migrations
                     b.ToTable("Lanes");
                 });
 
+            modelBuilder.Entity("Pensees.CargoX.Entities.SubImageInfo", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DeviceId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.Property<int>("EventSort")
+                        .HasColumnType("int");
+
+                    b.Property<long?>("FaceId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("FileFormat")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(41)")
+                        .HasMaxLength(41);
+
+                    b.Property<string>("ImageKey")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NodeId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ShotTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("StoragePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(3)")
+                        .HasMaxLength(3);
+
+                    b.Property<int>("Width")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FaceId");
+
+                    b.ToTable("SubImageInfo");
+                });
+
             modelBuilder.Entity("Pensees.CargoX.Entities.Tollgate", b =>
                 {
                     b.Property<long>("Id")
@@ -1971,10 +1971,10 @@ namespace Pensees.CargoX.Migrations
                         .HasForeignKey("LastModifierUserId");
                 });
 
-            modelBuilder.Entity("Pensees.CargoX.Entities.Common.SubImageInfo", b =>
+            modelBuilder.Entity("Pensees.CargoX.Entities.SubImageInfo", b =>
                 {
-                    b.HasOne("Pensees.CargoX.Entities.Faces.Face", null)
-                        .WithMany("SubImageList")
+                    b.HasOne("Pensees.CargoX.Entities.Face", null)
+                        .WithMany("SubImages")
                         .HasForeignKey("FaceId");
                 });
 

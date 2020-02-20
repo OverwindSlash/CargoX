@@ -11,6 +11,12 @@
     <Compile Remove="Migrations\20180726102624_Upgrade_ABP_380.cs" />
     <Compile Remove="Migrations\20180927062408_test.cs" />
     <Compile Remove="Migrations\20190111071724_Upgraded_To_Abp_v4_1_0.cs" />
+    <Compile Remove="Migrations\20200220041251_Remove_Require_Attribute.cs" />
+    <Compile Remove="Migrations\20200220041251_Remove_Require_Attribute.Designer.cs" />
+    <Compile Remove="Migrations\20200220041358_Remove_Require_Attribute.cs" />
+    <Compile Remove="Migrations\20200220041358_Remove_Require_Attribute.Designer.cs" />
+    <Compile Remove="Migrations\20200220062001_Rename_To_SubImages.cs" />
+    <Compile Remove="Migrations\20200220062001_Rename_To_SubImages.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
