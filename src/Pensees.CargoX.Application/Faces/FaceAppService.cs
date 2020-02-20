@@ -14,7 +14,7 @@ using Pensees.CargoX.Repository.Faces;
 
 namespace Pensees.CargoX.Faces
 {
-    public class FaceAppService : AsyncCrudAppService<Face, FaceRequiredDto, long, PagedResultRequestDto, FaceRequiredDto, FaceRequiredDto>, IFaceAppService
+    public class FaceAppService : AsyncCrudAppService<Face, FaceDto, long, PagedResultRequestDto, FaceDto, FaceDto>, IFaceAppService
     {
         private readonly IFaceRepository _faceRepository;
         private readonly IImageAppService _imageAppService;
@@ -27,13 +27,13 @@ namespace Pensees.CargoX.Faces
             _imageAppService = imageAppService;
         }
 
-        public async Task<ListResultDto<FaceRequiredDto>> QueryByParams(Dictionary<string, string> parameters)
+        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, string> parameters)
         {
             var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
-            return new ListResultDto<FaceRequiredDto>(ObjectMapper.Map<List<FaceRequiredDto>>(faces));
+            return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces));
         }
 
-        public override async Task<FaceRequiredDto> CreateAsync(FaceRequiredDto input)
+        public override async Task<FaceDto> CreateAsync(FaceDto input)
         {
             foreach (var subImageInfoDto in input.SubImageList)
             {
@@ -52,7 +52,7 @@ namespace Pensees.CargoX.Faces
             return await base.CreateAsync(input);
         }
 
-        public override async Task<FaceRequiredDto> GetAsync(EntityDto<long> input)
+        public override async Task<FaceDto> GetAsync(EntityDto<long> input)
         {
             Face face = _faceRepository.GetAllIncluding(t => t.SubImageList)
                 .SingleOrDefault(f => f.Id == input.Id);

@@ -12,7 +12,7 @@ using Pensees.CargoX.Entities;
 namespace Pensees.CargoX.Faces.Dto
 {
     [AutoMap(typeof(Face))]
-    public class FaceRequiredDto : EntityDto<long>
+    public class ClusteringFaceDto : EntityDto<long>
     {
         /// <summary>
         /// 人脸标识
@@ -41,25 +41,46 @@ namespace Pensees.CargoX.Faces.Dto
         public string SourceId { get; set; }
 
         /// <summary>
-        /// 是否在押人员 0：否；1：是；2：不确定
+        /// 左上角X坐标 人脸区域，自动采集记录时为必选
         /// </summary>
-        [Required]
-        [DisplayName("是否在押人员")]
-        public int IsDetainees { get; set; }
+        [DisplayName("左上角X坐标")]
+        public int LeftTopX { get; set; }
 
         /// <summary>
-        /// 是否被害人 0：否；1：是；2：不确定
+        /// 左上角Y坐标 人脸区域，自动采集记录时为必选
         /// </summary>
-        [Required]
-        [DisplayName("是否被害人")]
-        public int IsVictim { get; set; }
+        [DisplayName("左上角Y坐标")]
+        public int LeftTopY { get; set; }
 
         /// <summary>
-        /// 是否可疑人 0：否；1：是；2：不确定
+        /// 右下角X坐标 人脸区域，自动采集记录时为必选
         /// </summary>
-        [Required]
-        [DisplayName("是否可疑人")]
-        public int IsSuspiciousPerson { get; set; }
+        [DisplayName("右下角X坐标")]
+        public int RightBtmX { get; set; }
+
+        /// <summary>
+        /// 右下角Y坐标 人脸区域，自动采集记录时为必选
+        /// </summary>
+        [DisplayName("右下角Y坐标")]
+        public int RightBtmY { get; set; }
+
+        /// <summary>
+        /// 性别代码
+        /// </summary>
+        [DisplayName("性别代码")]
+        public string GenderCode { get; set; }
+
+        /// <summary>
+        /// 年龄上限 最大可能年龄
+        /// </summary>
+        [DisplayName("年龄上限")]
+        public int AgeUpLimit { get; set; }
+
+        /// <summary>
+        /// 年龄下限 最小可能年龄
+        /// </summary>
+        [DisplayName("年龄下限")]
+        public int AgeLowerLimit { get; set; }
 
         /// <summary>
         /// 图像列表 可以包含0个或者多个子图像对象
