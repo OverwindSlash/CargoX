@@ -57,16 +57,19 @@ namespace Pensees.CargoX.Faces
             Face face = _faceRepository.GetAllIncluding(t => t.SubImageList)
                 .SingleOrDefault(f => f.Id == input.Id);
 
-            foreach (var subImageInfo in face.SubImageList)
+            if (face.SubImageList != null)
             {
-                GetImageRequest request = new GetImageRequest()
+                foreach (var subImageInfo in face.SubImageList)
                 {
-                    BucketName = subImageInfo.NodeId,
-                    ImageName = subImageInfo.ImageKey
-                };
+                    GetImageRequest request = new GetImageRequest()
+                    {
+                        BucketName = subImageInfo.NodeId,
+                        ImageName = subImageInfo.ImageKey
+                    };
 
-                GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request);
-                subImageInfo.Data = Convert.ToBase64String(response.ImageData);
+                    GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request);
+                    subImageInfo.Data = Convert.ToBase64String(response.ImageData);
+                }
             }
 
             return MapToEntityDto(face);
