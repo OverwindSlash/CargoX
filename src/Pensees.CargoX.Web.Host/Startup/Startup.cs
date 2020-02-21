@@ -21,8 +21,6 @@ using Pensees.CargoX.Identity;
 using System;
 using System.Linq;
 using System.Reflection;
-using Abp.AspNetCore.Mvc.ModelBinding;
-using Pensees.CargoX.Authentication.Digest;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
 namespace Pensees.CargoX.Web.Host.Startup
@@ -45,7 +43,7 @@ namespace Pensees.CargoX.Web.Host.Startup
                 options =>
                 {
                     options.Filters.Add(new AbpAutoValidateAntiforgeryTokenAttribute());
-                    options.ModelBinderProviders.Insert(0, new AbpDateTimeModelBinderProvider());
+                    //options.ModelBinderProviders.Insert(0, new AbpDateTimeModelBinderProvider());
                 }
             ).AddNewtonsoftJson(options =>
             {

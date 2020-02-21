@@ -1,8 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
-using Microsoft.AspNetCore.Mvc;
 using Pensees.CargoX.Entities;
-using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -64,7 +62,7 @@ namespace Pensees.CargoX.Faces.Dto
         /// </summary>
         [Required]
         [DisplayName("拍摄时间")]
-        public DateTime ShotTime { get; set; }
+        public string ShotTime { get; set; }
 
         /// <summary>
         /// 图像宽度

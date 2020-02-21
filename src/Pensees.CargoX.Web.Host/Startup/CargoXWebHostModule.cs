@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Abp.Modules;
+using Abp.Reflection.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Abp.Modules;
-using Abp.Reflection.Extensions;
 using Pensees.CargoX.Configuration;
-using Pensees.CargoX.Web.Host.ModelBinder;
 
 namespace Pensees.CargoX.Web.Host.Startup
 {
@@ -24,8 +22,6 @@ namespace Pensees.CargoX.Web.Host.Startup
         public override void PreInitialize()
         {
             base.PreInitialize();
-
-            //Configuration.Modules.AbpWebApi(). HttpConfiguration.BindParameter(typeof(DateTime), RawStringDateTimeBinder);
         }
 
         public override void Initialize()

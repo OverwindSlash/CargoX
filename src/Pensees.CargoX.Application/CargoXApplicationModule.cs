@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Abp.AutoMapper;
 using Abp.Events.Bus;
 using Abp.Events.Bus.Exceptions;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Pensees.CargoX.Authorization;
+using Pensees.CargoX.Converter;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.Faces.Dto;
 using Pensees.CargoX.Service;
@@ -45,6 +47,16 @@ namespace Pensees.CargoX
                     .ForMember(face => face.SubImageInfos,
                         opt => opt.MapFrom(
                             dto => dto.SubImageList.SubImageInfoObject));
+
+                config.CreateMap<SubImageInfoDto, SubImageInfo>()
+                    .ForMember(info => info.ShotTime,
+                        opt => opt.ConvertUsing(
+                            new DateTimeConverter()));
+
+                config.CreateMap<SubImageInfo, SubImageInfoDto>()
+                    .ForMember(dto => dto.ShotTime,
+                        opt => opt.MapFrom(
+                            info => info.ShotTime.ToString("yyyyMMddHHmmss")));
             });
         }
     }
