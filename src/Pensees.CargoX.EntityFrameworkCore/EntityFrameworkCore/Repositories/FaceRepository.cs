@@ -65,6 +65,9 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
                     case "locationmarktime":
                         queryCriteria.Add(new LocationMarkTimeCriterion(param.Value));
                         break;
+                    case "shottime":
+                        queryCriteria.Add(new ShotTimeCriterion(param.Value));
+                        break;
                     default:
                         break;
                 }

@@ -534,8 +534,8 @@ namespace Pensees.CargoX.Faces.Dto
         /// <summary>
         /// 只为 AutoMapper 使用
         /// </summary>
-        [DisplayName("图像列表")]
-        public List<SubImageInfoDto> SubImageInfos { get; set; }
+        //[DisplayName("图像列表")]
+        //public List<SubImageInfoDto> SubImageInfos { get; set; }
 
         /// <summary>
         /// 人脸特征值

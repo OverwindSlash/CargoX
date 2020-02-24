@@ -30,7 +30,27 @@ namespace Pensees.CargoX.Faces
 
         public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, Dictionary<string, string>> parameters)
         {
-            var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
+            var faces = await _faceRepository.QueryByParams(parameters,_faceRepository.GetAllIncluding(p=>p.SubImageInfos)).ConfigureAwait(false);
+            foreach (var face in faces)
+            {
+                foreach (var subImageInfo in face.SubImageInfos)
+                {
+                    if (string.IsNullOrEmpty(subImageInfo.ImageKey) ||
+                        string.IsNullOrEmpty(subImageInfo.NodeId))
+                    {
+                        continue;
+                    }
+
+                    GetImageRequest request = new GetImageRequest()
+                    {
+                        BucketName = subImageInfo.NodeId,
+                        ImageName = subImageInfo.ImageKey
+                    };
+
+                    GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request).ConfigureAwait(false);
+                    subImageInfo.Data = Convert.ToBase64String(response.ImageData);
+                }
+            }
             return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces));
         }
 
@@ -92,9 +112,9 @@ namespace Pensees.CargoX.Faces
             }
 
             var faceDto = MapToEntityDto(face);
-            faceDto.SubImageList = new SubImageInfoDtoList();
-            faceDto.SubImageList.SubImageInfoObject = faceDto.SubImageInfos;
-            faceDto.SubImageInfos = null;
+            //faceDto.SubImageList = new SubImageInfoDtoList();
+            //faceDto.SubImageList.SubImageInfoObject = faceDto.SubImageInfos;
+            //faceDto.SubImageInfos = null;
 
             return faceDto;
         }

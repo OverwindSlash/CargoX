@@ -37,10 +37,12 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
             return queryable.ToList();
         }
 
-        public async Task<List<TEntity>> QueryByParams(Dictionary<string, Dictionary<string,string>> parameters)
+        public async Task<List<TEntity>> QueryByParams(Dictionary<string, Dictionary<string,string>> parameters, IQueryable<TEntity> queryable)
         {
-            IQueryable<TEntity> queryable = GetQueryable();
-
+            if (queryable==null)
+            {
+                queryable = GetQueryable();
+            }
             List<ICriterion<TEntity>> criteria = ConvertToCriteria(parameters);
             foreach (var criterion in criteria)
             {
