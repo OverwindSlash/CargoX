@@ -33,7 +33,7 @@ namespace Pensees.CargoX.Faces
             _httpContext = httpContext;
         }
 
-        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, string> parameters)
+        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, Dictionary<string, string>> parameters)
         {
             var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces));
@@ -119,6 +119,11 @@ namespace Pensees.CargoX.Faces
         public override Task<PagedResultDto<FaceDto>> GetAllAsync(PagedResultRequestDto input)
         {
             return base.GetAllAsync(input);
+        }
+
+        public ClusteringFaceDto TestQueryByParams(Dictionary<string, Dictionary<string,string>> parameters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

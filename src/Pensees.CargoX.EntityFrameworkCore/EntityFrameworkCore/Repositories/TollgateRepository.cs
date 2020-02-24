@@ -69,5 +69,10 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
 
             return queryCriteria;
         }
+
+        protected override List<ICriterion<Tollgate>> ConvertToCriteria(Dictionary<string, Dictionary<string, string>> parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

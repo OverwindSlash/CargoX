@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Pensees.CargoX.Converter
 {
-    public static class DateTimeParseHelper
+    public class DateTimeParseHelper
     {
         public static DateTime? ParseDateTime(
             string dateToParse,

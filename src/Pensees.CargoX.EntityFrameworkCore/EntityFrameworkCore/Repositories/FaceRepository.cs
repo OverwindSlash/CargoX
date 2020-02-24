@@ -50,5 +50,27 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
 
             return queryCriteria;
         }
+
+        protected override List<ICriterion<Face>> ConvertToCriteria(Dictionary<string, Dictionary<string, string>> parameters)
+        {
+            List<ICriterion<Face>> queryCriteria = new List<ICriterion<Face>>();
+
+            foreach (var param in parameters)
+            {
+                switch (param.Key.ToLower())
+                {
+                    case "faceid":
+                        queryCriteria.Add(new FaceIdCriterion(param.Value));
+                        break;
+                    case "locationmarktime":
+                        queryCriteria.Add(new LocationMarkTimeCriterion(param.Value));
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return queryCriteria;
+        }
     }
 }
