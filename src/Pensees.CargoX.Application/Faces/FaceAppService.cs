@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Pensees.CargoX.Entities;
-using Pensees.CargoX.Entities.Common;
 using Pensees.CargoX.Faces.Dto;
 using Pensees.CargoX.Images;
 using Pensees.CargoX.Images.Dtos;
 using Pensees.CargoX.Repository.Faces;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Pensees.CargoX.Faces
 {
@@ -34,6 +32,13 @@ namespace Pensees.CargoX.Faces
         {
             var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces));
+        }
+
+        [Route("City")]
+        [HttpGet]
+        public Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceWithContition(string condition)
+        {
+            throw new NotImplementedException();
         }
 
         public override async Task<FaceDto> CreateAsync(FaceDto input)
