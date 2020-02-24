@@ -1,13 +1,9 @@
-﻿using System;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Pensees.CargoX.Entities;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using Abp.Application.Services.Dto;
-using Abp.AutoMapper;
-using Abp.Domain.Entities;
-using Pensees.CargoX.Entities;
-using Pensees.CargoX.Entities;
 
 namespace Pensees.CargoX.Faces.Dto
 {

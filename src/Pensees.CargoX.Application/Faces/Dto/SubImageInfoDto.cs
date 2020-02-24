@@ -95,5 +95,13 @@ namespace Pensees.CargoX.Faces.Dto
         /// </summary>
         [DisplayName("存储Key")]
         public string ImageKey { get; set; }
+
+        /// <summary>
+        /// 图像质量等级，非1400人脸属性，澎思自定义
+        /// GA/T 1400.3  B.3.6　质量等级（QualityGradeType）
+        /// </summary>
+        [DisplayName("图像质量等级")]
+        [DefaultValue("3")]
+        public string QualityGrade { get; set; }
     }
 }
