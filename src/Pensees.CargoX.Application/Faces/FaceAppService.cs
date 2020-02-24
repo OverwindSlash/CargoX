@@ -30,7 +30,7 @@ namespace Pensees.CargoX.Faces
             _imageAppService = imageAppService;
         }
 
-        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, string> parameters)
+        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, Dictionary<string, string>> parameters)
         {
             var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
             return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces));
@@ -102,6 +102,11 @@ namespace Pensees.CargoX.Faces
         public override Task DeleteAsync(EntityDto<long> input)
         {
             return base.DeleteAsync(input);
+        }
+
+        public ClusteringFaceDto TestQueryByParams(Dictionary<string, Dictionary<string,string>> parameters)
+        {
+            throw new NotImplementedException();
         }
     }
 }

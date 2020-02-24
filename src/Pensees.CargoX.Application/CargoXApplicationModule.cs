@@ -47,6 +47,10 @@ namespace Pensees.CargoX
                     .ForMember(face => face.SubImageInfos,
                         opt => opt.MapFrom(
                             dto => dto.SubImageList.SubImageInfoObject));
+                config.CreateMap<ClusteringFaceDto, Face>()
+                    .ForMember(face => face.SubImageInfos,
+                        opt => opt.MapFrom(
+                            dto => dto.SubImageList.SubImageInfoObject));
 
                 config.CreateMap<SubImageInfoDto, SubImageInfo>()
                     .ForMember(info => info.ShotTime,

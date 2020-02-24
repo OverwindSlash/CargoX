@@ -34,5 +34,10 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
 
             return queryCriteria;
         }
+
+        protected override List<ICriterion<Lane>> ConvertToCriteria(Dictionary<string, Dictionary<string, string>> parameters)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
