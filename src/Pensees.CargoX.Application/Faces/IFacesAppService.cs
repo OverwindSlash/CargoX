@@ -8,7 +8,7 @@ using Pensees.CargoX.Faces.Dto;
 
 namespace Pensees.CargoX.Faces
 {
-    public interface IFaceAppService : IApplicationService
+    public interface IFacesAppService : IApplicationService
     {
         Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, string> parameters);
 
