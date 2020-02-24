@@ -11,6 +11,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Pensees.CargoX.Faces.Dto
 {
     [AutoMap(typeof(Face))]
+    [AutoMapTo(typeof(ClusteringFaceDto))]
     public class FaceDto : EntityDto<long>
     {
         /// <summary>

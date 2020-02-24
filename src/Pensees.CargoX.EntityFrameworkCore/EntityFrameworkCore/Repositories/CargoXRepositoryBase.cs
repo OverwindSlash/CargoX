@@ -37,7 +37,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
             return queryable.ToList();
         }
 
-        public async Task<List<TEntity>> QueryByParams(Dictionary<string, Dictionary<string,string>> parameters, IQueryable<TEntity> queryable)
+        public async Task<IQueryable<TEntity>> QueryByParams(Dictionary<string, Dictionary<string,string>> parameters, IQueryable<TEntity> queryable)
         {
             if (queryable==null)
             {
@@ -49,7 +49,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
                 queryable = criterion.HandleQueryable(queryable);
             }
 
-            return queryable.ToList();
+            return queryable;
         }
 
         protected abstract List<ICriterion<TEntity>> ConvertToCriteria(Dictionary<string, string> parameters);
