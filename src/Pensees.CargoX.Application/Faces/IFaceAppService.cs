@@ -12,5 +12,8 @@ namespace Pensees.CargoX.Faces
     {
         Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, Dictionary<string, string>> parameters);
         ClusteringFaceDto TestQueryByParams(Dictionary<string, Dictionary<string,string>> parameters);
+        Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, string> parameters);
+
+        Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceWithContition(string condition);
     }
 }

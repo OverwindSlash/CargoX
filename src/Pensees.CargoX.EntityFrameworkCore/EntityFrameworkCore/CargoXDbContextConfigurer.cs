@@ -7,12 +7,14 @@ namespace Pensees.CargoX.EntityFrameworkCore
     {
         public static void Configure(DbContextOptionsBuilder<CargoXDbContext> builder, string connectionString)
         {
-            builder.UseSqlServer(connectionString);
+            //builder.UseSqlServer(connectionString);
+            builder.UseMySql(connectionString);
         }
 
         public static void Configure(DbContextOptionsBuilder<CargoXDbContext> builder, DbConnection connection)
         {
-            builder.UseSqlServer(connection);
+            //builder.UseSqlServer(connection);
+            builder.UseMySql(connection);
         }
     }
 }
