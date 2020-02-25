@@ -41,7 +41,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -57,7 +57,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -74,7 +74,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -89,7 +89,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -102,7 +102,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -123,7 +123,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -147,7 +147,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -169,7 +169,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -191,7 +191,7 @@ namespace Pensees.CargoX.Images
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }

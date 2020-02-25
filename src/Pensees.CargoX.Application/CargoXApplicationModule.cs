@@ -25,10 +25,10 @@ namespace Pensees.CargoX
         {
             Configuration.Authorization.Providers.Add<CargoXAuthorizationProvider>();
 
-            EventBus.Default.Register<AbpHandledExceptionData>(eventData =>
-            {
-                SentrySdk.CaptureException(eventData.Exception);
-            });
+            //EventBus.Default.Register<AbpHandledExceptionData>(eventData =>
+            //{
+            //    SentrySdk.CaptureException(eventData.Exception);
+            //});
         }
 
         public override void Initialize()
