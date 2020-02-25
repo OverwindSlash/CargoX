@@ -18,7 +18,7 @@ using System.Linq;
 
 namespace Pensees.CargoX.Faces
 {
-    public class FacesAppService : AsyncCrudAppService<Face, FaceDto, long, PagedAndSortedRequestDto, FaceDto, FaceDto>, IFacesAppService
+    public class FacesAppService : CargoXAsyncCrudAppService<Face, FaceDto, long, PagedAndSortedResultRequestDto, FaceDto, FaceDto>, IFacesAppService
     {
         private readonly IFaceRepository _faceRepository;
         private readonly IRepository<SubImageInfo, long> _subImageInfoRepository;
@@ -37,8 +37,10 @@ namespace Pensees.CargoX.Faces
 
         public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(PagedAndSortedRequestDto input)
         {
-            //var faces = await _faceRepository.QueryByParams(input.Parameters,_faceRepository.GetAllIncluding(p=>p.SubImageInfos)).ConfigureAwait(false);
-            var faces = await GetAllAsync(input).ConfigureAwait(false);
+            var query = _faceRepository.GetAllIncluding(p => p.SubImageInfos);
+            query = await _faceRepository.QueryByParams(input.Parameters,query).ConfigureAwait(false);
+            //var faces = await GetAllAsync(input).ConfigureAwait(false);
+            var faces = PagingAndSorting(input, query);
             foreach (var face in faces.Items)
             {
                 foreach (var subImageInfo in face.SubImageList.SubImageInfoObject)
@@ -139,17 +141,16 @@ namespace Pensees.CargoX.Faces
             return base.DeleteAsync(input);
         }
 
-        public override Task<PagedResultDto<FaceDto>> GetAllAsync(PagedAndSortedRequestDto input)
+        public override Task<PagedResultDto<FaceDto>> GetAllAsync(PagedAndSortedResultRequestDto input)
         {
             return base.GetAllAsync(input);
         }
 
-        protected override IQueryable<Face> CreateFilteredQuery(PagedAndSortedRequestDto input)
-        {
-            var query= base.CreateFilteredQuery(input);
-            query = _faceRepository.QueryByParams(input.Parameters, _faceRepository.GetAllIncluding(p => p.SubImageInfos)).Result;
-            return query;
-        }
+        //protected override IQueryable<Face> CreateFilteredQuery(PagedAndSortedRequestDto input)
+        //{
+        //    var query= _faceRepository.QueryByParams(input.Parameters, _faceRepository.GetAllIncluding(p => p.SubImageInfos)).Result;
+        //    return query;
+        //}
 
     }
 }

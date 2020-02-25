@@ -253,6 +253,7 @@ paket-files/
 /src/Pensees.CargoX.Rpc.Host/App_Data/Logs/Logs.txt
 /src/Pensees.CargoX.Web.Host/App_Data/Logs/
 /src/Pensees.CargoX.Rpc.Host/Properties/launchSettings.json
+/src/Pensees.CargoX.Web.Host/appsettings.json
 /src/Pensees.CargoX.EntityFrameworkCore/Migrations/20200221075814_xx1.cs
 /src/Pensees.CargoX.EntityFrameworkCore/Migrations/20200221075814_xx1.Designer.cs
 /src/Pensees.CargoX.EntityFrameworkCore/Migrations/CargoXDbContextModelSnapshot.cs
