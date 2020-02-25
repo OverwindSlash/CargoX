@@ -13,10 +13,12 @@ using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Pensees.CargoX.Common;
+using System.Linq;
 
 namespace Pensees.CargoX.Faces
 {
-    public class FacesAppService : AsyncCrudAppService<Face, FaceDto, long, PagedResultRequestDto, FaceDto, FaceDto>, IFacesAppService
+    public class FacesAppService : AsyncCrudAppService<Face, FaceDto, long, PagedAndSortedRequestDto, FaceDto, FaceDto>, IFacesAppService
     {
         private readonly IFaceRepository _faceRepository;
         private readonly IRepository<SubImageInfo, long> _subImageInfoRepository;
@@ -33,10 +35,31 @@ namespace Pensees.CargoX.Faces
             _httpContext = httpContext;
         }
 
-        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, Dictionary<string, string>> parameters)
+        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(PagedAndSortedRequestDto input)
         {
-            var faces = await _faceRepository.QueryByParams(parameters).ConfigureAwait(false);
-            return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces));
+            //var faces = await _faceRepository.QueryByParams(input.Parameters,_faceRepository.GetAllIncluding(p=>p.SubImageInfos)).ConfigureAwait(false);
+            var faces = await GetAllAsync(input).ConfigureAwait(false);
+            foreach (var face in faces.Items)
+            {
+                foreach (var subImageInfo in face.SubImageList.SubImageInfoObject)
+                {
+                    if (string.IsNullOrEmpty(subImageInfo.ImageKey) ||
+                        string.IsNullOrEmpty(subImageInfo.NodeId))
+                    {
+                        continue;
+                    }
+
+                    GetImageRequest request = new GetImageRequest()
+                    {
+                        BucketName = subImageInfo.NodeId,
+                        ImageName = subImageInfo.ImageKey
+                    };
+
+                    GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request).ConfigureAwait(false);
+                    subImageInfo.Data = Convert.ToBase64String(response.ImageData);
+                }
+            }
+            return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces.Items));
         }
 
         [Route("VIID/Faces")]
@@ -99,9 +122,9 @@ namespace Pensees.CargoX.Faces
             }
 
             var faceDto = MapToEntityDto(face);
-            faceDto.SubImageList = new SubImageInfoDtoList();
-            faceDto.SubImageList.SubImageInfoObject = faceDto.SubImageInfos;
-            faceDto.SubImageInfos = null;
+            //faceDto.SubImageList = new SubImageInfoDtoList();
+            //faceDto.SubImageList.SubImageInfoObject = faceDto.SubImageInfos;
+            //faceDto.SubImageInfos = null;
 
             return faceDto;
         }
@@ -116,14 +139,17 @@ namespace Pensees.CargoX.Faces
             return base.DeleteAsync(input);
         }
 
-        public override Task<PagedResultDto<FaceDto>> GetAllAsync(PagedResultRequestDto input)
+        public override Task<PagedResultDto<FaceDto>> GetAllAsync(PagedAndSortedRequestDto input)
         {
             return base.GetAllAsync(input);
         }
 
-        public ClusteringFaceDto TestQueryByParams(Dictionary<string, Dictionary<string,string>> parameters)
+        protected override IQueryable<Face> CreateFilteredQuery(PagedAndSortedRequestDto input)
         {
-            throw new NotImplementedException();
+            var query= base.CreateFilteredQuery(input);
+            query = _faceRepository.QueryByParams(input.Parameters, _faceRepository.GetAllIncluding(p => p.SubImageInfos)).Result;
+            return query;
         }
+
     }
 }

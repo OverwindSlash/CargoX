@@ -54,7 +54,10 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
         protected override List<ICriterion<Face>> ConvertToCriteria(Dictionary<string, Dictionary<string, string>> parameters)
         {
             List<ICriterion<Face>> queryCriteria = new List<ICriterion<Face>>();
-
+            if (parameters==null)
+            {
+                return queryCriteria;
+            }
             foreach (var param in parameters)
             {
                 switch (param.Key.ToLower())
@@ -64,6 +67,9 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
                         break;
                     case "locationmarktime":
                         queryCriteria.Add(new LocationMarkTimeCriterion(param.Value));
+                        break;
+                    case "shottime":
+                        queryCriteria.Add(new ShotTimeCriterion(param.Value));
                         break;
                     default:
                         break;

@@ -5,6 +5,7 @@ using Abp.Events.Bus;
 using Abp.Events.Bus.Exceptions;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
+using AutoMapper;
 using Pensees.CargoX.Authorization;
 using Pensees.CargoX.Converter;
 using Pensees.CargoX.Entities;
@@ -47,10 +48,10 @@ namespace Pensees.CargoX
                     .ForMember(face => face.SubImageInfos,
                         opt => opt.MapFrom(
                             dto => dto.SubImageList.SubImageInfoObject));
-                config.CreateMap<ClusteringFaceDto, Face>()
-                    .ForMember(face => face.SubImageInfos,
+                config.CreateMap<Face,FaceDto>()
+                    .ForMember(dto => dto.SubImageList,
                         opt => opt.MapFrom(
-                            dto => dto.SubImageList.SubImageInfoObject));
+                            face => face));
 
                 config.CreateMap<SubImageInfoDto, SubImageInfo>()
                     .ForMember(info => info.ShotTime,
@@ -61,6 +62,17 @@ namespace Pensees.CargoX
                     .ForMember(dto => dto.ShotTime,
                         opt => opt.MapFrom(
                             info => info.ShotTime.ToString("yyyyMMddHHmmss")));
+
+                config.CreateMap<Face, SubImageInfoDtoList>()
+                    .ForMember(dto => dto.SubImageInfoObject,
+                        opt => opt.MapFrom(
+                            face => face.SubImageInfos));
+
+                config.CreateMap<Face, ClusteringFaceDto>()
+                    .ForMember(dto => dto.SubImageList,
+                        opt => opt.MapFrom(
+                            face => face));
+
             });
         }
     }
