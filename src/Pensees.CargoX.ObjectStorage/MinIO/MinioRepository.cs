@@ -58,7 +58,7 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
             }
             catch (MinioException e)
             {
-                SentrySdk.CaptureException(e);
+                //SentrySdk.CaptureException(e);
                 throw;
             }
         }
@@ -81,7 +81,7 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -103,7 +103,7 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
@@ -133,7 +133,7 @@ namespace Pensees.CargoX.ObjectStorage.MinIO
             }
             catch (Exception exception)
             {
-                SentrySdk.CaptureException(exception);
+                //SentrySdk.CaptureException(exception);
                 throw;
             }
         }
