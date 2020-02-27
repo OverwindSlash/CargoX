@@ -13,6 +13,7 @@ namespace Pensees.CargoX.EntityFrameworkCore
         public virtual DbSet<Tollgate> Tollgates { get; set; }
         public virtual DbSet<Lane> Lanes { get; set; }
         public virtual DbSet<Face> Faces { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
 
         public CargoXDbContext(DbContextOptions<CargoXDbContext> options)
             : base(options)

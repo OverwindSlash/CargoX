@@ -7,9 +7,11 @@ using Abp.Modules;
 using Abp.Reflection.Extensions;
 using AutoMapper;
 using Pensees.CargoX.Authorization;
+using Pensees.CargoX.Common.Dto;
 using Pensees.CargoX.Converter;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.Faces.Dto;
+using Pensees.CargoX.Persons.Dto;
 using Pensees.CargoX.Service;
 using Sentry;
 
@@ -44,24 +46,28 @@ namespace Pensees.CargoX
 
             Configuration.Modules.AbpAutoMapper().Configurators.Add(config =>
             {
-                config.CreateMap<FaceDto, Face>()
-                    .ForMember(face => face.SubImageInfos,
-                        opt => opt.MapFrom(
-                            dto => dto.SubImageList.SubImageInfoObject));
-                config.CreateMap<Face,FaceDto>()
-                    .ForMember(dto => dto.SubImageList,
-                        opt => opt.MapFrom(
-                            face => face));
-
+                #region SubImageInfo
                 config.CreateMap<SubImageInfoDto, SubImageInfo>()
-                    .ForMember(info => info.ShotTime,
-                        opt => opt.ConvertUsing(
-                            new DateTimeConverter()));
+                            .ForMember(info => info.ShotTime,
+                                opt => opt.ConvertUsing(
+                                    new DateTimeConverter()));
 
                 config.CreateMap<SubImageInfo, SubImageInfoDto>()
                     .ForMember(dto => dto.ShotTime,
                         opt => opt.MapFrom(
                             info => info.ShotTime.ToString("yyyyMMddHHmmss")));
+                #endregion
+
+                #region Face
+                config.CreateMap<FaceDto, Face>()
+                            .ForMember(face => face.SubImageInfos,
+                                opt => opt.MapFrom(
+                                    dto => dto.SubImageList.SubImageInfoObject));
+
+                config.CreateMap<Face, FaceDto>()
+                    .ForMember(dto => dto.SubImageList,
+                        opt => opt.MapFrom(
+                            face => face));
 
                 config.CreateMap<Face, SubImageInfoDtoList>()
                     .ForMember(dto => dto.SubImageInfoObject,
@@ -72,6 +78,24 @@ namespace Pensees.CargoX
                     .ForMember(dto => dto.SubImageList,
                         opt => opt.MapFrom(
                             face => face));
+                #endregion
+
+                #region Person
+                config.CreateMap<PersonDto, Person>()
+                    .ForMember(person => person.SubImageInfos,
+                        opt => opt.MapFrom(
+                            dto => dto.SubImageList.SubImageInfoObject));
+
+                config.CreateMap<Person, PersonDto>()
+                    .ForMember(dto => dto.SubImageList,
+                        opt => opt.MapFrom(
+                            person => person));
+
+                config.CreateMap<Person, SubImageInfoDtoList>()
+                    .ForMember(dto => dto.SubImageInfoObject,
+                        opt => opt.MapFrom(
+                            person => person.SubImageInfos));
+                #endregion
 
             });
         }

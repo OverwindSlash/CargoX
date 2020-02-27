@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Abp.AutoMapper;
-using AutoMapper.Configuration.Annotations;
-using Pensees.CargoX.Entities;
 using Pensees.CargoX.Entities.Common;
 
-namespace Pensees.CargoX.Faces.Dto
+namespace Pensees.CargoX.Common.Dto
 {
     [AutoMap(typeof(SubImageInfoList))]
     public class SubImageInfoDtoList

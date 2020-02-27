@@ -1,12 +1,17 @@
-﻿using Abp.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Text;
+using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Pensees.CargoX.Common.Dto;
+using Pensees.CargoX.Entities;
 
-namespace Pensees.CargoX.Entities
+namespace Pensees.CargoX.Persons.Dto
 {
-    public class Person:Entity<long>
+    [AutoMap(typeof(Person))]
+    public class PersonDto : EntityDto<long>
     {
         /// <summary>
         /// 人员标识
@@ -669,7 +674,7 @@ namespace Pensees.CargoX.Entities
         /// 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public List<SubImageInfo> SubImageInfos { get; set; }
+        public SubImageInfoDtoList SubImageList { get; set; }
 
         /// <summary>
         /// 人体朝向
