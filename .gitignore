@@ -257,3 +257,5 @@ paket-files/
 /src/Pensees.CargoX.EntityFrameworkCore/Migrations/20200221075814_xx1.cs
 /src/Pensees.CargoX.EntityFrameworkCore/Migrations/20200221075814_xx1.Designer.cs
 /src/Pensees.CargoX.EntityFrameworkCore/Migrations/CargoXDbContextModelSnapshot.cs
+/src/Pensees.CargoX.EntityFrameworkCore/Migrations
+.gitignore

@@ -195,5 +195,29 @@ namespace Pensees.CargoX.Images
                 throw;
             }
         }
+
+        public async Task<GetImageBase64Response> GetImageBase64Async(GetImageRequest request)
+        {
+            try
+            {
+                ImageLocationParam param = new ImageLocationParam()
+                {
+                    BucketName = request.BucketName,
+                    ImageName = request.ImageName
+                };
+
+                GetImageResult result = await _minioRepository.GetImageByteAsync(param);
+
+                return new GetImageBase64Response()
+                {
+                    ImageBase64 = Convert.ToBase64String(result.ImageData.GetAllBytes())
+                };
+            }
+            catch (Exception exception)
+            {
+                //SentrySdk.CaptureException(exception);
+                throw;
+            }
+        }
     }
 }

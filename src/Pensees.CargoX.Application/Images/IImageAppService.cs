@@ -22,6 +22,7 @@ namespace Pensees.CargoX.Images
         Task<SaveImageResponse> SaveImageByBytesAsync(SaveImageByBytesRequest request);
 
         Task<GetImageWithBytesResponse> GetImageWithBytesAsync(GetImageRequest request);
+        Task<GetImageBase64Response> GetImageBase64Async(GetImageRequest request);
 
         Task<GetImageStatusResponse> GetImageStatusAsync(GetImageRequest request);
 

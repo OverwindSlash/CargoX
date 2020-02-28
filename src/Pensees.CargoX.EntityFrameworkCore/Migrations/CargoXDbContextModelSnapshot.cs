@@ -1522,6 +1522,9 @@ namespace Pensees.CargoX.Migrations
                         .HasColumnType("varchar(32) CHARACTER SET utf8mb4")
                         .HasMaxLength(32);
 
+                    b.Property<DateTime>("ShotTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<double>("Similaritydegree")
                         .HasColumnType("double");
 
@@ -1881,6 +1884,9 @@ namespace Pensees.CargoX.Migrations
                     b.Property<string>("ShoesStyle")
                         .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
                         .HasMaxLength(2);
+
+                    b.Property<DateTime>("ShotTime")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("SkinColor")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");

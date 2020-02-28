@@ -95,6 +95,10 @@ namespace Pensees.CargoX
                     .ForMember(dto => dto.SubImageInfoObject,
                         opt => opt.MapFrom(
                             person => person.SubImageInfos));
+                config.CreateMap<Person, ClusteringPersonDto>()
+                    .ForMember(dto => dto.SubImageList,
+                        opt => opt.MapFrom(
+                            person => person));
                 #endregion
 
             });
