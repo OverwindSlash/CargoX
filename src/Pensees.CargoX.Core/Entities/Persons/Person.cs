@@ -339,6 +339,7 @@ namespace Pensees.CargoX.Entities
         /// 对行为项备注中没有的行为进行描述 
         /// </summary>
         [DisplayName("行为描述")]
+        [StringLength(256)]
         public string BehaviorDescription { get; set; }
 
         /// <summary>
@@ -347,7 +348,7 @@ namespace Pensees.CargoX.Entities
         /// AppendageType::string(2)::附属物
         /// </summary>
         [DisplayName("附属物")]
-        [StringLength(2)]
+        [StringLength(128)]
         public string Appendant { get; set; }
 
         /// <summary>
@@ -355,6 +356,7 @@ namespace Pensees.CargoX.Entities
         /// 对代码表中没有的附属物进行描述
         /// </summary>
         [DisplayName("附属物描述")]
+        [StringLength(256)]
         public string AppendantDescription { get; set; }
 
         /// <summary>

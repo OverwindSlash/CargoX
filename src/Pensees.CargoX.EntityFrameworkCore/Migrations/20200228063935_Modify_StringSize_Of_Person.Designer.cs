@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pensees.CargoX.EntityFrameworkCore;
 
 namespace Pensees.CargoX.Migrations
 {
     [DbContext(typeof(CargoXDbContext))]
-    partial class CargoXDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200228063935_Modify_StringSize_Of_Person")]
+    partial class Modify_StringSize_Of_Person
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
