@@ -531,6 +531,11 @@ namespace Pensees.CargoX.Entities
         public List<SubImageInfo> SubImageInfos { get; set; }
 
         /// <summary>
+        /// 拍摄时间：冗余SubImageInfo中字段，方便查询
+        /// </summary>
+        public DateTime ShotTime { get; set; }
+
+        /// <summary>
         /// 人脸特征值
         /// 非 1400 属性
         /// </summary>

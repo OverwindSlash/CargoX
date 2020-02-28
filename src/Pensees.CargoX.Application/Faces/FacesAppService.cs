@@ -35,33 +35,43 @@ namespace Pensees.CargoX.Faces
             _httpContext = httpContext;
         }
 
-        public async Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(PagedAndSortedRequestDto input)
+        public async Task<PagedResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(PagedAndSortedRequestDto input)
         {
             var query = _faceRepository.GetAllIncluding(p => p.SubImageInfos);
             query = await _faceRepository.QueryByParams(input.Parameters,query).ConfigureAwait(false);
             //var faces = await GetAllAsync(input).ConfigureAwait(false);
             var faces = PagingAndSorting(input, query);
-            foreach (var face in faces.Items)
+            if (input.ImageRequred==1)
             {
-                foreach (var subImageInfo in face.SubImageList.SubImageInfoObject)
+                foreach (var face in faces.Items)
                 {
-                    if (string.IsNullOrEmpty(subImageInfo.ImageKey) ||
-                        string.IsNullOrEmpty(subImageInfo.NodeId))
+                    var imageToQuery = face.SubImageList.SubImageInfoObject;
+                    //imageType
+                    if (input.ImageType == "11" || input.ImageType == "14")
                     {
-                        continue;
+                        imageToQuery = imageToQuery.Where(p => p.Type == input.ImageType).ToList();
                     }
-
-                    GetImageRequest request = new GetImageRequest()
+                    foreach (var subImageInfo in imageToQuery)
                     {
-                        BucketName = subImageInfo.NodeId,
-                        ImageName = subImageInfo.ImageKey
-                    };
+                        if (string.IsNullOrEmpty(subImageInfo.ImageKey) ||
+                            string.IsNullOrEmpty(subImageInfo.NodeId))
+                        {
+                            continue;
+                        }
+                        
+                        GetImageRequest request = new GetImageRequest()
+                        {
+                            BucketName = subImageInfo.NodeId,
+                            ImageName = subImageInfo.ImageKey
+                        };
 
-                    GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request).ConfigureAwait(false);
-                    subImageInfo.Data = Convert.ToBase64String(response.ImageData);
+                        GetImageWithBytesResponse response = await _imageAppService.GetImageWithBytesAsync(request).ConfigureAwait(false);
+                        subImageInfo.Data = Convert.ToBase64String(response.ImageData);
+                    }
                 }
             }
-            return new ListResultDto<ClusteringFaceDto>(ObjectMapper.Map<List<ClusteringFaceDto>>(faces.Items));
+            
+            return new PagedResultDto<ClusteringFaceDto>(faces.TotalCount,ObjectMapper.Map<List<ClusteringFaceDto>>(faces.Items));
         }
 
         [Route("VIID/Faces")]
