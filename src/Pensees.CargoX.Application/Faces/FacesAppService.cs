@@ -1,7 +1,9 @@
-﻿using Abp.Application.Services;
-using Abp.Application.Services.Dto;
+﻿using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Pensees.CargoX.Common;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.Faces.Dto;
 using Pensees.CargoX.Images;
@@ -11,9 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Pensees.CargoX.Common;
+using Pensees.CargoX.Common.Dto;
 using System.Linq;
 
 namespace Pensees.CargoX.Faces

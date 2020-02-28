@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Pensees.CargoX.Common;
+using Pensees.CargoX.Common.Dto;
 using Pensees.CargoX.Faces.Dto;
 
 namespace Pensees.CargoX.Faces

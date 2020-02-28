@@ -1,9 +1,7 @@
-﻿using Abp.Application.Services.Dto;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Abp.Application.Services.Dto;
 
-namespace Pensees.CargoX.Common
+namespace Pensees.CargoX.Common.Dto
 {
     public class PagedAndSortedRequestDto : PagedAndSortedResultRequestDto
     {

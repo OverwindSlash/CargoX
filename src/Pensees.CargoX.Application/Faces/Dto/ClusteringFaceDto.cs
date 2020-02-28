@@ -4,6 +4,7 @@ using Pensees.CargoX.Entities;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Pensees.CargoX.Common.Dto;
 
 namespace Pensees.CargoX.Faces.Dto
 {

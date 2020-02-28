@@ -1,10 +1,10 @@
-﻿using Abp.Application.Services.Dto;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
 using Pensees.CargoX.Entities;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
-namespace Pensees.CargoX.Faces.Dto
+namespace Pensees.CargoX.Common.Dto
 {
     [AutoMap(typeof(SubImageInfo))]
     public class SubImageInfoDto : EntityDto<long>
