@@ -11,8 +11,10 @@ namespace Pensees.CargoX.Common.Dto
         /// </summary>
         public int ImageRequred { get; set; }
         public int FeatureRequred { get; set; }
-        //11 人脸
-        //14 场景
+
+        /// <summary>
+        /// 11 人脸 , 14 场景
+        /// </summary>
         public string ImageType { get; set; }
 
     }

@@ -1522,6 +1522,9 @@ namespace Pensees.CargoX.Migrations
                         .HasColumnType("varchar(32) CHARACTER SET utf8mb4")
                         .HasMaxLength(32);
 
+                    b.Property<DateTime>("ShotTime")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<double>("Similaritydegree")
                         .HasColumnType("double");
 
@@ -1601,6 +1604,332 @@ namespace Pensees.CargoX.Migrations
                     b.ToTable("Lanes");
                 });
 
+            modelBuilder.Entity("Pensees.CargoX.Entities.Person", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("AccompanyNumber")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AgeLowerLimit")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AgeUpLimit")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Alias")
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("Appendant")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("AppendantDescription")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("BagColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("BagStyle")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("Behavior")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("BehaviorDescription")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("BodyFeature")
+                        .HasColumnType("varchar(70) CHARACTER SET utf8mb4")
+                        .HasMaxLength(70);
+
+                    b.Property<string>("BodySpeciallMark")
+                        .HasColumnType("varchar(7) CHARACTER SET utf8mb4")
+                        .HasMaxLength(7);
+
+                    b.Property<string>("BodyType")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("CapColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("CapStyle")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("ChineseAccentCode")
+                        .HasColumnType("varchar(6) CHARACTER SET utf8mb4")
+                        .HasMaxLength(6);
+
+                    b.Property<string>("CoatColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("CoatLength")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("CoatPattern")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("CoatStyle")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("CorpseConditionCode")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("CrimeCharacterCode")
+                        .HasColumnType("varchar(3) CHARACTER SET utf8mb4")
+                        .HasMaxLength(3);
+
+                    b.Property<string>("CrimeMethod")
+                        .HasColumnType("varchar(4) CHARACTER SET utf8mb4")
+                        .HasMaxLength(4);
+
+                    b.Property<string>("CriminalInvolvedSpecilisationCode")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("DetaineesIdentity")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("DetaineesSpecialIdentity")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("DetentionHouseCode")
+                        .HasColumnType("varchar(9) CHARACTER SET utf8mb4")
+                        .HasMaxLength(9);
+
+                    b.Property<string>("DeviceID")
+                        .HasColumnType("varchar(20) CHARACTER SET utf8mb4")
+                        .HasMaxLength(20);
+
+                    b.Property<string>("EscapedCriminalNumber")
+                        .HasColumnType("varchar(23) CHARACTER SET utf8mb4")
+                        .HasMaxLength(23);
+
+                    b.Property<string>("EthicCode")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("FaceStyle")
+                        .HasColumnType("varchar(4) CHARACTER SET utf8mb4")
+                        .HasMaxLength(4);
+
+                    b.Property<string>("FacialFeature")
+                        .HasColumnType("varchar(40) CHARACTER SET utf8mb4")
+                        .HasMaxLength(40);
+
+                    b.Property<string>("GenderCode")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("Gesture")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("GlassColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("GlassStyle")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("HabitualMovement")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("HairColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("HairStyle")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<int>("HeightLowerLimit")
+                        .HasColumnType("int");
+
+                    b.Property<int>("HeightUpLimit")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IDNumber")
+                        .HasColumnType("varchar(30) CHARACTER SET utf8mb4")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("IDType")
+                        .HasColumnType("varchar(3) CHARACTER SET utf8mb4")
+                        .HasMaxLength(3);
+
+                    b.Property<string>("ImmigrantTypeCode")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<int>("InfoType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("InjuredDegree")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<int>("IsCriminalInvolved")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IsDetainees")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IsDriver")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IsForeigner")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IsSuspectedTerrorist")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IsSuspiciousPerson")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IsVictim")
+                        .HasColumnType("int");
+
+                    b.Property<string>("JobCategory")
+                        .HasColumnType("varchar(3) CHARACTER SET utf8mb4")
+                        .HasMaxLength(3);
+
+                    b.Property<int>("LeftTopX")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LeftTopY")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("LocationMarkTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("MemberTypeCode")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("NationalityCode")
+                        .HasColumnType("varchar(3) CHARACTER SET utf8mb4")
+                        .HasMaxLength(3);
+
+                    b.Property<string>("NativeCityCode")
+                        .HasColumnType("varchar(6) CHARACTER SET utf8mb4")
+                        .HasMaxLength(6);
+
+                    b.Property<string>("Orientation")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("PassportType")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<DateTime>("PersonAppearTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("PersonDisAppearTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("PersonID")
+                        .IsRequired()
+                        .HasColumnType("varchar(48) CHARACTER SET utf8mb4")
+                        .HasMaxLength(48);
+
+                    b.Property<string>("PersonOrg")
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("PhysicalFeature")
+                        .HasColumnType("varchar(200) CHARACTER SET utf8mb4")
+                        .HasMaxLength(200);
+
+                    b.Property<string>("ResidenceAdminDivision")
+                        .HasColumnType("varchar(6) CHARACTER SET utf8mb4")
+                        .HasMaxLength(6);
+
+                    b.Property<string>("RespiratorColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<int>("RightBtmX")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RightBtmY")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ScarfColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("ShoesColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("ShoesStyle")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<DateTime>("ShotTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("SkinColor")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("SourceID")
+                        .IsRequired()
+                        .HasColumnType("varchar(41) CHARACTER SET utf8mb4")
+                        .HasMaxLength(41);
+
+                    b.Property<string>("Status")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("SuspectedTerroristNumber")
+                        .HasColumnType("varchar(19) CHARACTER SET utf8mb4")
+                        .HasMaxLength(19);
+
+                    b.Property<string>("TrousersColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("TrousersLen")
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+
+                    b.Property<string>("TrousersStyle")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("UmbrellaColor")
+                        .HasColumnType("varchar(2) CHARACTER SET utf8mb4")
+                        .HasMaxLength(2);
+
+                    b.Property<string>("UsedName")
+                        .HasColumnType("varchar(50) CHARACTER SET utf8mb4")
+                        .HasMaxLength(50);
+
+                    b.Property<string>("VictimType")
+                        .HasColumnType("varchar(3) CHARACTER SET utf8mb4")
+                        .HasMaxLength(3);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Persons");
+                });
+
             modelBuilder.Entity("Pensees.CargoX.Entities.SubImageInfo", b =>
                 {
                     b.Property<long>("Id")
@@ -1636,6 +1965,9 @@ namespace Pensees.CargoX.Migrations
                     b.Property<string>("NodeId")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<long?>("PersonId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("QualityGrade")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -1657,6 +1989,8 @@ namespace Pensees.CargoX.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("FaceId");
+
+                    b.HasIndex("PersonId");
 
                     b.ToTable("SubImageInfo");
                 });
@@ -1947,6 +2281,10 @@ namespace Pensees.CargoX.Migrations
                     b.HasOne("Pensees.CargoX.Entities.Face", null)
                         .WithMany("SubImageInfos")
                         .HasForeignKey("FaceId");
+
+                    b.HasOne("Pensees.CargoX.Entities.Person", null)
+                        .WithMany("SubImageInfos")
+                        .HasForeignKey("PersonId");
                 });
 
             modelBuilder.Entity("Pensees.CargoX.MultiTenancy.Tenant", b =>

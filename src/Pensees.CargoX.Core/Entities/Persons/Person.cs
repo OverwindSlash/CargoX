@@ -684,5 +684,10 @@ namespace Pensees.CargoX.Entities
         /// </summary>
         [DisplayName("上衣花纹")]
         public string CoatPattern { get; set; }
+
+        /// <summary>
+        /// 拍摄时间：冗余SubImageInfo中字段，方便查询
+        /// </summary>
+        public DateTime ShotTime { get; set; }
     }
 }
