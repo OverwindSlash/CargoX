@@ -14,10 +14,23 @@ namespace Pensees.CargoX.EntityFrameworkCore
         public virtual DbSet<Lane> Lanes { get; set; }
         public virtual DbSet<Face> Faces { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
-
         public CargoXDbContext(DbContextOptions<CargoXDbContext> options)
             : base(options)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Face>()
+                .HasMany(p => p.SubImageInfos)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<Person>()
+                .HasMany(p => p.SubImageInfos)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

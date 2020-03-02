@@ -21,7 +21,6 @@ namespace Pensees.CargoX.Faces
     public class FacesAppService : CargoXAsyncCrudAppService<Face, FaceDto, long, PagedAndSortedResultRequestDto, FaceDto, FaceDto>, IFacesAppService
     {
         private readonly IFaceRepository _faceRepository;
-        private readonly IRepository<SubImageInfo, long> _subImageInfoRepository;
         private readonly IImageAppService _imageAppService;
         private readonly IHttpContextAccessor _httpContext;
 
@@ -82,7 +81,6 @@ namespace Pensees.CargoX.Faces
             string decodedQueryStr = WebUtility.UrlDecode(queryString.Value);
             return null;
         }
-
         public override async Task<FaceDto> CreateAsync(FaceDto input)
         {
             foreach (var subImageInfoDto in input.SubImageList.SubImageInfoObject)
@@ -96,7 +94,7 @@ namespace Pensees.CargoX.Faces
                 {
                     ImageBase64 = subImageInfoDto.Data
                 };
-                
+
                 SaveImageResponse response = await _imageAppService.SaveImageByBase64Async(request);
 
                 subImageInfoDto.NodeId = response.BucketName;
@@ -106,13 +104,48 @@ namespace Pensees.CargoX.Faces
 
             return await base.CreateAsync(input);
         }
+        public override async Task<ResponseStatusList> CreateList(CreateOrUpdateListInputDto<FaceDto> input)
+        {
+            ResponseStatusList result = new ResponseStatusList();
+            foreach (var faceDto in input.List)
+            {
+                foreach (var subImageInfoDto in faceDto.SubImageList.SubImageInfoObject)
+                {
+                    if (string.IsNullOrEmpty(subImageInfoDto.Data))
+                    {
+                        continue;
+                    }
+
+                    SaveImageByBase64Request request = new SaveImageByBase64Request()
+                    {
+                        ImageBase64 = subImageInfoDto.Data
+                    };
+
+                    SaveImageResponse response = await _imageAppService.SaveImageByBase64Async(request);
+
+                    subImageInfoDto.NodeId = response.BucketName;
+                    subImageInfoDto.ImageKey = response.ImageName;
+                    subImageInfoDto.StoragePath = $"{response.BucketName}:{response.ImageName}";
+                }
+                var face = await base.CreateAsync(faceDto);
+                result.ResponseStatusObject.Add(new ResponseStatus
+                {
+                    Id = face.Id.ToString(),
+                    RequestURL = "",
+                    StatusCode = 0,
+                    StatusString = "",
+                    LocalTime = DateTime.Now
+                });
+            }
+            return result;
+        }
 
         public override async Task<FaceDto> GetAsync(EntityDto<long> input)
         {
             Face face = await _faceRepository.GetAllIncluding(t => t.SubImageInfos)
                 .SingleOrDefaultAsync(f => f.Id == input.Id).ConfigureAwait(false);
 
-            if (face.SubImageInfos != null)
+            if (face?.SubImageInfos != null)
             {
                 foreach (var subImageInfo in face.SubImageInfos)
                 {
@@ -140,6 +173,24 @@ namespace Pensees.CargoX.Faces
 
             return faceDto;
         }
+        [HttpPut]
+        public override async Task<ResponseStatusList> UpdateList(CreateOrUpdateListInputDto<FaceDto> input)
+        {
+            ResponseStatusList result = new ResponseStatusList();
+            foreach (var item in input.List)
+            {
+                var dto = await base.UpdateAsync(item);
+                result.ResponseStatusObject.Add(new ResponseStatus
+                {
+                    Id = dto.Id.ToString(),
+                    RequestURL = "",
+                    StatusCode = 0,
+                    StatusString = "",
+                    LocalTime = DateTime.Now
+                });
+            }
+            return result;
+        }
 
         public override Task<FaceDto> UpdateAsync(FaceDto input)
         {
@@ -154,6 +205,30 @@ namespace Pensees.CargoX.Faces
         public override Task<PagedResultDto<FaceDto>> GetAllAsync(PagedAndSortedResultRequestDto input)
         {
             return base.GetAllAsync(input);
+        }
+        [HttpDelete]
+        public override async Task<ResponseStatusList> DeleteList(string input)
+        {
+            ResponseStatusList result = new ResponseStatusList();
+            var ids = input.Split(',');
+            long id;
+            foreach (var item in ids)
+            {
+                if (!long.TryParse(item, out id))
+                {
+                    continue;
+                }
+                await base.DeleteAsync(new EntityDto<long> { Id = id });
+                result.ResponseStatusObject.Add(new ResponseStatus
+                {
+                    Id = item,
+                    RequestURL = "",
+                    StatusCode = 0,
+                    StatusString = "",
+                    LocalTime = DateTime.Now
+                });
+            }
+            return result;
         }
 
         //protected override IQueryable<Face> CreateFilteredQuery(PagedAndSortedRequestDto input)
