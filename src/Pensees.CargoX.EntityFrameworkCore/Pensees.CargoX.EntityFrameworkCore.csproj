@@ -18,6 +18,10 @@
     <Compile Remove="Migrations\20200220041358_Remove_Require_Attribute.Designer.cs" />
     <Compile Remove="Migrations\20200220062001_Rename_To_SubImages.cs" />
     <Compile Remove="Migrations\20200220062001_Rename_To_SubImages.Designer.cs" />
+    <Compile Remove="Migrations\20200228072125_Add_Shottime_Column_In_Person.cs" />
+    <Compile Remove="Migrations\20200228072125_Add_Shottime_Column_In_Person.Designer.cs" />
+    <Compile Remove="Migrations\20200228072651_Add_Shottime_Column_In_Person.cs" />
+    <Compile Remove="Migrations\20200228072651_Add_Shottime_Column_In_Person.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
