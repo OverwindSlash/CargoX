@@ -29,7 +29,7 @@ namespace Pensees.CargoX.Persons.Dto
         /// </summary>
         [Required]
         [DisplayName("信息分类")]
-        public int InfoType { get; set; }
+        public int InfoKind { get; set; }
 
         /// <summary>
         /// 来源图像信息标识
