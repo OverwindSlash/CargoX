@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Pensees.CargoX.Entities
 {
-    public class Person:Entity<long>
+    public class Person : Entity<long>
     {
         /// <summary>
         /// 人员标识
