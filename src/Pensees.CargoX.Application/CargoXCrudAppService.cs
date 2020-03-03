@@ -2,7 +2,11 @@
 using Abp.Application.Services.Dto;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
+using Pensees.CargoX.Common.Dto;
+using Pensees.CargoX.Entities;
+using Pensees.CargoX.Faces.Dto;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Pensees.CargoX
 {
@@ -91,5 +95,19 @@ namespace Pensees.CargoX
                 entities.Select(MapToEntityDto).ToList()
             );
         }
+
+        public virtual Task<ResponseStatusList> CreateList(CreateOrUpdateListInputDto<TEntityDto> input) 
+        {
+            return null;
+        }
+        public virtual Task<ResponseStatusList> UpdateList(CreateOrUpdateListInputDto<TEntityDto> input)
+        {
+            return null;
+        }
+        public virtual Task<ResponseStatusList> DeleteList(string input)
+        {
+            return null;
+        }
+
     }
 }

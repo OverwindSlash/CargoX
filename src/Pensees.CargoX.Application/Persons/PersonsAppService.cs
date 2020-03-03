@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pensees.CargoX.Common.Dto;
 using Pensees.CargoX.Entities;
@@ -129,6 +130,84 @@ namespace Pensees.CargoX.Persons
         public override Task<PagedResultDto<PersonDto>> GetAllAsync(PagedAndSortedResultRequestDto input)
         {
             return base.GetAllAsync(input);
+        }
+        
+        public override async Task<ResponseStatusList> CreateList(CreateOrUpdateListInputDto<PersonDto> input)
+        {
+            ResponseStatusList result = new ResponseStatusList();
+            foreach (var item in input.List)
+            {
+                foreach (var subImageInfoDto in item.SubImageList.SubImageInfoObject)
+                {
+                    if (string.IsNullOrEmpty(subImageInfoDto.Data))
+                    {
+                        continue;
+                    }
+
+                    SaveImageByBase64Request request = new SaveImageByBase64Request()
+                    {
+                        ImageBase64 = subImageInfoDto.Data
+                    };
+
+                    SaveImageResponse response = await _imageAppService.SaveImageByBase64Async(request);
+
+                    subImageInfoDto.NodeId = response.BucketName;
+                    subImageInfoDto.ImageKey = response.ImageName;
+                    subImageInfoDto.StoragePath = $"{response.BucketName}:{response.ImageName}";
+                }
+                var face = await base.CreateAsync(item);
+                result.ResponseStatusObject.Add(new ResponseStatus
+                {
+                    Id = face.Id.ToString(),
+                    RequestURL = "",
+                    StatusCode = 0,
+                    StatusString = "",
+                    LocalTime = DateTime.Now
+                });
+            }
+            return result;
+        }
+        [HttpPut]
+        public override async Task<ResponseStatusList> UpdateList(CreateOrUpdateListInputDto<PersonDto> input)
+        {
+            ResponseStatusList result = new ResponseStatusList();
+            foreach (var item in input.List)
+            {
+                var dto = await base.UpdateAsync(item);
+                result.ResponseStatusObject.Add(new ResponseStatus
+                {
+                    Id = dto.Id.ToString(),
+                    RequestURL = "",
+                    StatusCode = 0,
+                    StatusString = "",
+                    LocalTime = DateTime.Now
+                });
+            }
+            return result;
+        }
+        [HttpDelete]
+        public override async Task<ResponseStatusList> DeleteList(string input)
+        {
+            ResponseStatusList result = new ResponseStatusList();
+            var ids = input.Split(',');
+            long id;
+            foreach (var item in ids)
+            {
+                if (!long.TryParse(item, out id))
+                {
+                    continue;
+                }
+                await base.DeleteAsync(new EntityDto<long> { Id = id });
+                result.ResponseStatusObject.Add(new ResponseStatus
+                {
+                    Id = item,
+                    RequestURL = "",
+                    StatusCode = 0,
+                    StatusString = "",
+                    LocalTime = DateTime.Now
+                });
+            }
+            return result;
         }
     }
 }
