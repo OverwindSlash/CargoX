@@ -14,7 +14,7 @@ namespace Pensees.CargoX.Faces
     public interface IFacesAppService : IApplicationService
     {
         Task<PagedResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(PagedAndSortedRequestDto input);
-        Task<ListResultDto<FaceDto>> QueryClusteringFaceWithContition(string condition);
+        Task<PagedResultDto<FaceDto>> QueryClusteringFaceWithContition(string condition);
         //Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(Dictionary<string, string> parameters);
     }
 }
