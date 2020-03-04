@@ -75,15 +75,15 @@ namespace Pensees.CargoX.Faces
 
         [Route("VIID/Faces")]
         [HttpGet]
-        public Task<ListResultDto<ClusteringFaceDto>> QueryClusteringFaceWithContition(string condition)
+        public async Task<ListResultDto<FaceDto>> QueryClusteringFaceWithContition(string condition)
         {
-            QueryString queryString = _httpContext.HttpContext.Request.QueryString;
-            string decodedQueryStr = WebUtility.UrlDecode(queryString.Value);
+            //QueryString queryString = _httpContext.HttpContext.Request.QueryString;
+            //string decodedQueryStr = WebUtility.UrlDecode(queryString.Value);
 
-            var query = _faceRepository.QueryByConditions(condition);
+            var query = await _faceRepository.QueryByConditions(condition).ConfigureAwait(false);
 
-            var result = query.Result.ToList();
-            return null;
+            var result = query.ToList();
+            return new ListResultDto<FaceDto>(ObjectMapper.Map<List<FaceDto>>(result));
         }
         public override async Task<FaceDto> CreateAsync(FaceDto input)
         {
