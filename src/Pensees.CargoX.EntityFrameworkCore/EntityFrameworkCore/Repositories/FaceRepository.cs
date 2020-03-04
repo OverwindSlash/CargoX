@@ -78,5 +78,24 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
 
             return queryCriteria;
         }
+
+        protected override ICriterion<Face> GetCriterion(UserCondition cond)
+        {
+            ICriterion<Face> criterion;
+            //通过UserCondition.Key对应不同的字段
+            switch (cond.Key.ToLower())
+            {
+                case "faceid":
+                    criterion = new FaceIdCriterion(cond) as ICriterion<Face>;
+                    break;
+                case "shottime":
+                    criterion = new ShotTimeCriterion(cond) as ICriterion<Face>;
+                    break;
+                default:
+                    criterion = null;
+                    break;
+            }
+            return criterion;
+        }
     }
 }

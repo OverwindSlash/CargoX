@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
@@ -18,6 +19,11 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
     public abstract class CargoXRepositoryBase<TEntity, TPrimaryKey> : EfCoreRepositoryBase<CargoXDbContext, TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
+        private static string AND = "AND";
+        private static string AND_OR = "AND|OR";
+        private static Regex REGEX_AND = new Regex("&");
+        private static Regex REGEX_AND_OR = new Regex("AND|OR");
+        private static Regex REGEX_OPERATOR = new Regex("(=|>(?:=){0,1}|<(?:=|>)?|(<>)|!=|!<|!>)|(LIKE)");
         protected CargoXRepositoryBase(IDbContextProvider<CargoXDbContext> dbContextProvider)
             : base(dbContextProvider)
         {
@@ -54,6 +60,87 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
 
         protected abstract List<ICriterion<TEntity>> ConvertToCriteria(Dictionary<string, string> parameters);
         protected abstract List<ICriterion<TEntity>> ConvertToCriteria(Dictionary<string, Dictionary<string, string>> parameters);
+
+        //query string interpretor
+        public async Task<IQueryable<TEntity>> QueryByConditions(string queryString)
+        {
+            queryString = queryString.Replace(" ", "");
+            var query = GetQueryable();
+            if (!string.IsNullOrEmpty(queryString))
+            {
+                var head = new ExpressionTreeNode<TEntity> { Query = queryString };
+                CreateTree(head);
+                query=head.Data.HandleQueryable(query);
+            }
+            return query;
+        }
+        public void CreateTree(ExpressionTreeNode<TEntity> node)
+        {
+            string logic = AND;
+            node.Query = REGEX_AND.Replace(node.Query, "#", 1, 0);
+            var list = node.Query.Split("#");
+            if (list.Length == 1)
+            {
+                int endAt = 0;
+                if (list[0][0] == '(')
+                {
+                    node.Query = list[0].Substring(1, list[0].Length - 2);
+                    IsValid(node.Query, out endAt);
+                }
+                logic = Regex.Match(node.Query.Substring(endAt, node.Query.Length - 1 - endAt), AND_OR).Value;
+                node.Query = REGEX_AND_OR.Replace(node.Query, "#", 1, endAt);
+                list = node.Query.Split("#");
+                if (list.Length == 1)
+                {
+                    var data = REGEX_OPERATOR.Split(node.Query);
+                    var cond = new UserCondition { Key = data[0], Value = data[2], Operator = data[1] };
+                    node.Data = GetCriterion(cond);
+                    return;
+                }
+            }
+            node.LogicalOperator = logic;
+            var left = new ExpressionTreeNode<TEntity>() { Query = list[0] };
+            node.Left = left;
+            CreateTree(node.Left);
+            var right = new ExpressionTreeNode<TEntity>() { Query = list[1] };
+            node.Right = right;
+            CreateTree(node.Right);
+            if (node.LogicalOperator == "AND")
+            {
+                node.Data = new AndCriterion<TEntity>(left.Data, right.Data);
+            }
+            else
+            {
+                node.Data = new OrCriterion<TEntity>(left.Data, right.Data);
+            }
+        }
+
+        protected abstract ICriterion<TEntity> GetCriterion(UserCondition cond);
+        private bool IsValid(string query, out int endAt)
+        {
+            endAt = 0;
+            Stack<char> stack = new Stack<char>();
+            for (int i = 0; i < query.Length; i++)
+            {
+                if (query[i] == '(')
+                {
+                    stack.Push(query[i]);
+                }
+                else
+                {
+                    if (stack.Count == 0)
+                    {
+                        endAt = i == 0 ? 0 : i - 1;
+                        return false;
+                    }
+                    if (query[i] == ')' && stack.Pop() != '(')
+                    {
+                        return false;
+                    }
+                }
+            }
+            return stack.Count == 0;
+        }
     }
 
     /// <summary>

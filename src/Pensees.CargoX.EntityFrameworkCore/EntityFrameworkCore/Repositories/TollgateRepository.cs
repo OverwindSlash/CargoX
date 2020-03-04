@@ -74,5 +74,10 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
         {
             throw new NotImplementedException();
         }
+
+        protected override ICriterion<Tollgate> GetCriterion(UserCondition cond)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

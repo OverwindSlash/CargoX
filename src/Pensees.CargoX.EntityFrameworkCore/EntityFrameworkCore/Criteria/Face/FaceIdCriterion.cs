@@ -10,6 +10,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
     {
         private readonly string _faceId;
         private readonly Dictionary<string, string> _conditions;
+        private readonly UserCondition _condition;
         public FaceIdCriterion(string faceId)
         {
             _faceId = faceId;
@@ -19,9 +20,24 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
         {
             _conditions = conditions;
         }
-
+        public FaceIdCriterion(UserCondition condition)
+        {
+            _condition = condition;
+        }
         public IQueryable<Face> HandleQueryable(IQueryable<Face> queryable)
         {
+            switch (_condition?.Operator?.ToLower())
+            {
+                case "like":
+                    queryable = queryable.Where(p => p.FaceId.Contains(_condition.Value));
+                    break;
+                default:
+                    break;
+            }
+            if (_conditions == null)
+            {
+                return queryable;
+            }
             foreach (var condition in _conditions)
             {
                 switch (condition.Key)
@@ -35,9 +51,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
                     default:
                         break;
                 }
-
             }
-
             return queryable;
         }
     }

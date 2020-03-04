@@ -45,5 +45,10 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
         {
             throw new NotImplementedException();
         }
+
+        protected override ICriterion<Person> GetCriterion(UserCondition cond)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

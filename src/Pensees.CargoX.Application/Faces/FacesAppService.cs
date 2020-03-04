@@ -79,6 +79,10 @@ namespace Pensees.CargoX.Faces
         {
             QueryString queryString = _httpContext.HttpContext.Request.QueryString;
             string decodedQueryStr = WebUtility.UrlDecode(queryString.Value);
+
+            var query = _faceRepository.QueryByConditions(condition);
+
+            var result = query.Result.ToList();
             return null;
         }
         public override async Task<FaceDto> CreateAsync(FaceDto input)
