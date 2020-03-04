@@ -2282,11 +2282,13 @@ namespace Pensees.CargoX.Migrations
                 {
                     b.HasOne("Pensees.CargoX.Entities.Face", null)
                         .WithMany("SubImageInfos")
-                        .HasForeignKey("FaceId");
+                        .HasForeignKey("FaceId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Pensees.CargoX.Entities.Person", null)
                         .WithMany("SubImageInfos")
-                        .HasForeignKey("PersonId");
+                        .HasForeignKey("PersonId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Pensees.CargoX.MultiTenancy.Tenant", b =>
