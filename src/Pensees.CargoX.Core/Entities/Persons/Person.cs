@@ -106,7 +106,7 @@ namespace Pensees.CargoX.Entities
         /// 有效证件号码
         /// IdNumberType::string(0..30)::证件号码
         /// </summary>
-        [DisplayName("证件种类")]
+        [DisplayName("证件号码")]
         [StringLength(30)]
         public string IDNumber { get; set; }
 

@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="5.0.0" />
-    <PackageReference Include="Minio" Version="3.1.7" />
-    <PackageReference Include="Sentry" Version="1.2.0" />
+    <PackageReference Include="Abp" Version="5.2.0" />
+    <PackageReference Include="Minio" Version="3.1.9" />
+    <PackageReference Include="Sentry" Version="2.1.0" />
   </ItemGroup>
 
   <ItemGroup>

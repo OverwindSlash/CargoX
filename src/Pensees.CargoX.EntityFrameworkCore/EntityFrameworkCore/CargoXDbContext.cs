@@ -24,6 +24,7 @@ namespace Pensees.CargoX.EntityFrameworkCore
         public virtual DbSet<CaseInfo> CaseInfos { get; set; }
         public virtual DbSet<Subscribe> Subscribes { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
+        public virtual DbSet<VideoSliceInfo> VideoSliceInfos { get; set; }
 
 
 
