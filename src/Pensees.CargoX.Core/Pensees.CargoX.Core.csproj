@@ -15,6 +15,14 @@
     <EmbeddedResource Include="Localization\SourceFiles\*.xml" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Entities\Motors\**" />
+    <Compile Remove="Entities\NonMotors\**" />
+    <EmbeddedResource Remove="Entities\Motors\**" />
+    <EmbeddedResource Remove="Entities\NonMotors\**" />
+    <None Remove="Entities\Motors\**" />
+    <None Remove="Entities\NonMotors\**" />
+  </ItemGroup>
+  <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>

@@ -22,6 +22,8 @@
     <Compile Remove="Migrations\20200228072125_Add_Shottime_Column_In_Person.Designer.cs" />
     <Compile Remove="Migrations\20200228072651_Add_Shottime_Column_In_Person.cs" />
     <Compile Remove="Migrations\20200228072651_Add_Shottime_Column_In_Person.Designer.cs" />
+    <Compile Remove="Migrations\20200303083332_Add_Serveral_Entity.cs" />
+    <Compile Remove="Migrations\20200303083332_Add_Serveral_Entity.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Pensees.CargoX.Entities
 {
-    public class Person:Entity<long>
+    public class Person : Entity<long>
     {
         /// <summary>
         /// 人员标识
@@ -24,7 +24,7 @@ namespace Pensees.CargoX.Entities
         /// </summary>
         [Required]
         [DisplayName("信息分类")]
-        public int InfoType { get; set; }
+        public int InfoKind { get; set; }
 
         /// <summary>
         /// 来源图像信息标识
