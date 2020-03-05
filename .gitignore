@@ -254,5 +254,3 @@ paket-files/
 /src/Pensees.CargoX.Web.Host/App_Data/Logs/
 /src/Pensees.CargoX.Rpc.Host/Properties/launchSettings.json
 /src/Pensees.CargoX.Web.Host/appsettings.json
-/src/Pensees.CargoX.EntityFrameworkCore/Migrations/
-.gitignore
