@@ -11,6 +11,7 @@ using Pensees.CargoX.Common.Dto;
 using Pensees.CargoX.Converter;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.Faces.Dto;
+using Pensees.CargoX.MotorVehicles.Dto;
 using Pensees.CargoX.Persons.Dto;
 using Pensees.CargoX.Service;
 using Sentry;
@@ -99,6 +100,23 @@ namespace Pensees.CargoX
                     .ForMember(dto => dto.SubImageList,
                         opt => opt.MapFrom(
                             person => person));
+                #endregion
+
+                #region Motor
+                config.CreateMap<MotorDto, Motor>()
+                    .ForMember(entiry => entiry.SubImageInfos,
+                        opt => opt.MapFrom(
+                            dto => dto.SubImageList.SubImageInfoObject));
+
+                config.CreateMap<Motor, MotorDto>()
+                    .ForMember(dto => dto.SubImageList,
+                        opt => opt.MapFrom(
+                            entiry => entiry));
+
+                config.CreateMap<Motor, SubImageInfoDtoList>()
+                    .ForMember(dto => dto.SubImageInfoObject,
+                        opt => opt.MapFrom(
+                            entiry => entiry.SubImageInfos));
                 #endregion
 
             });
