@@ -1,7 +1,7 @@
 ﻿using Abp.EntityFrameworkCore;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.EntityFrameworkCore.Criteria;
-using Pensees.CargoX.Repository.MotorVehicle;
+using Pensees.CargoX.Repository.MotorVehicles;
 using System;
 using System.Collections.Generic;
 using System.Text;

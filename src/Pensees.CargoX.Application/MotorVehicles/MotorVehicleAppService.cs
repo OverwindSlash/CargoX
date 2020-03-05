@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Pensees.CargoX.Common.Dto;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.MotorVehicles.Dto;
-using Pensees.CargoX.Repository.MotorVehicle;
+using Pensees.CargoX.Repository.MotorVehicles;
 using System;
 using System.Collections.Generic;
 using System.Text;
