@@ -62,6 +62,16 @@ namespace Pensees.CargoX.Persons
             }
             return new PagedResultDto<ClusteringPersonDto>(persons.TotalCount, ObjectMapper.Map<List<ClusteringPersonDto>>(persons.Items));
         }
+        [Route("VIID/Persons")]
+        [HttpGet]
+        public async Task<PagedResultDto<PersonDto>> QueryClusteringMotorWithContition(string condition)
+        {
+            PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
+            var queryString = GetQueryStringAndPagingParameters(condition, input);
+            var query = await _personRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var result = PagingAndSorting(input, query);
+            return new PagedResultDto<PersonDto>(result.TotalCount, ObjectMapper.Map<List<PersonDto>>(result.Items));
+        }
 
         public override async Task<PersonDto> CreateAsync(PersonDto input)
         {
@@ -92,7 +102,7 @@ namespace Pensees.CargoX.Persons
             Person person = await _personRepository.GetAllIncluding(t => t.SubImageInfos)
                 .SingleOrDefaultAsync(f => f.Id == input.Id).ConfigureAwait(false);
 
-            if (person.SubImageInfos != null)
+            if (person?.SubImageInfos != null)
             {
                 foreach (var subImageInfo in person.SubImageInfos)
                 {

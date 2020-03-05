@@ -31,6 +31,13 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
                 case "like":
                     queryable = queryable.Where(p => p.FaceId.Contains(_condition.Value));
                     break;
+                case "=":
+                    queryable = queryable.Where(p => p.FaceId == _condition.Value);
+                    break;
+                case "!=":
+                case "<>":
+                    queryable = queryable.Where(p => p.FaceId != _condition.Value);
+                    break;
                 default:
                     break;
             }
