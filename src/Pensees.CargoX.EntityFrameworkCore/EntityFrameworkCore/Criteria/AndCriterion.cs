@@ -24,9 +24,14 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
 
         public IQueryable<T> HandleQueryable(IQueryable<T> query)
         {
-            var left = _left.HandleQueryable(query);
-            var right = _right.HandleQueryable(query);
-            return left.Intersect(right);
+            var left = _left?.HandleQueryable(query);
+            var right = _right?.HandleQueryable(query);
+            //如此处理不一定合理
+            if (left!=null && right !=null)
+            {
+                return left.Intersect(right);
+            }
+            return query;
         }
     }
 }

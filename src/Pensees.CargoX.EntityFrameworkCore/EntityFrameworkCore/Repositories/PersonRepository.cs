@@ -48,7 +48,19 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
 
         protected override ICriterion<Person> GetCriterion(UserCondition cond)
         {
-            throw new NotImplementedException();
+            ICriterion<Person> criterion = null;
+            switch (cond.Key.ToLower())
+            {
+                case "personid":
+                    criterion = new PersonIdCriterion(cond) as ICriterion<Person>;
+                    break;
+                case "shottime":
+                    criterion = new PersonShotTimeCriterion(cond) as ICriterion<Person>;
+                    break;
+                default:
+                    break;
+            }
+            return criterion;
         }
     }
 }

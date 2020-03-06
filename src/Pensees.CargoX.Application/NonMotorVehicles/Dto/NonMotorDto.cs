@@ -1,13 +1,17 @@
-﻿using System;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Pensees.CargoX.Common.Dto;
+using Pensees.CargoX.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
-using Abp.Domain.Entities;
 
-namespace Pensees.CargoX.Entities
+namespace Pensees.CargoX.NonMotorVehicles.Dto
 {
-    public class NonMotor : Entity<long>
+    [AutoMap(typeof(NonMotor))]
+    public class NonMotorDto:EntityDto<long>
     {
         /// <summary>
         /// 车辆标识
@@ -338,11 +342,12 @@ namespace Pensees.CargoX.Entities
         /// 图像列表 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public List<SubImageInfo> SubImageInfos { get; set; }
+        public SubImageInfoDtoList SubImageList { get; set; }
         /// <summary>
         /// 拍摄时间：冗余SubImageInfo中字段，方便查询
         /// </summary>
         [DisplayName("拍摄时间")]
         public DateTime ShotTime { get; set; }
+
     }
 }

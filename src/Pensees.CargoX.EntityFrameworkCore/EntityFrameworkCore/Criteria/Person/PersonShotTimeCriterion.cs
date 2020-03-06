@@ -9,6 +9,12 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
     public class PersonShotTimeCriterion : ICriterion<Person>
     {
         private readonly Dictionary<string, string> _conditions;
+        private readonly UserCondition _condition;
+
+        public PersonShotTimeCriterion(UserCondition condition)
+        {
+            _condition = condition;
+        }
 
         public PersonShotTimeCriterion(Dictionary<string, string> conditions)
         {
@@ -16,6 +22,36 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
         }
         public IQueryable<Person> HandleQueryable(IQueryable<Person> queryable)
         {
+            switch (_condition?.Operator)
+            {
+                case "=":
+                    queryable.Where(p => p.ShotTime == Convert.ToDateTime(_condition.Value));
+                    break;
+                case ">":
+                    queryable.Where(p => p.ShotTime > Convert.ToDateTime(_condition.Value));
+                    break;
+                case "<":
+                    queryable.Where(p => p.ShotTime < Convert.ToDateTime(_condition.Value));
+                    break;
+                case ">=":
+                case "!<":
+                    queryable.Where(p => p.ShotTime >= Convert.ToDateTime(_condition.Value));
+                    break;
+                case "<=":
+                case "!>":
+                    queryable.Where(p => p.ShotTime <= Convert.ToDateTime(_condition.Value));
+                    break;
+                case "!=":
+                case "<>":
+                    queryable.Where(p => p.ShotTime != Convert.ToDateTime(_condition.Value));
+                    break;
+                default:
+                    break;
+            }
+            if (_conditions == null)
+            {
+                return queryable;
+            }
             foreach (var condition in _conditions)
             {
                 switch (condition.Key)

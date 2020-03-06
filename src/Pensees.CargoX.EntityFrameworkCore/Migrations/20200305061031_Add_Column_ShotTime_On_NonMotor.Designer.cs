@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Pensees.CargoX.EntityFrameworkCore;
 
 namespace Pensees.CargoX.Migrations
 {
     [DbContext(typeof(CargoXDbContext))]
-    partial class CargoXDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200305061031_Add_Column_ShotTime_On_NonMotor")]
+    partial class Add_Column_ShotTime_On_NonMotor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Abp.Application.Services.Dto;
+using Abp.AutoMapper;
+using Pensees.CargoX.Common.Dto;
+using Pensees.CargoX.Entities;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
-using Abp.Domain.Entities;
 
-namespace Pensees.CargoX.Entities
+namespace Pensees.CargoX.MotorVehicles.Dto
 {
-    public class NonMotor : Entity<long>
+    [AutoMap(typeof(Motor))]
+    public class MotorDto: EntityDto<long>
     {
         /// <summary>
         /// 车辆标识
@@ -17,7 +19,7 @@ namespace Pensees.CargoX.Entities
         [Required]
         [StringLength(48)]
         [DisplayName("车辆标识")]
-        public string NonMotorVehicleID { get; set; }
+        public string MotorVehicleID { get; set; }
 
         /// <summary>
         /// 信息分类
@@ -38,12 +40,63 @@ namespace Pensees.CargoX.Entities
         public string SourceId { get; set; }
 
         /// <summary>
+        /// 关联卡口编号 GA/T 1400.1《公安视频图像信息应用系统 第1部分：通用技术要求》，采集设备、卡口点位、采集系统、分析系统、视图库、应用平台等设备编码规则
+        /// GB/T28181附录D中D.1规定的编码规则
+        /// 编码规则A 由中心编码(8位)、行业编码(2位)、类型编码(3位)和序号(7位)四个码段共20位十进制数字字符构成,即系统编码=中心编码+ 行业编码+ 类型编码+ 序号。
+        /// </summary>
+        [StringLength(20)]
+        [DisplayName("关联卡口编号")]
+        public string TollgateId { get; set; }
+
+        /// <summary>
         /// 设备编码，自动采集必选
         /// GA/T 1400.1《公安视频图像信息应用系统 第1部分：通用技术要求》，采集设备、卡口点位、采集系统、分析系统、视图库、应用平台等设备编码规则
         /// </summary>
         [StringLength(20)]
         [DisplayName("设备编码")]
         public string DeviceId { get; set; }
+
+        /// <summary>
+        /// 近景照片
+        /// 卡口相机所拍照片，自动采集必选，图像访问路径，采用URI命名规则
+        /// </summary>
+        [Required]
+        [StringLength(256)]
+        [DisplayName("近景照片")]
+        public string StorageUrl1 { get; set; }
+
+        /// <summary>
+        /// 车牌照片 
+        /// </summary>
+        [Required]
+        [StringLength(256)]
+        [DisplayName("车牌照片")]
+        public string StorageUrl2 { get; set; }
+
+        /// <summary>
+        /// 远景照片
+        /// 全景相机所拍照片
+        /// </summary>
+        [Required]
+        [StringLength(256)]
+        [DisplayName("远景照片")]
+        public string StorageUrl3 { get; set; }
+
+        /// <summary>
+        /// 合成图
+        /// </summary>
+        [Required]
+        [StringLength(256)]
+        [DisplayName("合成图")]
+        public string StorageUrl4 { get; set; }
+
+        /// <summary>
+        /// 缩略图
+        /// </summary>
+        [Required]
+        [StringLength(256)]
+        [DisplayName("缩略图")]
+        public string StorageUrl5 { get; set; }
 
         /// <summary>
         /// 左上角X坐标
@@ -92,6 +145,12 @@ namespace Pensees.CargoX.Entities
         public DateTime DisappearTime { get; set; }
 
         /// <summary>
+        /// 车道编号 车辆行驶方向最左车道为1，由左向右顺序编号。与方向有关
+        /// </summary>
+        [DisplayName("车道编号")]
+        public int LaneNo { get; set; }
+
+        /// <summary>
         /// 有无车牌
         /// </summary>
         [DisplayName("有无车牌")]
@@ -137,7 +196,7 @@ namespace Pensees.CargoX.Entities
         /// 各类机动车号牌编号车牌全部无法识别的以“无车牌”标识，部分未识别的每个字符以半角‘-’代替
         /// </summary>
         [DisplayName("车牌号")]
-        [MaxLength(16)]
+        [MaxLength(15)]
         public string PlateNo { get; set; }
 
         /// <summary>
@@ -145,7 +204,7 @@ namespace Pensees.CargoX.Entities
         /// 各类机动车挂车号牌编号
         /// </summary>
         [DisplayName("挂车牌号")]
-        [MaxLength(16)]
+        [MaxLength(15)]
         public string PlateNoAttach { get; set; }
 
         /// <summary>
@@ -181,6 +240,22 @@ namespace Pensees.CargoX.Entities
         public double Speed { get; set; }
 
         /// <summary>
+        /// 行驶方向
+        /// 1	西向东（简称东，下同）
+        /// 2	东向西（西）         
+        /// 3	北向南（南）         
+        /// 4	南向北（北）         
+        /// 5	西南到东北（东北）   
+        /// 6	东北到西南（西南）   
+        /// 7	西北到东南（东南）   
+        /// 8	东南到西北（西北）   
+        /// 9	其他                
+        /// </summary>
+        [StringLength(1)]
+        [DisplayName("行驶方向")]
+        public string Direction { get; set; }
+
+        /// <summary>
         /// 行驶状态代码
         /// GA/T 16.55，机动车行驶状态代码                
         /// </summary>
@@ -196,18 +271,34 @@ namespace Pensees.CargoX.Entities
         public int UsingPropertiesCode { get; set; }
 
         /// <summary>
-        /// 车辆品牌 
+        /// 车辆类型
+        /// GA/T16.4机动车车辆类型代码
         /// </summary>
-        [StringLength(32)]
+        [StringLength(3)]
+        [DisplayName("车辆类型")]
+        public string VehicleClass { get; set; }
+
+        /// <summary>
+        /// 车辆品牌
+        /// 车辆品牌代码
+        /// </summary>
+        [StringLength(3)]
         [DisplayName("车辆品牌")]
         public string VehicleBrand { get; set; }
 
         /// <summary>
-        /// 车辆款型 
+        /// 车辆型号 
         /// </summary>
-        [StringLength(64)]
-        [DisplayName("车辆款型")]
-        public string VehicleType { get; set; }
+        [MaxLength(32)]
+        [DisplayName("车辆型号")]
+        public string VehicleModel { get; set; }
+
+        /// <summary>
+        /// 车辆年款 
+        /// </summary>
+        [MaxLength(16)]
+        [DisplayName("车辆年款")]
+        public string VehicleStyles { get; set; }
 
         /// <summary>
         /// 车辆长度
@@ -237,6 +328,12 @@ namespace Pensees.CargoX.Entities
         [MaxLength(2)]
         [DisplayName("车身颜色")]
         public string VehicleColor { get; set; }
+
+        /// <summary>
+        /// 颜色深浅 
+        /// </summary>
+        [DisplayName("颜色深浅")]
+        public string VehicleColorDepth { get; set; }
 
         /// <summary>
         /// 车前盖 
@@ -335,10 +432,121 @@ namespace Pensees.CargoX.Entities
         public bool IsModified { get; set; }
 
         /// <summary>
+        /// 撞痕信息 
+        /// </summary>
+        [DisplayName("撞痕信息")]
+        public string HitMarkInfo { get; set; }
+
+        /// <summary>
+        /// 车身描述 描述车身上的文字信息，或者车上载物信息
+        /// </summary>
+        [MaxLength(128)]
+        [DisplayName("车身描述")]
+        public string VehicleBodyDesc { get; set; }
+
+        /// <summary>
+        /// 车前部物品  当有多个时可用英文半角逗号分隔
+        /// </summary>
+        [MaxLength(128)]
+        [DisplayName("车前部物品")]
+        public string VehicleFrontItem { get; set; }
+
+        /// <summary>
+        /// 车前部物品描述  对车前部物品数量、颜色、种类等信息的描述
+        /// </summary>
+        [MaxLength(256)]
+        [DisplayName("车前部物品描述")]
+        public string DescOfFrontItem { get; set; }
+
+        /// <summary>
+        /// 车后部物品  当有多个时可用英文半角逗号分隔
+        /// </summary>
+        [MaxLength(128)]
+        [DisplayName("车后部物品")]
+        public string VehicleRearItem { get; set; }
+
+        /// <summary>
+        /// 车后部物品描述  对车后部物品数量、颜色、种类等信息的描述
+        /// </summary>
+        [MaxLength(256)]
+        [DisplayName("车后部物品描述")]
+        public string DescOfRearItem { get; set; }
+
+        /// <summary>
+        /// 车内人数  车辆内人员数量
+        /// </summary>
+        [DisplayName("车内人数")]
+        public int NumOfPassenger { get; set; }
+
+        /// <summary>
+        /// 经过时刻 卡口事件有效，过车时间
+        /// </summary>
+        [DisplayName("经过时刻")]
+        public DateTime PassTime { get; set; }
+
+        /// <summary>
+        /// 经过道路名称  车辆被标注时经过的道路名称
+        /// </summary>
+        [MaxLength(64)]
+        [DisplayName("经过道路名称")]
+        public string NameOfPassedRoad { get; set; }
+
+        /// <summary>
+        /// 是否可疑车
+        /// </summary>
+        [DisplayName("是否可疑车")]
+        public bool IsSuspicious { get; set; }
+
+        /// <summary>
+        /// 遮阳板状态
+        /// 0：收起；1：放下
+        /// </summary>
+        [DisplayName("遮阳板状态")]
+        public int Sunvisor { get; set; }
+
+        /// <summary>
+        /// 安全带状态
+        /// 0：未系；1：有系
+        /// </summary>
+        [DisplayName("安全带状态")]
+        public int SafetyBelt { get; set; }
+
+        /// <summary>
+        /// 打电话状态
+        /// 0：未打电话；1：打电话中
+        /// </summary>
+        [DisplayName("打电话状态")]
+        public int Calling { get; set; }
+
+        /// <summary>
+        /// 号牌识别可信度  整个号牌号码的识别可信度，以0～100数值表示百分比，数值越大可信度越高
+        /// </summary>
+        [MaxLength(3)]
+        [DisplayName("号牌识别可信度")]
+        public string PlateReliability { get; set; }
+
+        /// <summary>
+        /// 每位号牌号码可信度
+        /// 号牌号码的识别可信度，以0～100数值表示百分比，数值越大可信度越高。
+        /// 按“字符1-可信度1，字符2-可信度2”方式排列，中间为英文半角连接线、逗号；
+        /// 例如识别号牌号码为：苏B12345，则取值为：”苏-80，B-90，1-90，2-88，3-90，4-67，5-87” 
+        /// </summary>
+        [MaxLength(64)]
+        [DisplayName("每位号牌号码可信度")]
+        public string PlateCharReliability { get; set; }
+
+        /// <summary>
+        /// 品牌标志识别可信度  车辆品牌标志可信度；以0～100之间数值表示百分比，数值越大可信度越高
+        /// </summary>
+        [MaxLength(3)]
+        [DisplayName("品牌标志识别可信度")]
+        public string BrandReliability { get; set; }
+
+        /// <summary>
         /// 图像列表 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public List<SubImageInfo> SubImageInfos { get; set; }
+        public SubImageInfoDtoList SubImageList { get; set; }
         /// <summary>
         /// 拍摄时间：冗余SubImageInfo中字段，方便查询
         /// </summary>

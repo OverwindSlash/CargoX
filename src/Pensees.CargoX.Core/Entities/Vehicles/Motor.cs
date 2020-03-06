@@ -544,5 +544,10 @@ namespace Pensees.CargoX.Entities
         /// </summary>
         [DisplayName("图像列表")]
         public List<SubImageInfo> SubImageInfos { get; set; }
+        /// <summary>
+        /// 拍摄时间：冗余SubImageInfo中字段，方便查询
+        /// </summary>
+        [DisplayName("拍摄时间")]
+        public DateTime ShotTime { get; set; }
     }
 }
