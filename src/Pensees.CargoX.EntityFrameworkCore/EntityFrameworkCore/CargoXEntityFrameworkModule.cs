@@ -3,6 +3,7 @@ using Abp.Modules;
 using Abp.Reflection.Extensions;
 using Abp.Zero.EntityFrameworkCore;
 using Pensees.CargoX.EntityFrameworkCore.Seed;
+using System.Transactions;
 
 namespace Pensees.CargoX.EntityFrameworkCore
 {
@@ -18,6 +19,8 @@ namespace Pensees.CargoX.EntityFrameworkCore
 
         public override void PreInitialize()
         {
+            Configuration.UnitOfWork.IsolationLevel = IsolationLevel.ReadCommitted;
+
             if (!SkipDbContextRegistration)
             {
                 Configuration.Modules.AbpEfCore().AddDbContext<CargoXDbContext>(options =>
