@@ -1,46 +1,43 @@
 ﻿using Abp.Application.Services.Dto;
-using Abp.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pensees.CargoX.Common.Dto;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.Images;
 using Pensees.CargoX.Images.Dtos;
-using Pensees.CargoX.MotorVehicles.Dto;
-using Pensees.CargoX.Repository.MotorVehicles;
+using Pensees.CargoX.NonMotorVehicles.Dto;
+using Pensees.CargoX.Repository.NonMotorVehicles;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pensees.CargoX.MotorVehicles
+namespace Pensees.CargoX.NonMotorVehicles
 {
-    public class MotorVehicleAppService:CargoXAsyncCrudAppService<Motor,MotorDto,long, PagedAndSortedRequestDto,MotorDto,MotorDto>,IMotorVehicleAppService
+    public class NonMotorVehiclesAppService : CargoXAsyncCrudAppService<NonMotor, NonMotorDto, long, PagedAndSortedRequestDto, NonMotorDto, NonMotorDto>, INonMotorVehiclesAppService
     {
-        private readonly IMotorVehicleRepository _motorVehicleRepository;
+        private readonly INonMotorVehicleRepository _nonMotorVehicleRepository;
         private readonly IImageAppService _imageAppService;
-
-        public MotorVehicleAppService(IMotorVehicleRepository motorVehicleRepository, 
-            IImageAppService imageAppService) : base(motorVehicleRepository)
+        public NonMotorVehiclesAppService(INonMotorVehicleRepository nonMotorVehicleRepository,
+            IImageAppService imageAppService) :base(nonMotorVehicleRepository)
         {
-            _motorVehicleRepository = motorVehicleRepository;
+            _nonMotorVehicleRepository = nonMotorVehicleRepository;
             _imageAppService = imageAppService;
         }
 
-        [Route("VIID/MotorVehicles")]
+        [Route("VIID/NonMotorVehicles")]
         [HttpGet]
-        public async Task<PagedResultDto<MotorDto>> QueryClusteringMotorWithContition(string condition)
+        public async Task<PagedResultDto<NonMotorDto>> QueryNonMotorsWithContition(string condition)
         {
             PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
             var queryString = GetQueryStringAndPagingParameters(condition, input);
-            var query = await _motorVehicleRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var query = await _nonMotorVehicleRepository.QueryByConditions(queryString).ConfigureAwait(false);
             var result = PagingAndSorting(input, query);
-            return new PagedResultDto<MotorDto>(result.TotalCount, ObjectMapper.Map<List<MotorDto>>(result.Items));
+            return new PagedResultDto<NonMotorDto>(result.TotalCount, ObjectMapper.Map<List<NonMotorDto>>(result.Items));
         }
-
-        public override async Task<MotorDto> GetAsync(EntityDto<long> input)
+        public override async Task<NonMotorDto> GetAsync(EntityDto<long> input)
         {
-            var entity = await _motorVehicleRepository.GetAllIncluding(t => t.SubImageInfos)
+            var entity = await _nonMotorVehicleRepository.GetAllIncluding(t => t.SubImageInfos)
                 .SingleOrDefaultAsync(f => f.Id == input.Id).ConfigureAwait(false);
 
             if (entity?.SubImageInfos != null)
@@ -67,7 +64,7 @@ namespace Pensees.CargoX.MotorVehicles
             return dto;
         }
 
-        public override async Task<MotorDto> CreateAsync(MotorDto input)
+        public override async Task<NonMotorDto> CreateAsync(NonMotorDto input)
         {
             foreach (var subImageInfoDto in input.SubImageList.SubImageInfoObject)
             {
@@ -91,7 +88,7 @@ namespace Pensees.CargoX.MotorVehicles
             return await base.CreateAsync(input);
         }
 
-        public override async Task<ResponseStatusList> CreateList(CreateOrUpdateListInputDto<MotorDto> input)
+        public override async Task<ResponseStatusList> CreateList(CreateOrUpdateListInputDto<NonMotorDto> input)
         {
             ResponseStatusList result = new ResponseStatusList();
             foreach (var dto in input.List)
@@ -128,7 +125,7 @@ namespace Pensees.CargoX.MotorVehicles
         }
 
         [HttpPut]
-        public override async Task<ResponseStatusList> UpdateList(CreateOrUpdateListInputDto<MotorDto> input)
+        public override async Task<ResponseStatusList> UpdateList(CreateOrUpdateListInputDto<NonMotorDto> input)
         {
             ResponseStatusList result = new ResponseStatusList();
             foreach (var item in input.List)

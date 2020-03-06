@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pensees.CargoX.NonMotorVehicles
 {
-    public interface INonMotorVehicleAppService:IApplicationService
+    public interface INonMotorVehiclesAppService:IApplicationService
     {
         Task<PagedResultDto<NonMotorDto>> QueryNonMotorsWithContition(string condition);
     }

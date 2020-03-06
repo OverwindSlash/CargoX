@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pensees.CargoX.MotorVehicles
 {
-    public interface IMotorVehicleAppService:IApplicationService
+    public interface IMotorVehiclesAppService:IApplicationService
     {
         Task<PagedResultDto<MotorDto>> QueryClusteringMotorWithContition(string condition);
     }

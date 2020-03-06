@@ -18,6 +18,6 @@ namespace Pensees.CargoX.Entities
 
     public class ResponseStatusList
     {
-        public IList<ResponseStatus> ResponseStatusObject { get; set; }
+        public IList<ResponseStatus> ResponseStatusObject { get; set; } = new List<ResponseStatus>();
     }
 }
