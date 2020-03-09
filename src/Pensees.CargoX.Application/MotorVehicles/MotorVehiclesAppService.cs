@@ -33,8 +33,13 @@ namespace Pensees.CargoX.MotorVehicles
         {
             PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
             var queryString = GetQueryStringAndPagingParameters(condition, input);
-            var query = await _motorVehicleRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var query = _motorVehicleRepository.GetAll();
+            query = await _motorVehicleRepository.QueryByConditions(queryString,query).ConfigureAwait(false);
             var result = PagingAndSorting(input, query);
+            foreach (var item in result.Items)
+            {
+                await _imageAppService.GetSubImageInfoDtoList(item.SubImageList.SubImageInfoObject);
+            }
             return new PagedResultDto<MotorDto>(result.TotalCount, ObjectMapper.Map<List<MotorDto>>(result.Items));
         }
 

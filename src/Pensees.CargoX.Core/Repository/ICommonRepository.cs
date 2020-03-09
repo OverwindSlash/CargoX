@@ -11,7 +11,7 @@ namespace Pensees.CargoX.Repository
     public interface ICommonRepository<TEntity,TPrimaryKey>: IRepository<TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
-        Task<IQueryable<TEntity>> QueryByConditions(string queryString);
+        Task<IQueryable<TEntity>> QueryByConditions(string queryString, IQueryable<TEntity> query);
 
     }
 }

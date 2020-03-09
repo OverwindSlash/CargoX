@@ -11,6 +11,6 @@ namespace Pensees.CargoX.Repository.Persons
     public interface IPersonRepository:IRepository<Person,long>
     {
         Task<IQueryable<Person>> QueryByParams(Dictionary<string, Dictionary<string, string>> parameters, IQueryable<Person> query);
-        Task<IQueryable<Person>> QueryByConditions(string queryString);
+        Task<IQueryable<Person>> QueryByConditions(string queryString,IQueryable<Person> query);
     }
 }

@@ -28,7 +28,8 @@ namespace Pensees.CargoX.APEs
         {
             PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
             var queryString = QueryHelper<Ape,long,ApeDto>.GetQueryStringAndPagingParameters(condition, input);
-            var query = await _apeRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var query = _apeRepository.GetAll();
+            query = await _apeRepository.QueryByConditions(queryString,query).ConfigureAwait(false);
             var result = QueryHelper<Ape, long, ApeDto>.PagingAndSorting(input, query);
             return new PagedResultDto<ApeDto>(result.TotalCount, ObjectMapper.Map<List<ApeDto>>(result.Items));
         }

@@ -62,10 +62,10 @@ namespace Pensees.CargoX.EntityFrameworkCore.Repositories
         protected abstract List<ICriterion<TEntity>> ConvertToCriteria(Dictionary<string, Dictionary<string, string>> parameters);
 
         //query string interpretor
-        public async Task<IQueryable<TEntity>> QueryByConditions(string queryString)
+        public async Task<IQueryable<TEntity>> QueryByConditions(string queryString,IQueryable<TEntity> query)
         {
             queryString = queryString.Replace(" ", "");
-            var query = GetQueryable();
+            //var query = GetQueryable();
             if (!string.IsNullOrEmpty(queryString))
             {
                 var head = new ExpressionTreeNode<TEntity> { Query = queryString };

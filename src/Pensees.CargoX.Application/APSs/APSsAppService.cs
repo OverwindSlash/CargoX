@@ -27,7 +27,8 @@ namespace Pensees.CargoX.APSs
         {
             PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
             var queryString = QueryHelper<Aps, long, ApsDto>.GetQueryStringAndPagingParameters(condition, input);
-            var query = await _apsRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var query = _apsRepository.GetAll();
+            query = await _apsRepository.QueryByConditions(queryString,query).ConfigureAwait(false);
             var result = QueryHelper<Aps, long, ApsDto>.PagingAndSorting(input, query);
             return new PagedResultDto<ApsDto>(result.TotalCount, ObjectMapper.Map<List<ApsDto>>(result.Items));
         }

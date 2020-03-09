@@ -68,8 +68,13 @@ namespace Pensees.CargoX.Persons
         {
             PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
             var queryString = GetQueryStringAndPagingParameters(condition, input);
-            var query = await _personRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var query = _personRepository.GetAllIncluding(p => p.SubImageInfos);
+            query = await _personRepository.QueryByConditions(queryString,query).ConfigureAwait(false);
             var result = PagingAndSorting(input, query);
+            foreach (var item in result.Items)
+            {
+                await _imageAppService.GetSubImageInfoDtoList(item.SubImageList.SubImageInfoObject);
+            }
             return new PagedResultDto<PersonDto>(result.TotalCount, ObjectMapper.Map<List<PersonDto>>(result.Items));
         }
 

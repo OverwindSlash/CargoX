@@ -81,8 +81,13 @@ namespace Pensees.CargoX.Faces
             //string decodedQueryStr = WebUtility.UrlDecode(queryString.Value);
             PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
             var queryString = GetQueryStringAndPagingParameters(condition, input);
-            var query = await _faceRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var query = _faceRepository.GetAllIncluding(p => p.SubImageInfos);
+            query = await _faceRepository.QueryByConditions(queryString,query).ConfigureAwait(false);
             var result= PagingAndSorting(input, query);
+            foreach (var item in result.Items)
+            {
+                await _imageAppService.GetSubImageInfoDtoList(item.SubImageList.SubImageInfoObject);
+            }
             return new PagedResultDto<FaceDto>(result.TotalCount,ObjectMapper.Map<List<FaceDto>>(result.Items));
         }
         public override async Task<FaceDto> CreateAsync(FaceDto input)

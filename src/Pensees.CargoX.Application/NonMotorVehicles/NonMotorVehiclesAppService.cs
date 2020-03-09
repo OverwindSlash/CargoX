@@ -31,8 +31,13 @@ namespace Pensees.CargoX.NonMotorVehicles
         {
             PagedAndSortedRequestDto input = new PagedAndSortedRequestDto();
             var queryString = GetQueryStringAndPagingParameters(condition, input);
-            var query = await _nonMotorVehicleRepository.QueryByConditions(queryString).ConfigureAwait(false);
+            var query = _nonMotorVehicleRepository.GetAll();
+            query = await _nonMotorVehicleRepository.QueryByConditions(queryString,query).ConfigureAwait(false);
             var result = PagingAndSorting(input, query);
+            foreach (var item in result.Items)
+            {
+                await _imageAppService.GetSubImageInfoDtoList(item.SubImageList.SubImageInfoObject);
+            }
             return new PagedResultDto<NonMotorDto>(result.TotalCount, ObjectMapper.Map<List<NonMotorDto>>(result.Items));
         }
         public override async Task<NonMotorDto> GetAsync(EntityDto<long> input)

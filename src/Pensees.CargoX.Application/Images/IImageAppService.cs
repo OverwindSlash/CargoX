@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Abp.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Pensees.CargoX.Common.Dto;
 using Pensees.CargoX.Images.Dtos;
 
 namespace Pensees.CargoX.Images
@@ -27,5 +28,6 @@ namespace Pensees.CargoX.Images
         Task<GetImageStatusResponse> GetImageStatusAsync(GetImageRequest request);
 
         Task<FileStreamResult> DownloadImageAsync(DownloadImageRequest request);
+        Task GetSubImageInfoDtoList(List<SubImageInfoDto> subImageInfoDtos);
     }
 }

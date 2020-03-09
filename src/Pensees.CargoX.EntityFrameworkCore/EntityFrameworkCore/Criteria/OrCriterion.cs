@@ -21,7 +21,7 @@ namespace Pensees.CargoX.EntityFrameworkCore.Criteria
         {
             var left = _left.HandleQueryable(query);
             var right = _right.HandleQueryable(query);
-            return left?.Union(right)==null?query: left.Union(right);
+            return left.Union(right);
         }
     }
 }

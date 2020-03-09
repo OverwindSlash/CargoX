@@ -11,6 +11,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Abp.Events.Bus;
 using Microsoft.AspNetCore.Mvc;
+using Pensees.CargoX.Common.Dto;
+using System.Collections.Generic;
 
 namespace Pensees.CargoX.Images
 {
@@ -218,6 +220,36 @@ namespace Pensees.CargoX.Images
                 //SentrySdk.CaptureException(exception);
                 throw;
             }
+        }
+
+        public async Task GetSubImageInfoDtoList(List<SubImageInfoDto> subImageInfoDtos)
+        {
+            try
+            {
+                foreach (var subImageInfo in subImageInfoDtos)
+                {
+                    if (string.IsNullOrEmpty(subImageInfo.ImageKey) ||
+                        string.IsNullOrEmpty(subImageInfo.NodeId))
+                    {
+                        continue;
+                    }
+
+                    GetImageRequest request = new GetImageRequest()
+                    {
+                        BucketName = subImageInfo.NodeId,
+                        ImageName = subImageInfo.ImageKey
+                    };
+
+                    GetImageWithBytesResponse response = await GetImageWithBytesAsync(request).ConfigureAwait(false);
+                    subImageInfo.Data = Convert.ToBase64String(response.ImageData);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
     }
 }
