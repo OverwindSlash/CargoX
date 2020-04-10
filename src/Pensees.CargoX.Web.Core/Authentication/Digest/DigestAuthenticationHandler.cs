@@ -55,13 +55,15 @@ namespace Pensees.CargoX.Authentication.Digest
             }
             else
             {
-                string password = await _userManager.GetPassword(authHeader.Username);
+                //string password 
+                var (password, id)= await _userManager.GetPasswordAndId(authHeader.Username);
                 string calculatedResponse = CalculateClientResponse(authHeader, password);
 
                 if (calculatedResponse == authHeader.Response)
                 {
                     var claims = new[]
                     {
+                        new Claim(ClaimTypes.NameIdentifier,id.ToString()),
                         new Claim(ClaimTypes.Name, authHeader.Username),
                     };
                     var identity = new ClaimsIdentity(claims, Scheme.Name);

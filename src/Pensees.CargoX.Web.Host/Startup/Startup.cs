@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using Pensees.CargoX.Authentication.Digest;
 using Pensees.CargoX.Configuration;
 using Pensees.CargoX.Conventions;
 using Pensees.CargoX.Identity;
@@ -61,6 +62,8 @@ namespace Pensees.CargoX.Web.Host.Startup
 
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
+            services.AddAuthentication("DigestAuthentication")
+           .AddScheme<DigestAuthenticationOptions, DigestAuthenticationHandler>("DigestAuthentication", null);
 
             services.AddSignalR();
 
@@ -95,9 +98,7 @@ namespace Pensees.CargoX.Web.Host.Startup
             });
 
             services.AddHttpClient();
-
-            //services.AddAuthentication("DigestAuthentication")
-            //    .AddScheme<DigestAuthenticationOptions, DigestAuthenticationHandler>("DigestAuthentication", null);
+       
 
             // Swagger - Enable this line and the related lines in Configure method to enable swagger UI
             services.AddSwaggerGen(options =>
@@ -135,6 +136,8 @@ namespace Pensees.CargoX.Web.Host.Startup
             app.UseRouting();
 
             app.UseAuthentication();
+            app.UseDigestiddleware();
+
             app.UseAuthorization();
 
             app.UseAbpRequestLocalization();

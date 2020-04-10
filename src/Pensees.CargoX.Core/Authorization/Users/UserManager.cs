@@ -59,15 +59,15 @@ namespace Pensees.CargoX.Authorization.Users
             _userStore = store;
         }
 
-        public async Task<string> GetPassword(string username)
+        public async Task<(string password,long id)> GetPasswordAndId(string username)
         {
             var user = await _userStore.FindByNameAsync(username);
             if (user == null)
             {
-                return string.Empty;
+                return (string.Empty,0);
             }
 
-            return user.ClearTextPassword;
+            return (user.ClearTextPassword,user.Id);
         }
     }
 }
