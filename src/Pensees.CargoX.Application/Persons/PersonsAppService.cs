@@ -1,5 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pensees.CargoX.Common.Dto;
@@ -8,6 +9,7 @@ using Pensees.CargoX.Images;
 using Pensees.CargoX.Images.Dtos;
 using Pensees.CargoX.Persons.Dto;
 using Pensees.CargoX.Repository.Persons;
+using Shared.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +21,15 @@ namespace Pensees.CargoX.Persons
     {
         private readonly IPersonRepository _personRepository;
         private readonly IImageAppService _imageAppService;
+        private readonly IPublishEndpoint _publishEndpoint;
 
-        public PersonsAppService(IPersonRepository personRepository, IImageAppService imageAppService):base(personRepository)
+        public PersonsAppService(IPersonRepository personRepository, 
+            IImageAppService imageAppService,
+            IPublishEndpoint publishEndpoint) :base(personRepository)
         {
             _personRepository = personRepository;
             _imageAppService = imageAppService;
+            _publishEndpoint = publishEndpoint;
         }
 
         public async Task<PagedResultDto<ClusteringPersonDto>> QueryClusteringPersonByParams(PagedAndSortedRequestDto input)
@@ -99,7 +105,15 @@ namespace Pensees.CargoX.Persons
                 subImageInfoDto.StoragePath = $"{response.BucketName}:{response.ImageName}";
             }
 
-            return await base.CreateAsync(input);
+            var result= await base.CreateAsync(input);
+            var person = ObjectMapper.Map<Person>(input);
+            await _publishEndpoint.Publish(new PersonEvent
+            {
+                //需要获取device
+                DeviceId = person.DeviceID,
+                Entity = person
+            });
+            return result;
         }
 
         public override async Task<PersonDto> GetAsync(EntityDto<long> input)

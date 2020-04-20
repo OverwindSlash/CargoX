@@ -17,10 +17,13 @@
   <ItemGroup>
     <Compile Remove="Entities\Motors\**" />
     <Compile Remove="Entities\NonMotors\**" />
+    <Compile Remove="Events\**" />
     <EmbeddedResource Remove="Entities\Motors\**" />
     <EmbeddedResource Remove="Entities\NonMotors\**" />
+    <EmbeddedResource Remove="Events\**" />
     <None Remove="Entities\Motors\**" />
     <None Remove="Entities\NonMotors\**" />
+    <None Remove="Events\**" />
   </ItemGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

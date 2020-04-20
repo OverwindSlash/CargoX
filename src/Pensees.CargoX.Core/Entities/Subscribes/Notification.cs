@@ -48,78 +48,78 @@ namespace Pensees.CargoX.Entities
         /// 视频案事件  视频案事件信息数据集
         /// </summary>
         [NotMapped]
-        public List<Case> Cases { get; set; }
+        public List<Case> Cases { get; set; } = new List<Case>();
 
         /// <summary>
         /// 视频卡口	视频卡口信息数据集
         /// </summary>
         [NotMapped]
-        public List<Tollgate> TollgateList { get; set; }
+        public List<Tollgate> TollgateList { get; set; } = new List<Tollgate>();
 
         /// <summary>
         /// 车道  车道信息数据集
         /// </summary>
         [NotMapped]
-        public List<Lane> LaneList { get; set; }
+        public List<Lane> LaneList { get; set; } = new List<Lane>();
 
         /// <summary>
         /// 设备  设备信息数据集
         /// </summary>
         [NotMapped]
-        public List<Ape> DeviceList { get; set; }
+        public List<Ape> DeviceList { get; set; } = new List<Ape>();
 
         /// <summary>
         /// 设备状态  该通知针对批量订阅方式
         /// </summary>
         [NotMapped]
-        public List<ApeStatus> DeviceStatusList { get; set; }
+        public List<ApeStatus> DeviceStatusList { get; set; } = new List<ApeStatus>();
 
         /// <summary>
         /// 采集系统  设备网管信息数据集
         /// </summary>
         [NotMapped]
-        public List<Aps> APSObjectList { get; set; }
+        public List<Aps> APSObjectList { get; set; } = new List<Aps>();
 
         /// <summary>
         /// 采集系统状态  该通知针对批量订阅方式
         /// </summary>
         [NotMapped]
-        public List<ApeStatus> APSStatusObjectList { get; set; }
+        public List<ApeStatus> APSStatusObjectList { get; set; } = new List<ApeStatus>();
 
         /// <summary>
         /// 人员信息  人员信息数据集
         /// </summary>
         [NotMapped]
-        public List<Person> PersonObjectList { get; set; }
+        public List<Person> PersonObjectList { get; set; } = new List<Person>();
 
         /// <summary>
         /// 人脸信息  人脸信息数据集
         /// </summary>
         [NotMapped]
-        public List<Face> FaceObjectList { get; set; }
+        public List<Face> FaceObjectList { get; set; } = new List<Face>();
 
         /// <summary>
         /// 机动车信息  机动车(过车)信息数据集
         /// </summary>
         [NotMapped]
-        public List<Motor> MotorVehicleObjectList { get; set; }
+        public List<Motor> MotorVehicleObjectList { get; set; } = new List<Motor>();
 
         /// <summary>
         /// 非机动车信息  非机动车数据集
         /// </summary>
         [NotMapped]
-        public List<NonMotor> NonMotorVehicleObjectList { get; set; }
+        public List<NonMotor> NonMotorVehicleObjectList { get; set; } = new List<NonMotor>();
 
         /// <summary>
         /// 物品信息
         /// </summary>
         [NotMapped]
-        public List<Thing> ThingObjectList { get; set; }
+        public List<Thing> ThingObjectList { get; set; } = new List<Thing>();
 
         /// <summary>
         /// 场景信息
         /// </summary>
         [NotMapped]
-        public List<Thing> SceneObjectList { get; set; }
+        public List<Thing> SceneObjectList { get; set; } = new List<Thing>();
     }
 }

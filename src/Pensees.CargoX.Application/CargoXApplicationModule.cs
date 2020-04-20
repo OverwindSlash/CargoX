@@ -5,9 +5,12 @@ using Abp.Events.Bus;
 using Abp.Events.Bus.Exceptions;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
+using Abp.Runtime.Caching.Redis;
 using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using Pensees.CargoX.Authorization;
 using Pensees.CargoX.Common.Dto;
+using Pensees.CargoX.Configuration;
 using Pensees.CargoX.Converter;
 using Pensees.CargoX.Entities;
 using Pensees.CargoX.Faces.Dto;
@@ -22,9 +25,19 @@ namespace Pensees.CargoX
     [DependsOn(
         typeof(CargoXCoreModule), 
         typeof(CargoXServiceModule),
-        typeof(AbpAutoMapperModule))]
+        typeof(AbpAutoMapperModule),
+        typeof(AbpRedisCacheModule))]
     public class CargoXApplicationModule : AbpModule
     {
+        private readonly IConfigurationRoot _appConfiguration;
+
+        public CargoXApplicationModule()
+        {
+            _appConfiguration = AppConfigurations.Get(
+                typeof(CargoXApplicationModule).GetAssembly().GetDirectoryPathOrNull()
+            );
+        }
+
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<CargoXAuthorizationProvider>();
@@ -32,6 +45,15 @@ namespace Pensees.CargoX
             //EventBus.Default.Register<AbpHandledExceptionData>(eventData =>
             //{
             //    SentrySdk.CaptureException(eventData.Exception);
+            //});
+            //Configuration.Caching.UseRedis(options =>
+            //{
+            //    options.ConnectionString = _appConfiguration["Redis:ConnectionString"];
+            //    options.DatabaseId = _appConfiguration.GetValue<int>("Redis:DatabaseId");
+            //});
+            //Configuration.Caching.Configure("CargoX", cache =>
+            //{
+            //    cache.DefaultSlidingExpireTime = TimeSpan.FromSeconds(300);
             //});
         }
 

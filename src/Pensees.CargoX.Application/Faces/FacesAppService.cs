@@ -15,6 +15,8 @@ using System.Net;
 using System.Threading.Tasks;
 using Pensees.CargoX.Common.Dto;
 using System.Linq;
+using MassTransit;
+using Shared.Events;
 
 namespace Pensees.CargoX.Faces
 {
@@ -23,15 +25,17 @@ namespace Pensees.CargoX.Faces
         private readonly IFaceRepository _faceRepository;
         private readonly IImageAppService _imageAppService;
         private readonly IHttpContextAccessor _httpContext;
-
+        private readonly IPublishEndpoint _publishEndpoint;
         public FacesAppService(
             IFaceRepository faceRepository,
             IImageAppService imageAppService,
-            IHttpContextAccessor httpContext) : base(faceRepository)
+            IHttpContextAccessor httpContext,
+            IPublishEndpoint publishEndpoint) : base(faceRepository)
         {
             _faceRepository = faceRepository;
             _imageAppService = imageAppService;
             _httpContext = httpContext;
+            _publishEndpoint = publishEndpoint;
         }
 
         public async Task<PagedResultDto<ClusteringFaceDto>> QueryClusteringFaceByParams(PagedAndSortedRequestDto input)
@@ -110,8 +114,16 @@ namespace Pensees.CargoX.Faces
                 subImageInfoDto.ImageKey = response.ImageName;
                 subImageInfoDto.StoragePath = $"{response.BucketName}:{response.ImageName}";
             }
+            var result= await base.CreateAsync(input);
+            var face = ObjectMapper.Map<Face>(input);
+            await _publishEndpoint.Publish(new FaceEvent
+            {
+                //需要获取device
+                DeviceId = face.DeviceId,
+                Entity = face
+            });
 
-            return await base.CreateAsync(input);
+            return result;
         }
         public override async Task<ResponseStatusList> CreateList(CreateOrUpdateListInputDto<FaceDto> input)
         {

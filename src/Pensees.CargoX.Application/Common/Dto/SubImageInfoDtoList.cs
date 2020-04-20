@@ -7,6 +7,6 @@ namespace Pensees.CargoX.Common.Dto
     [AutoMap(typeof(SubImageInfoList))]
     public class SubImageInfoDtoList
     {
-        public List<SubImageInfoDto> SubImageInfoObject { get; set; }
+        public List<SubImageInfoDto> SubImageInfoObject { get; set; } = new List<SubImageInfoDto>();
     }
 }

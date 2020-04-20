@@ -676,7 +676,7 @@ namespace Pensees.CargoX.Persons.Dto
         /// 可以包含0个或者多个子图像对象
         /// </summary>
         [DisplayName("图像列表")]
-        public SubImageInfoDtoList SubImageList { get; set; }
+        public SubImageInfoDtoList SubImageList { get; set; } = new SubImageInfoDtoList();
 
         /// <summary>
         /// 人体朝向

@@ -7,12 +7,17 @@ using Abp.Dependency;
 using Abp.Extensions;
 using Abp.Json;
 using Castle.Facilities.Logging;
+using MassTransit;
+using MassTransit.AspNetCoreIntegration;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using Pensees.CargoX.Configuration;
@@ -32,6 +37,7 @@ namespace Pensees.CargoX.Web.Host.Startup
         private readonly IConfigurationRoot _appConfiguration;
 
         public Startup(IHostingEnvironment env)
+
         {
             _appConfiguration = env.GetAppConfiguration();
         }
@@ -115,6 +121,36 @@ namespace Pensees.CargoX.Web.Host.Startup
                 });
             });
 
+            //configure MT
+            services.AddMassTransit(x =>
+            {
+                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+                {
+                    // configure health checks for this bus instance
+                    cfg.UseHealthCheck(provider);
+                    cfg.Host(_appConfiguration["Mq:Host"], _appConfiguration["Mq:VirtualHost"], h =>
+                    {
+                        h.Username(_appConfiguration["Mq:Username"]);
+                        h.Password(_appConfiguration["Mq:Password"]);
+                    });
+                }));
+            });
+            services.AddMassTransitHostedService();
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.InstanceName = "CargoX:";
+                options.ConfigurationOptions = new StackExchange.Redis.ConfigurationOptions
+                {
+                    EndPoints ={
+                        {_appConfiguration["Redis:ConnectionString"],6379}
+                    },
+                    DefaultDatabase = _appConfiguration.GetValue<int>("Redis:DatabaseId"),
+                    
+                };
+
+            });
+
             // Configure Abp and Dependency Injection
             return services.AddAbp<CargoXWebHostModule>(
                 // Configure Log4Net logging
@@ -144,6 +180,18 @@ namespace Pensees.CargoX.Web.Host.Startup
                 endpoints.MapHub<AbpCommonHub>("/signalr");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
+
+                // The readiness check uses all registered checks with the 'ready' tag.
+                endpoints.MapHealthChecks("/health/ready", new HealthCheckOptions()
+                {
+                    Predicate = (check) => check.Tags.Contains("ready"),
+                });
+
+                endpoints.MapHealthChecks("/health/live", new HealthCheckOptions()
+                {
+                    // Exclude all checks and return a 200-Ok.
+                    Predicate = (_) => false
+                });
             });
 
             // Enable middleware to serve generated Swagger as a JSON endpoint
